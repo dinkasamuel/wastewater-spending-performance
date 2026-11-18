@@ -1,0 +1,9 @@
+﻿Field,Field Description
+COMPANY_NAME,Water company and sub-region name
+COMPANY_ABBREVIATION,Water company and sub-region abbreviated name
+UNIQUE_ITEM_REFERENCE,Unique item reference ID 
+SHORT_DESCRIPTION,Description of unique item reference ID
+RAG,Regulatory Accounting Guideline.  You can read more about the Regulatory Accounting Guidelines at https://www.ofwat.gov.uk/wp-content/uploads/2025/01/RAG-4.13_DraftForConsultation.pdf
+YEAR,Year in yyyy-yy format e.g. 2024-25
+VALUE,Value for each unique item reference ID
+UNITS,Units of the stated value e.g. £m

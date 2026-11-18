@@ -1,0 +1,10 @@
+relationship ba361d98-782a-4479-9a3d-a3ba3d69d8ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: historical_outcomes.period_start
+	toColumn: LocalDateTable_2b01173c-8a8b-454c-811f-1cbac44dabc4.Date
+
+relationship 381dc07e-cbd1-4814-8339-cfc6ed9febbe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: historical_outcomes.period_end
+	toColumn: LocalDateTable_bc202fa1-ae84-4fb9-a477-b51baeed5229.Date
+

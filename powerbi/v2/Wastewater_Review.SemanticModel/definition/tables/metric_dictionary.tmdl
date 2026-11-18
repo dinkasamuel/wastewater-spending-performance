@@ -1,0 +1,63 @@
+table metric_dictionary
+	lineageTag: 0007b037-406b-5b07-bd41-8001c71b0fdb
+
+	column metric
+		dataType: string
+		lineageTag: 73c83413-729f-4a69-810c-e91c1747e7d4
+		summarizeBy: none
+		sourceColumn: metric
+
+	column source_item
+		dataType: string
+		lineageTag: 2f2cd5c2-4731-495e-a24d-6d69f1b8febb
+		summarizeBy: none
+		sourceColumn: source_item
+
+	column unit
+		dataType: string
+		lineageTag: 01241821-2528-4053-b743-766d27769296
+		summarizeBy: none
+		sourceColumn: unit
+
+	column period_basis
+		dataType: string
+		lineageTag: 162fcca9-c912-46b3-88c7-3bc0252632ec
+		summarizeBy: none
+		sourceColumn: period_basis
+
+	column better_direction
+		dataType: string
+		lineageTag: b884d9da-dcd4-4576-a958-f35553497a71
+		summarizeBy: none
+		sourceColumn: better_direction
+
+	column source_description
+		dataType: string
+		lineageTag: 37d9903a-592b-4a16-b02c-d306f26ee107
+		summarizeBy: none
+		sourceColumn: source_description
+
+	column source_rag
+		dataType: string
+		lineageTag: 9c3b4a61-e875-461b-b1ae-78fbcaf93170
+		summarizeBy: none
+		sourceColumn: source_rag
+
+	column analytical_role
+		dataType: string
+		lineageTag: 37141adb-cac0-4072-86f2-6522d1c4052f
+		summarizeBy: none
+		sourceColumn: analytical_role
+
+	partition metric_dictionary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\HP\Desktop\CSCT Master's Project\Project_Review_Version_2026-11-16\data\dim_metric.csv"),[Delimiter=",", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Nulls,{{"metric", type text}, {"source_item", type text}, {"unit", type text}, {"period_basis", type text}, {"better_direction", type text}, {"source_description", type text}, {"source_rag", type text}, {"analytical_role", type text}},"en-GB")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

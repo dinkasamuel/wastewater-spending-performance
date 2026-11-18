@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Wastewater_Review"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2cc52425-7c51-44e2-bfe9-ecc87ae8dbee"
+  }
+}

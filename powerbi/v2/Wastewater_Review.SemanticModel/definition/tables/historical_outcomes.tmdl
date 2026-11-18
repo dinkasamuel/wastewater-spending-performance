@@ -1,0 +1,150 @@
+table historical_outcomes
+	lineageTag: 1a1e05eb-5d85-5c37-996e-e92751022a01
+
+	measure 'Selected historical rate' = IF(HASONEVALUE(historical_outcomes[metric]), AVERAGE(historical_outcomes[value]), BLANK())
+		formatString: 0.00
+		lineageTag: 8b098755-379c-46a4-80d2-65a84a5dd758
+
+	measure 'Historical chart title' = IF(HASONEVALUE(historical_outcomes[metric]), SELECTEDVALUE(historical_outcomes[Outcome name]) & " | " & SELECTEDVALUE(historical_outcomes[Unit]) & " | blank = not available", "Select exactly one outcome to show its rate and unit")
+		lineageTag: 707ea7e0-d21f-4c77-92d8-a7d5318ad19e
+
+	column company_code
+		dataType: string
+		lineageTag: 8022f192-ae49-4dbc-bb8b-004945ea4ee4
+		summarizeBy: none
+		sourceColumn: company_code
+
+	column reporting_year
+		dataType: string
+		lineageTag: b6a7e4f8-6c58-45aa-87a3-127d112868f8
+		summarizeBy: none
+		sourceColumn: reporting_year
+
+	column year_start
+		dataType: int64
+		formatString: 0
+		lineageTag: 2193566c-9e6c-4ab5-a52c-6991b55e7f85
+		summarizeBy: sum
+		sourceColumn: year_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric
+		dataType: string
+		lineageTag: 5ce26398-9974-4991-a478-c306ef040e3c
+		summarizeBy: none
+		sourceColumn: metric
+
+	column value
+		dataType: double
+		formatString: 0.0000
+		lineageTag: a341feca-e1a9-45fc-a25a-eceb5ce9b482
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+	column raw_value
+		dataType: string
+		lineageTag: 434a41c1-25e2-4ab9-b332-a1d87faf1d81
+		summarizeBy: none
+		sourceColumn: raw_value
+
+	column available
+		dataType: string
+		lineageTag: 1f22a9dd-ec1e-48de-9f9a-7f12ec073f32
+		summarizeBy: none
+		sourceColumn: available
+
+	column period_basis
+		dataType: string
+		lineageTag: 42a09185-d0b7-46f2-ac7b-d7d8f1ab04db
+		summarizeBy: none
+		sourceColumn: period_basis
+
+	column period_start
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 59a9889b-4252-4087-992e-144cff1029c4
+		summarizeBy: none
+		sourceColumn: period_start
+
+		variation Variation
+			isDefault
+			relationship: ba361d98-782a-4479-9a3d-a3ba3d69d8ed
+			defaultHierarchy: LocalDateTable_2b01173c-8a8b-454c-811f-1cbac44dabc4.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column period_end
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 304825a9-fe42-4646-b685-36d807bc9472
+		summarizeBy: none
+		sourceColumn: period_end
+
+		variation Variation
+			isDefault
+			relationship: 381dc07e-cbd1-4814-8339-cfc6ed9febbe
+			defaultHierarchy: LocalDateTable_bc202fa1-ae84-4fb9-a477-b51baeed5229.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column source_file
+		dataType: string
+		lineageTag: 75152c46-15d8-45f1-b980-358005d33854
+		summarizeBy: none
+		sourceColumn: source_file
+
+	column source_sheet
+		dataType: string
+		lineageTag: 1d05d0d0-a9ce-40fa-a05e-1ce4934a22f7
+		summarizeBy: none
+		sourceColumn: source_sheet
+
+	column source_cell
+		dataType: string
+		lineageTag: 9c0239f8-38b8-4879-b548-06ba2e516640
+		summarizeBy: none
+		sourceColumn: source_cell
+
+	column source_release
+		dataType: string
+		lineageTag: 0f4874f9-a772-4d22-bc19-53ee664c7c8a
+		summarizeBy: none
+		sourceColumn: source_release
+
+	column definition
+		dataType: string
+		lineageTag: e369db98-fecf-47a6-87ba-44b566f3247a
+		summarizeBy: none
+		sourceColumn: definition
+
+	column source_metric_code
+		dataType: string
+		lineageTag: 5ecb93d6-9322-483e-adb8-9d9bf9a9ef10
+		summarizeBy: none
+		sourceColumn: source_metric_code
+
+	column 'Outcome name' = SWITCH(historical_outcomes[metric], "sewer_flooding_rate", "Internal sewer flooding", "sewer_collapse_rate", "Sewer collapses", "pollution_rate", "Pollution incidents", "treatment_compliance_pct", "Treatment works compliance", historical_outcomes[metric])
+		dataType: string
+		lineageTag: 61350108-0a0e-4780-b51a-60f1e7d5961c
+		summarizeBy: none
+
+	column 'Unit' = LOOKUPVALUE(metric_dictionary[unit], metric_dictionary[metric], historical_outcomes[metric])
+		dataType: string
+		lineageTag: 92c95342-77d6-4123-b50a-65b18b770744
+		summarizeBy: none
+
+	partition historical_outcomes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\HP\Desktop\CSCT Master's Project\Project_Review_Version_2026-11-16\data\fact_historical_outcomes.csv"),[Delimiter=",", Columns=16, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Nulls,{{"company_code", type text}, {"reporting_year", type text}, {"year_start", Int64.Type}, {"metric", type text}, {"value", type number}, {"raw_value", type text}, {"available", type text}, {"period_basis", type text}, {"period_start", type date}, {"period_end", type date}, {"source_file", type text}, {"source_sheet", type text}, {"source_cell", type text}, {"source_release", type text}, {"definition", type text}, {"source_metric_code", type text}},"en-GB")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

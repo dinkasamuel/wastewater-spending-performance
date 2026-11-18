@@ -1,0 +1,174 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a0212742959155ae286a",
+  "position": {
+    "x": 295,
+    "y": 530,
+    "width": 955,
+    "height": 430,
+    "z": 4,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "company_code"
+                }
+              },
+              "queryRef": "historical_outcomes.company_code",
+              "nativeQueryRef": "company_code",
+              "displayName": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "historical_outcomes.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "displayName": "Reporting year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "Outcome name"
+                }
+              },
+              "queryRef": "historical_outcomes.Outcome name",
+              "nativeQueryRef": "Outcome name",
+              "displayName": "Outcome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "Unit"
+                }
+              },
+              "queryRef": "historical_outcomes.Unit",
+              "nativeQueryRef": "Unit",
+              "displayName": "Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "value"
+                }
+              },
+              "queryRef": "historical_outcomes.value",
+              "nativeQueryRef": "value",
+              "displayName": "Value (blank = not available)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "period_basis"
+                }
+              },
+              "queryRef": "historical_outcomes.period_basis",
+              "nativeQueryRef": "period_basis",
+              "displayName": "Period basis"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "period_start"
+                }
+              },
+              "queryRef": "historical_outcomes.period_start",
+              "nativeQueryRef": "period_start",
+              "displayName": "Measured from"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "period_end"
+                }
+              },
+              "queryRef": "historical_outcomes.period_end",
+              "nativeQueryRef": "period_end",
+              "displayName": "Measured to"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "source_cell"
+                }
+              },
+              "queryRef": "historical_outcomes.source_cell",
+              "nativeQueryRef": "source_cell",
+              "displayName": "Source cell"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of historical outcome values with measurement period start and end dates and source cell. Blank values are not available.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "b880aa8c587b5207171d",
+  "position": {
+    "x": 755,
+    "y": 560,
+    "z": 3,
+    "height": 360,
+    "width": 490,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "baseline_panel.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "company_code"
+                }
+              },
+              "queryRef": "baseline_panel.company_code",
+              "nativeQueryRef": "company_code"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "Pollution rate"
+                }
+              },
+              "queryRef": "baseline_panel.Pollution rate",
+              "nativeQueryRef": "Pollution rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "baseline_panel"
+                  }
+                },
+                "Property": "reporting_year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pollution | per 10,000 km | calendar year'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

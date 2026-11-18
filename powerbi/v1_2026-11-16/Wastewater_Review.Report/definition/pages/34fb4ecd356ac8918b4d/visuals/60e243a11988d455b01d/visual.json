@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "60e243a11988d455b01d",
+  "position": {
+    "x": 255,
+    "y": 560,
+    "z": 3,
+    "height": 360,
+    "width": 490,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "baseline_panel.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "company_code"
+                }
+              },
+              "queryRef": "baseline_panel.company_code",
+              "nativeQueryRef": "company_code"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "baseline_panel"
+                    }
+                  },
+                  "Property": "Collapse rate"
+                }
+              },
+              "queryRef": "baseline_panel.Collapse rate",
+              "nativeQueryRef": "Collapse rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "baseline_panel"
+                  }
+                },
+                "Property": "reporting_year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sewer collapses | per 1,000 km'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

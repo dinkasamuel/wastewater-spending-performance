@@ -1,0 +1,181 @@
+model_id,omitted_company,diff_per_10pct
+"sewer_flooding_rate|main: same year, balanced 2017-24",ANH,0.1119707821103369
+"sewer_flooding_rate|main: same year, balanced 2017-24",NES,0.0004897677879245822
+"sewer_flooding_rate|main: same year, balanced 2017-24",SRN,-0.04522672309413278
+"sewer_flooding_rate|main: same year, balanced 2017-24",SVE,0.0689304052549176
+"sewer_flooding_rate|main: same year, balanced 2017-24",SWB,0.1413954658812466
+"sewer_flooding_rate|main: same year, balanced 2017-24",TMS,0.051967418563321266
+"sewer_flooding_rate|main: same year, balanced 2017-24",UUW,0.03340442430277596
+"sewer_flooding_rate|main: same year, balanced 2017-24",WSX,0.0951866744326591
+"sewer_flooding_rate|main: same year, balanced 2017-24",YKY,0.054615612632237936
+sewer_flooding_rate|unbalanced: all available years,ANH,0.29101045166828104
+sewer_flooding_rate|unbalanced: all available years,NES,0.1916491967213441
+sewer_flooding_rate|unbalanced: all available years,SRN,0.1663820030516054
+sewer_flooding_rate|unbalanced: all available years,SVE,0.24330328716643115
+sewer_flooding_rate|unbalanced: all available years,SWB,0.3528037219832151
+sewer_flooding_rate|unbalanced: all available years,TMS,0.23238878278336328
+sewer_flooding_rate|unbalanced: all available years,UUW,0.06097959430517553
+sewer_flooding_rate|unbalanced: all available years,WSX,0.24568245473225814
+sewer_flooding_rate|unbalanced: all available years,YKY,0.2551925266907775
+sewer_flooding_rate|total spending + size,ANH,0.11029660828199954
+sewer_flooding_rate|total spending + size,NES,-0.0017736637228435077
+sewer_flooding_rate|total spending + size,SRN,-0.08757523949636704
+sewer_flooding_rate|total spending + size,SVE,0.09376900387574948
+sewer_flooding_rate|total spending + size,SWB,0.15692333673309308
+sewer_flooding_rate|total spending + size,TMS,0.048497858856208685
+sewer_flooding_rate|total spending + size,UUW,0.024836539857062905
+sewer_flooding_rate|total spending + size,WSX,0.08800609256332957
+sewer_flooding_rate|total spending + size,YKY,0.04973752700077925
+sewer_flooding_rate|spending one year earlier,ANH,-0.06742177735288761
+sewer_flooding_rate|spending one year earlier,NES,-0.18735770685796946
+sewer_flooding_rate|spending one year earlier,SRN,-0.2247740496386633
+sewer_flooding_rate|spending one year earlier,SVE,-0.1238283815668369
+sewer_flooding_rate|spending one year earlier,SWB,-0.13052073982322238
+sewer_flooding_rate|spending one year earlier,TMS,-0.0938077854482987
+sewer_flooding_rate|spending one year earlier,UUW,-0.06610789915788053
+sewer_flooding_rate|spending one year earlier,WSX,-0.11697717686108393
+sewer_flooding_rate|spending one year earlier,YKY,-0.04826673464057278
+"sewer_collapse_rate|main: same year, balanced 2017-24",ANH,-0.14309727163829966
+"sewer_collapse_rate|main: same year, balanced 2017-24",NES,-0.274660945515394
+"sewer_collapse_rate|main: same year, balanced 2017-24",SRN,-0.5294516275838141
+"sewer_collapse_rate|main: same year, balanced 2017-24",SVE,-0.2246125755557214
+"sewer_collapse_rate|main: same year, balanced 2017-24",SWB,0.25600738057241135
+"sewer_collapse_rate|main: same year, balanced 2017-24",TMS,-0.26199206308877976
+"sewer_collapse_rate|main: same year, balanced 2017-24",UUW,-0.19296937182138763
+"sewer_collapse_rate|main: same year, balanced 2017-24",WSX,-0.10786584744287742
+"sewer_collapse_rate|main: same year, balanced 2017-24",YKY,-0.43111901630958804
+sewer_collapse_rate|unbalanced: all available years,ANH,-0.3021915931074292
+sewer_collapse_rate|unbalanced: all available years,NES,-0.42984828303421546
+sewer_collapse_rate|unbalanced: all available years,SRN,-0.5294516275838312
+sewer_collapse_rate|unbalanced: all available years,SVE,-0.37805237964537586
+sewer_collapse_rate|unbalanced: all available years,SWB,0.01683847899862624
+sewer_collapse_rate|unbalanced: all available years,TMS,-0.41854453412689163
+sewer_collapse_rate|unbalanced: all available years,UUW,-0.3545495068074399
+sewer_collapse_rate|unbalanced: all available years,WSX,-0.2679491070164253
+sewer_collapse_rate|unbalanced: all available years,YKY,-0.43111901630959176
+sewer_collapse_rate|total spending + size,ANH,-0.12043618499473097
+sewer_collapse_rate|total spending + size,NES,-0.27379995954244624
+sewer_collapse_rate|total spending + size,SRN,-0.5927240821702794
+sewer_collapse_rate|total spending + size,SVE,-0.1850272286545372
+sewer_collapse_rate|total spending + size,SWB,0.2787336653188038
+sewer_collapse_rate|total spending + size,TMS,-0.2589197377610001
+sewer_collapse_rate|total spending + size,UUW,-0.19743805306641496
+sewer_collapse_rate|total spending + size,WSX,-0.11204304281369275
+sewer_collapse_rate|total spending + size,YKY,-0.42303384713701975
+sewer_collapse_rate|spending one year earlier,ANH,-0.03901040929272641
+sewer_collapse_rate|spending one year earlier,NES,-0.13567742324926022
+sewer_collapse_rate|spending one year earlier,SRN,-0.4690311253875885
+sewer_collapse_rate|spending one year earlier,SVE,-0.13436947041816782
+sewer_collapse_rate|spending one year earlier,SWB,-0.12174940999329588
+sewer_collapse_rate|spending one year earlier,TMS,-0.13443795394121222
+sewer_collapse_rate|spending one year earlier,UUW,-0.06137249037910187
+sewer_collapse_rate|spending one year earlier,WSX,-0.18026224222268347
+sewer_collapse_rate|spending one year earlier,YKY,0.08192222518230637
+"pollution_rate|main: same year, balanced 2017-24",ANH,1.014584646029598
+"pollution_rate|main: same year, balanced 2017-24",NES,1.4239410378974413
+"pollution_rate|main: same year, balanced 2017-24",SRN,-1.3386020234546736
+"pollution_rate|main: same year, balanced 2017-24",SVE,0.728860961119906
+"pollution_rate|main: same year, balanced 2017-24",SWB,2.117136290390278
+"pollution_rate|main: same year, balanced 2017-24",TMS,0.8777767674648023
+"pollution_rate|main: same year, balanced 2017-24",UUW,0.8270066447906291
+"pollution_rate|main: same year, balanced 2017-24",WSX,1.323220258471748
+"pollution_rate|main: same year, balanced 2017-24",YKY,0.4416229937291652
+pollution_rate|total spending + size,ANH,1.091933217237829
+pollution_rate|total spending + size,NES,1.4157168383616379
+pollution_rate|total spending + size,SRN,-1.8281643435725128
+pollution_rate|total spending + size,SVE,0.5844152653926517
+pollution_rate|total spending + size,SWB,2.158082355189061
+pollution_rate|total spending + size,TMS,0.8647077961291476
+pollution_rate|total spending + size,UUW,0.8065765721753568
+pollution_rate|total spending + size,WSX,1.3207479626587861
+pollution_rate|total spending + size,YKY,0.4629207593982
+pollution_rate|spending one year earlier,ANH,-1.8424796700488506
+pollution_rate|spending one year earlier,NES,-1.9212851366501715
+pollution_rate|spending one year earlier,SRN,-2.1935504343575207
+pollution_rate|spending one year earlier,SVE,-1.9657080609593789
+pollution_rate|spending one year earlier,SWB,-2.8039738246022323
+pollution_rate|spending one year earlier,TMS,-2.1526878375807814
+pollution_rate|spending one year earlier,UUW,-2.909813759941461
+pollution_rate|spending one year earlier,WSX,-1.584299234876643
+pollution_rate|spending one year earlier,YKY,-1.9578926073486735
+pollution_rate|spending two years earlier,ANH,0.15228796393054686
+pollution_rate|spending two years earlier,NES,0.16187754718956396
+pollution_rate|spending two years earlier,SRN,-0.2575155524051426
+pollution_rate|spending two years earlier,SVE,-0.3069991087181033
+pollution_rate|spending two years earlier,SWB,-1.1675189734684686
+pollution_rate|spending two years earlier,TMS,-0.03416842886959116
+pollution_rate|spending two years earlier,UUW,-0.3875971860124255
+pollution_rate|spending two years earlier,WSX,0.36540977354193593
+pollution_rate|spending two years earlier,YKY,0.7028949526142361
+"sewer_flooding_rate|base spending, 2020-24",ANH,0.1522173456400337
+"sewer_flooding_rate|base spending, 2020-24",NES,0.13380801478464055
+"sewer_flooding_rate|base spending, 2020-24",SRN,0.0811792282995309
+"sewer_flooding_rate|base spending, 2020-24",SVE,0.17271899913244276
+"sewer_flooding_rate|base spending, 2020-24",SWB,0.1968180725120385
+"sewer_flooding_rate|base spending, 2020-24",TMS,0.1618497993901289
+"sewer_flooding_rate|base spending, 2020-24",UUW,0.09182501625888928
+"sewer_flooding_rate|base spending, 2020-24",WSX,0.159452091318273
+"sewer_flooding_rate|base spending, 2020-24",YKY,0.15253589195450315
+"sewer_flooding_rate|total spending, 2020-24",ANH,0.016541354903172753
+"sewer_flooding_rate|total spending, 2020-24",NES,-0.02031254822043849
+"sewer_flooding_rate|total spending, 2020-24",SRN,-0.09031806043498557
+"sewer_flooding_rate|total spending, 2020-24",SVE,0.0036913451972869432
+"sewer_flooding_rate|total spending, 2020-24",SWB,0.008899695372427257
+"sewer_flooding_rate|total spending, 2020-24",TMS,0.007471883813593968
+"sewer_flooding_rate|total spending, 2020-24",UUW,0.039449552490729775
+"sewer_flooding_rate|total spending, 2020-24",WSX,0.014989451990201012
+"sewer_flooding_rate|total spending, 2020-24",YKY,0.006178026790427625
+"sewer_collapse_rate|base spending, 2020-24",ANH,0.4391731188634368
+"sewer_collapse_rate|base spending, 2020-24",NES,0.4607210248965614
+"sewer_collapse_rate|base spending, 2020-24",SRN,0.6954882212936628
+"sewer_collapse_rate|base spending, 2020-24",SVE,0.46175490879401876
+"sewer_collapse_rate|base spending, 2020-24",SWB,0.3895447777493049
+"sewer_collapse_rate|base spending, 2020-24",TMS,0.42962482915779365
+"sewer_collapse_rate|base spending, 2020-24",UUW,0.47551288783090123
+"sewer_collapse_rate|base spending, 2020-24",WSX,0.4604222736448527
+"sewer_collapse_rate|base spending, 2020-24",YKY,-0.0027135094793863646
+"sewer_collapse_rate|total spending, 2020-24",ANH,0.15079555521307247
+"sewer_collapse_rate|total spending, 2020-24",NES,0.14449843587513195
+"sewer_collapse_rate|total spending, 2020-24",SRN,0.16849541682895922
+"sewer_collapse_rate|total spending, 2020-24",SVE,0.12646664256928292
+"sewer_collapse_rate|total spending, 2020-24",SWB,-0.037670241630266374
+"sewer_collapse_rate|total spending, 2020-24",TMS,0.1318282537247761
+"sewer_collapse_rate|total spending, 2020-24",UUW,0.17244006970815967
+"sewer_collapse_rate|total spending, 2020-24",WSX,0.1829878135574016
+"sewer_collapse_rate|total spending, 2020-24",YKY,0.19178809623039958
+"pollution_rate|base spending, 2020-24",ANH,-1.7405144179310112
+"pollution_rate|base spending, 2020-24",NES,-0.9967793019820651
+"pollution_rate|base spending, 2020-24",SRN,-1.548085898205925
+"pollution_rate|base spending, 2020-24",SVE,-2.0460888528945427
+"pollution_rate|base spending, 2020-24",SWB,-0.39542897105237834
+"pollution_rate|base spending, 2020-24",TMS,-1.7613076771534033
+"pollution_rate|base spending, 2020-24",UUW,-1.5707096635961333
+"pollution_rate|base spending, 2020-24",WSX,-1.4284776419457965
+"pollution_rate|base spending, 2020-24",YKY,-2.9354425742767862
+"pollution_rate|total spending, 2020-24",ANH,-2.46854184249021
+"pollution_rate|total spending, 2020-24",NES,-2.1022673359847195
+"pollution_rate|total spending, 2020-24",SRN,-3.5591312274506395
+"pollution_rate|total spending, 2020-24",SVE,-2.555087814632613
+"pollution_rate|total spending, 2020-24",SWB,-1.9862602724803142
+"pollution_rate|total spending, 2020-24",TMS,-2.636456460111965
+"pollution_rate|total spending, 2020-24",UUW,-1.7852753207045977
+"pollution_rate|total spending, 2020-24",WSX,-2.06150386125834
+"pollution_rate|total spending, 2020-24",YKY,-1.9380056895831843
+sewer_flooding_rate|previous design: WCPR totex 2020-24,ANH,0.03198034411653952
+sewer_flooding_rate|previous design: WCPR totex 2020-24,NES,-0.005309313332739234
+sewer_flooding_rate|previous design: WCPR totex 2020-24,SRN,-0.07173799108614316
+sewer_flooding_rate|previous design: WCPR totex 2020-24,SVE,0.012497467202263007
+sewer_flooding_rate|previous design: WCPR totex 2020-24,SWB,0.024661618165278017
+sewer_flooding_rate|previous design: WCPR totex 2020-24,TMS,0.023052975196943302
+sewer_flooding_rate|previous design: WCPR totex 2020-24,UUW,0.051225987055750016
+sewer_flooding_rate|previous design: WCPR totex 2020-24,WSX,0.03089878828115931
+sewer_flooding_rate|previous design: WCPR totex 2020-24,YKY,0.023453947079374496
+sewer_collapse_rate|previous design: WCPR totex 2020-24,ANH,0.32680236476206664
+sewer_collapse_rate|previous design: WCPR totex 2020-24,NES,0.31206859153486205
+sewer_collapse_rate|previous design: WCPR totex 2020-24,SRN,0.38397665310315154
+sewer_collapse_rate|previous design: WCPR totex 2020-24,SVE,0.3354867686421125
+sewer_collapse_rate|previous design: WCPR totex 2020-24,SWB,-0.04080563777618795
+sewer_collapse_rate|previous design: WCPR totex 2020-24,TMS,0.31646624230694415
+sewer_collapse_rate|previous design: WCPR totex 2020-24,UUW,0.37741114378550317
+sewer_collapse_rate|previous design: WCPR totex 2020-24,WSX,0.3641236546447334
+sewer_collapse_rate|previous design: WCPR totex 2020-24,YKY,0.40317569284914634

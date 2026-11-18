@@ -1,0 +1,201 @@
+table model_results
+	lineageTag: 873f1652-0b75-5b8e-b36e-0d42ce960807
+
+	column model_id
+		dataType: string
+		lineageTag: 85349b0a-13e9-4555-b8e2-9ed8b86f3851
+		summarizeBy: none
+		sourceColumn: model_id
+
+	column outcome
+		dataType: string
+		lineageTag: c68cd094-3bcd-4531-8f64-3c8fef1c59a6
+		summarizeBy: none
+		sourceColumn: outcome
+
+	column specification
+		dataType: string
+		lineageTag: 86091593-6e15-4f25-8c4a-79c6f4c8e298
+		summarizeBy: none
+		sourceColumn: specification
+
+	column outcome_release
+		dataType: string
+		lineageTag: d326a368-669f-4e9b-aec6-85e1d370b5ff
+		summarizeBy: none
+		sourceColumn: outcome_release
+
+	column lag_labels
+		dataType: int64
+		formatString: 0
+		lineageTag: 33dce3bd-205c-4cbf-9fcb-cbaf3d947083
+		summarizeBy: none
+		sourceColumn: lag_labels
+
+	column n
+		dataType: int64
+		formatString: 0
+		lineageTag: ea7fe2b1-f70c-4c6c-8386-82265708f502
+		summarizeBy: none
+		sourceColumn: n
+
+	column companies
+		dataType: int64
+		formatString: 0
+		lineageTag: ba3eca5e-42bd-443e-ac60-9478d161efdc
+		summarizeBy: none
+		sourceColumn: companies
+
+	column first_outcome_year
+		dataType: int64
+		formatString: 0
+		lineageTag: db3720ed-64c2-4640-be93-cf3fa8ca7856
+		summarizeBy: none
+		sourceColumn: first_outcome_year
+
+	column last_outcome_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 94d43289-b871-4292-9818-28d5c59769b3
+		summarizeBy: none
+		sourceColumn: last_outcome_year
+
+	column coefficient
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 3bfb9a1c-b5cf-4df2-9698-9312c52cb8fe
+		summarizeBy: none
+		sourceColumn: coefficient
+
+	column cv3_se
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 6473c772-6198-498d-86f6-352c1dbeeefa
+		summarizeBy: none
+		sourceColumn: cv3_se
+
+	column p_cv3_approx
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 37292ab0-b020-4fff-b8d5-341054f999f6
+		summarizeBy: none
+		sourceColumn: p_cv3_approx
+
+	column wcr11_p_zero
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 145ad7ef-f858-4aee-99f0-eba1931301b5
+		summarizeBy: none
+		sourceColumn: wcr11_p_zero
+
+	column wcr11_draws
+		dataType: int64
+		formatString: 0
+		lineageTag: c7a67df6-d887-4744-b0c7-c3047ea275b5
+		summarizeBy: none
+		sourceColumn: wcr11_draws
+
+	column wcr11_observed_t_cv1
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 99e11dbe-3519-406b-885f-2e5aa5cd2992
+		summarizeBy: none
+		sourceColumn: wcr11_observed_t_cv1
+
+	column effect_10pct
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 31fbbbff-133a-4d53-b7a9-d275ee62b86f
+		summarizeBy: none
+		sourceColumn: effect_10pct
+
+	column lower_10pct
+		dataType: double
+		formatString: 0.0000
+		lineageTag: dcf6bb26-1698-42d8-9be4-3c106f4982f4
+		summarizeBy: none
+		sourceColumn: lower_10pct
+
+	column upper_10pct
+		dataType: double
+		formatString: 0.0000
+		lineageTag: fc7ac510-a119-4a79-a6ef-3f9a38ae64d7
+		summarizeBy: none
+		sourceColumn: upper_10pct
+
+	column residual_df
+		dataType: int64
+		formatString: 0
+		lineageTag: 45e006f1-85b3-4fb8-859a-ec1ef8a0438f
+		summarizeBy: none
+		sourceColumn: residual_df
+
+	column condition_number
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 320af6e8-a74d-4141-8963-bfad2bbb350d
+		summarizeBy: none
+		sourceColumn: condition_number
+
+	column max_company_partial_leverage
+		dataType: double
+		formatString: 0.0000
+		lineageTag: e7e38206-63e8-49d0-8fb6-62a4eb106e47
+		summarizeBy: none
+		sourceColumn: max_company_partial_leverage
+
+	column omission_effect_min
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 079a6d36-6ef9-4f53-870e-c44dded795f1
+		summarizeBy: none
+		sourceColumn: omission_effect_min
+
+	column omission_effect_max
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 31148b53-855a-44f6-9be9-507aaf97d947
+		summarizeBy: none
+		sourceColumn: omission_effect_max
+
+	column p_cv3_approx_holm_main
+		dataType: double
+		formatString: 0.0000
+		lineageTag: d1e84bbb-be4c-4c79-a394-8cd441ae95bf
+		summarizeBy: none
+		sourceColumn: p_cv3_approx_holm_main
+
+	column wcr11_p_zero_holm_main
+		dataType: int64
+		formatString: 0
+		lineageTag: c8decd9f-0064-4d44-bfed-4a77d4dd1d24
+		summarizeBy: none
+		sourceColumn: wcr11_p_zero_holm_main
+
+	column 'Outcome name' = SWITCH(model_results[outcome], "sewer_flooding_rate", "Internal sewer flooding", "sewer_collapse_rate", "Sewer collapses", "pollution_rate", "Pollution incidents", "treatment_compliance_pct", "Treatment works compliance", model_results[outcome])
+		dataType: string
+		lineageTag: 9f1a2f95-1c3a-4073-bf7e-9a45730f6c9f
+		summarizeBy: none
+
+	column 'Unit' = LOOKUPVALUE(metric_dictionary[unit], metric_dictionary[metric], model_results[outcome])
+		dataType: string
+		lineageTag: 468f7816-0d54-4ea0-8747-c049e7b9a7df
+		summarizeBy: none
+
+	column 'Model specification' = SWITCH(model_results[specification], "main", "Main: same year", "total_plus_size", "Total spending plus size", "preceding_financial_year", "Spending in preceding financial year", "same_year_on_lag_sample", "Same year on lag sample (comparison)", "calendar_same_label", "Same label (calendar outcome)", "calendar_2021_onward", "Calendar 2021 onward", "calendar_lag_1", "Lag 1 (overlaps outcome year)", "calendar_same_label_on_lag_1_sample", "Same label on lag-1 sample", "calendar_lag_2", "Lag 2 (wholly precedes)", "calendar_same_label_on_lag_2_sample", "Same label on lag-2 sample", "outcome_release_sensitivity", "PR24 outcome release", model_results[specification])
+		dataType: string
+		lineageTag: 6b185178-5ce8-46e4-be2b-c8ba2044766b
+		summarizeBy: none
+
+	partition model_results = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\HP\Desktop\CSCT Master's Project\Project_Review_Version_2026-11-16\data\fact_model_results.csv"),[Delimiter=",", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Nulls,{{"model_id", type text}, {"outcome", type text}, {"specification", type text}, {"outcome_release", type text}, {"lag_labels", Int64.Type}, {"n", Int64.Type}, {"companies", Int64.Type}, {"first_outcome_year", Int64.Type}, {"last_outcome_year", Int64.Type}, {"coefficient", type number}, {"cv3_se", type number}, {"p_cv3_approx", type number}, {"wcr11_p_zero", type number}, {"wcr11_draws", Int64.Type}, {"wcr11_observed_t_cv1", type number}, {"effect_10pct", type number}, {"lower_10pct", type number}, {"upper_10pct", type number}, {"residual_df", Int64.Type}, {"condition_number", type number}, {"max_company_partial_leverage", type number}, {"omission_effect_min", type number}, {"omission_effect_max", type number}, {"p_cv3_approx_holm_main", type number}, {"wcr11_p_zero_holm_main", Int64.Type}},"en-GB")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

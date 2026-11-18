@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# Power BI local caches and user settings
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
+# Office lock files
+~$*
+# Participant data must never be committed (ethics)
+participant_data/
+consent_forms/

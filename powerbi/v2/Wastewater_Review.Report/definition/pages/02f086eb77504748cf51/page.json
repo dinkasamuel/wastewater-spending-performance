@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "02f086eb77504748cf51",
+  "displayName": "5 Definitions and limits",
+  "displayOption": "FitToPage",
+  "height": 1000,
+  "width": 1280
+}

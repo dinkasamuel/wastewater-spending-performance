@@ -1,0 +1,16 @@
+test_id,passed,detail
+T00_methods,True,"Known slope, demeaning, 512-draw bootstrap and Holm self-tests pass"
+T01b_same_definition,True,CA06 equals CA08 for all 156 company-years 2011-12 to 2023-24 (one definition)
+T01_base_grid,True,126 company-years = 9 companies x 14 actual years (2011-12 to 2024-25)
+T02_base_positive,True,All actual base costs and property counts are positive (needed for logs)
+T03_wcpr_grid,True,"270 WCPR values = 9 companies x 5 years x 6 items, none missing"
+T04_companion,True,Every selected WCPR value equals the companion workbook value
+T05_properties,True,"Properties identical for 7 of 9 companies; differences only for ['SVE', 'SWB']"
+T06_pr24_grid,True,Unique 9 companies x 10 years x 4 outcomes grid
+T07_balanced,True,"Balanced panel: 9 companies x 8 years = 72 rows, no missing outcomes or spending"
+T08_no_forecasts,True,No forecast spending year enters any panel
+T09_reproduce_previous,True,"Previous main estimates reproduced: flooding 0.0134, collapses 0.3111"
+T10_bootstrap,True,All 512 sign patterns used in every model
+T11_demean_sewer_flooding_rate,True,Demeaned slope equals dummy-variable slope
+T11_demean_sewer_collapse_rate,True,Demeaned slope equals dummy-variable slope
+T12_inputs_unchanged,True,Raw input files unchanged by the run

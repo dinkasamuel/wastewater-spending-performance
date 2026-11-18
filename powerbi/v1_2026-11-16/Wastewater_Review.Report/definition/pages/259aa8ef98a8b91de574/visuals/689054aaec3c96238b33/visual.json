@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "689054aaec3c96238b33",
+  "position": {
+    "x": 295,
+    "y": 145,
+    "z": 3,
+    "height": 350,
+    "width": 955,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "historical_outcomes.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "company_code"
+                }
+              },
+              "queryRef": "historical_outcomes.company_code",
+              "nativeQueryRef": "company_code"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "historical_outcomes"
+                    }
+                  },
+                  "Property": "Selected historical rate"
+                }
+              },
+              "queryRef": "historical_outcomes.Selected historical rate",
+              "nativeQueryRef": "Selected historical rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "historical_outcomes"
+                  }
+                },
+                "Property": "reporting_year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Selected outcome | read its definition and period below'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

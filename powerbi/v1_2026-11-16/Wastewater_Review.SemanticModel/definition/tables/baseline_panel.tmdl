@@ -1,0 +1,147 @@
+table baseline_panel
+	lineageTag: 7456115a-2399-5029-acc6-ddcbe4f5f451
+
+	measure 'Real expenditure per property' = AVERAGE(baseline_panel[expenditure_real_per_property])
+		formatString: 0.00
+		lineageTag: cde77198-f84f-47e2-9c12-0a045f1f850a
+
+	measure 'Flooding rate' = AVERAGE(baseline_panel[sewer_flooding_rate])
+		formatString: 0.00
+		lineageTag: 1f69258d-596b-4062-9bc7-1f342e54de33
+
+	measure 'Collapse rate' = AVERAGE(baseline_panel[sewer_collapse_rate])
+		formatString: 0.00
+		lineageTag: 1d900344-78ba-4904-b382-6676dac2ee14
+
+	measure 'Pollution rate' = AVERAGE(baseline_panel[pollution_rate])
+		formatString: 0.00
+		lineageTag: 71b47270-4dd5-46a5-ae5c-0b95422c3eec
+
+	column company_code
+		dataType: string
+		lineageTag: 2b1d414c-a5f9-49ba-8ad3-c56d67408a25
+		summarizeBy: none
+		sourceColumn: company_code
+
+	column reporting_year
+		dataType: string
+		lineageTag: 52f72ae7-684a-448d-96b8-40edeb9f4b24
+		summarizeBy: none
+		sourceColumn: reporting_year
+
+	column collapse_sewer_km
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 21284003-0ff4-4233-9701-6efd7878b17a
+		summarizeBy: none
+		sourceColumn: collapse_sewer_km
+
+	column expenditure_real_m
+		dataType: double
+		formatString: 0.0000
+		lineageTag: a120e01f-b286-46b7-998a-92e749b631ff
+		summarizeBy: none
+		sourceColumn: expenditure_real_m
+
+	column expenditure_reported_m
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 62439a0a-75d4-4665-a6d1-b672c4a3c1a2
+		summarizeBy: none
+		sourceColumn: expenditure_reported_m
+
+	column pollution_rate
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 7b7cf72c-98e2-4ecc-81f3-e6b73180b35e
+		summarizeBy: none
+		sourceColumn: pollution_rate
+
+	column pollution_sewer_km
+		dataType: double
+		formatString: 0.0000
+		lineageTag: d6fd445c-60f1-4c6e-8bc5-b193eba80ccb
+		summarizeBy: none
+		sourceColumn: pollution_sewer_km
+
+	column properties_thousands
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 7e670bed-5034-4ff5-b845-9239f869b557
+		summarizeBy: none
+		sourceColumn: properties_thousands
+
+	column sewer_collapse_rate
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 9e46db3b-95d8-4b02-82b6-a7335e6239ca
+		summarizeBy: none
+		sourceColumn: sewer_collapse_rate
+
+	column sewer_flooding_rate
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 13084b53-7ade-41eb-9046-dd24eae921ed
+		summarizeBy: none
+		sourceColumn: sewer_flooding_rate
+
+	column treatment_compliance_pct
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 8269fbb1-9849-47d2-be67-746590eea6f9
+		summarizeBy: none
+		sourceColumn: treatment_compliance_pct
+
+	column year_start
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f86e8e5-698b-42a2-91bc-a91bcca655b1
+		summarizeBy: none
+		sourceColumn: year_start
+
+	column company_name
+		dataType: string
+		lineageTag: dbbbe246-8abf-4d9e-af15-26f1a2c0e262
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column expenditure_real_per_property
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 1844e2d7-a6fe-4c08-b232-c65d332e867f
+		summarizeBy: none
+		sourceColumn: expenditure_real_per_property
+
+	column log_intensity
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 0583321b-c800-41bc-9e3b-1079150402fb
+		summarizeBy: none
+		sourceColumn: log_intensity
+
+	column log_total
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 040fc474-0482-42cb-903f-83e6b1bdfc3c
+		summarizeBy: none
+		sourceColumn: log_total
+
+	column log_properties
+		dataType: double
+		formatString: 0.0000
+		lineageTag: e716ff1f-902b-47cb-80a8-644bb2da0a80
+		summarizeBy: none
+		sourceColumn: log_properties
+
+	partition baseline_panel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\HP\Desktop\CSCT Master's Project\Project_Review_Version_2026-11-16\data\baseline_panel.csv"),[Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Nulls,{{"company_code", type text}, {"reporting_year", type text}, {"collapse_sewer_km", type number}, {"expenditure_real_m", type number}, {"expenditure_reported_m", type number}, {"pollution_rate", type number}, {"pollution_sewer_km", type number}, {"properties_thousands", type number}, {"sewer_collapse_rate", type number}, {"sewer_flooding_rate", type number}, {"treatment_compliance_pct", type number}, {"year_start", Int64.Type}, {"company_name", type text}, {"expenditure_real_per_property", type number}, {"log_intensity", type number}, {"log_total", type number}, {"log_properties", type number}},"en-GB")
+				in Typed
+
+	annotation PBI_ResultType = Table
+
