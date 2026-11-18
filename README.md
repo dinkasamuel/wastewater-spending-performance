@@ -11,6 +11,7 @@ MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (stu
 | Folder | Contents |
 |---|---|
 | `code/` | Python scripts (see the table below) |
+| `notebooks/` | **`Wastewater_Analysis.ipynb`**: the executed analysis, with each section's research question, objective and requirements highlighted |
 | `data/raw/` | Ofwat source files, unchanged (see Data sources) |
 | `outputs/` | Generated CSV tables, validation checks, run manifest and reproducibility result |
 | `figures/` | Result charts and UML diagrams (PNG, plus SVG for the diagrams) |
@@ -24,6 +25,7 @@ MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (stu
 |---|---|
 | `wastewater_analysis.py` | **The full analysis.** Loads and validates the data, builds the panels, then runs descriptive analysis (RQ1), association models (RQ2) and sensitivity checks (RQ3). Writes the tables and figures. Run it cell by cell (`# %%`) or as a whole |
 | `methods.py` | The statistical methods: two-way fixed-effects model, CV3 jackknife, wild-cluster bootstrap (all 512 sign patterns), minimum detectable effect, Holm adjustment and self-tests |
+| `make_notebook.py` | Generates and executes `notebooks/Wastewater_Analysis.ipynb` from the analysis script: blue boxes state what each section answers, green boxes give the insights |
 | `check_reproducibility.py` | Runs the analysis twice in fresh processes and confirms that every output is byte-identical |
 | `make_uml_figures.py` | Draws UML Figures 4.1 (project workflow) and 4.2 (requirements traceability) |
 | `build_powerbi_v3.py` | Builds the current dashboard (v3) from `outputs/powerbi/*.csv`: six pages, research-question tags, alt text, portable data folder |
