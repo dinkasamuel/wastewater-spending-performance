@@ -6,7 +6,7 @@
     "y": 112,
     "z": 1,
     "width": 1240,
-    "height": 330,
+    "height": 215,
     "tabOrder": 1
   },
   "visual": {
@@ -89,40 +89,38 @@
               "queryRef": "pbi_dictionary.role",
               "nativeQueryRef": "role",
               "displayName": "Role"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pbi_dictionary"
-                    }
-                  },
-                  "Property": "source"
-                }
-              },
-              "queryRef": "pbi_dictionary.source",
-              "nativeQueryRef": "source",
-              "displayName": "Source"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pbi_dictionary"
-                    }
-                  },
-                  "Property": "notes"
-                }
-              },
-              "queryRef": "pbi_dictionary.notes",
-              "nativeQueryRef": "notes",
-              "displayName": "Notes"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -158,7 +156,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Table defining each measure: unit, direction of better performance, period, role in the analysis, source and notes.'"
+                  "Value": "'Table defining each measure: unit, direction of better performance, period and role in the analysis.'"
                 }
               }
             }

@@ -92,6 +92,12 @@ def column_types(table):
     return header, types
 
 
+FORMATS = {"properties": "#,0", "base_spend_per_property_gbp": "#,0.00", "base_spend_gbp_m": "#,0.0",
+           "sewer_flooding_rate": "0.00", "sewer_collapse_rate": "0.00", "pollution_rate": "0.00",
+           "treatment_compliance_pct": "0.00", "value": "0.00", "average_rate": "0.00",
+           "detectable_pct_of_average": "0", "p_wild_bootstrap": "0.000", "p_holm_main": "0.000"}
+
+
 def table_tmdl(table):
     header, types = column_types(table)
     lines = [f"table {table}", f"\tlineageTag: {uid(table)}", ""]
@@ -104,7 +110,7 @@ def table_tmdl(table):
         dtype = types[col][0]
         lines += [f"\tcolumn {col}", f"\t\tdataType: {dtype}"]
         if dtype == "double":
-            lines.append("\t\tformatString: 0.000")
+            lines.append(f"\t\tformatString: {FORMATS.get(col, '0.000')}")
         lines += [f"\t\tlineageTag: {uid(table, col)}", "\t\tsummarizeBy: none",
                   f"\t\tsourceColumn: {col}", "", "\t\tannotation SummarizationSetBy = User", ""]
     typed = ", ".join(f'{{"{c}", {types[c][1]}}}' for c in header)
@@ -198,13 +204,17 @@ def slicer(table, column, display):
     return decorate({"visualType": "slicer",
                      "query": {"queryState": {"Values": {"projections": [field(table, column, display=display) | {"active": True}]}}},
                      "objects": {"data": [{"properties": {"mode": text_lit("Basic")}}]}},
-                    title=display, alt=f"Slicer to filter this page by {display.lower()}.")
+                    alt=f"Slicer to filter this page by {display.lower()}.")
 
 
-def table_visual(table, columns, title, alt):
-    return decorate({"visualType": "tableEx",
-                     "query": {"queryState": {"Values": {"projections": [field(table, c, display=d) for c, d in columns]}}}},
-                    title=title, alt=alt)
+def table_visual(table, columns, title, alt, sort_by=None):
+    query = {"queryState": {"Values": {"projections": [field(table, c, display=d) for c, d in columns]}}}
+    if sort_by:
+        query["sortDefinition"] = {"sort": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": table}},
+                                                                  "Property": sort_by}}, "direction": "Ascending"}]}
+    wrap = [{"properties": {"wordWrap": lit("true")}}]
+    return decorate({"visualType": "tableEx", "query": query,
+                     "objects": {"values": wrap, "columnHeaders": wrap}}, title=title, alt=alt)
 
 
 def line_chart(table, measure, title, alt, series="company_code", series_name="Company"):
@@ -216,8 +226,12 @@ def line_chart(table, measure, title, alt, series="company_code", series_name="C
                   "Series": {"projections": [field(table, series, display=series_name)]},
                   "Y": {"projections": [field(table, measure, measure=True)]}},
                   "sortDefinition": sort},
-              "objects": {"seriesLabels": [{"properties": {"show": lit("true")}}]}}
-    return decorate(visual, title=title, alt=alt)
+              "objects": {"seriesLabels": [{"properties": {"show": lit("true")}}],
+                          "lineStyles": [{"properties": {"lineChartType": text_lit("linear"),
+                                                         "showMarker": lit("true")}}]}}
+    visual = decorate(visual, title=title, alt=alt)
+    visual["visualContainerObjects"]["subTitle"] = [{"properties": {"show": lit("false")}}]
+    return visual
 
 
 PAGES = []      # (page_id, display_name, [(key, x, y, w, h, visual)])
@@ -283,8 +297,9 @@ page("3 Associations", [
         ("ci95_high", "95% range: high"), ("range_includes_zero", "Range includes zero?"),
         ("p_wild_bootstrap", "Wild-bootstrap p-value"),
         ("detectable_difference_80pct", "Smallest detectable difference")],
-        "All 20 model results (stored values; filters do not refit any model)",
-        "Table of model results: difference in each outcome for 10 percent more spending, 95 percent range, p-value and smallest detectable difference.")),
+        "Model results, main models first (stored values; filters do not refit any model)",
+        "Table of model results: difference in each outcome for 10 percent more spending, 95 percent range, p-value and smallest detectable difference.",
+        sort_by="role")),
     ("note", 235, 542, 1025, 160, textbox([
         ("How to read this page", 15, True, NAVY),
         ("A range that includes zero means the data cannot tell whether the link is positive, negative or absent. "
@@ -298,14 +313,18 @@ page("4 What can be detected", [
         "Answers RQ2-RQ4  ·  Objectives 3-5  ·  Requirements R07, R10",
         "Smallest difference per 10% more spending that the main model would detect with 80% probability "
         "(minimum detectable effect).")),
-    ("table", 20, 112, 1240, 260, table_visual("pbi_detectability", [
+    ("table", 20, 112, 1240, 185, table_visual("pbi_detectability", [
         ("outcome", "Outcome"), ("unit", "Unit"), ("average_rate", "Average rate"),
         ("difference_per_10pct", "Estimated difference"), ("ci95_low", "95% range: low"), ("ci95_high", "95% range: high"),
         ("detectable_difference_80pct", "Smallest detectable difference"),
-        ("detectable_pct_of_average", "As % of average rate"), ("plain_message", "In plain words")],
+        ("detectable_pct_of_average", "As % of average rate")],
         "Main models: estimate and detectable size",
         "Table of the three main models showing the estimated difference, its 95 percent range and the smallest difference the data could reliably detect.")),
-    ("note", 20, 385, 1240, 317, textbox([
+    ("plain", 20, 305, 1240, 160, table_visual("pbi_detectability", [
+        ("outcome", "Outcome"), ("plain_message", "What this means in plain words")],
+        "In plain words",
+        "Table giving a plain-language sentence for each main model about the size of link the data could detect.")),
+    ("note", 20, 475, 1240, 227, textbox([
         ("Why this matters", 15, True, NAVY),
         ("With only nine companies, any real link smaller than about a fifth of the average rate per 10% more spending "
          "would usually go unnoticed.", 13, False, GREY),
@@ -320,12 +339,12 @@ page("5 History and coverage", [
         "2017-18 to 2024-25, the years in which every company reports every outcome.")),
     ("outcome", 20, 112, 200, 200, slicer("pbi_outcomes_long", "outcome", "Outcome")),
     ("company", 20, 322, 200, 380, slicer("pbi_outcomes_long", "company_name", "Company")),
-    ("chart", 235, 112, 640, 330, line_chart("pbi_outcomes_long", "Selected outcome value",
+    ("chart", 235, 112, 600, 330, line_chart("pbi_outcomes_long", "Selected outcome value",
         {"expr": {"Measure": {"Expression": {"SourceRef": {"Entity": "pbi_outcomes_long"}},
                               "Property": "Outcome chart title"}}},
         "Line chart of the selected outcome for each company, 2015-16 to 2024-25. Missing years are left blank.")),
-    ("coverage", 885, 112, 375, 330, table_visual("pbi_coverage", [
-        ("outcome", "Outcome"), ("reporting_year", "Year"), ("companies_with_data", "Companies with data (of 9)")],
+    ("coverage", 845, 112, 415, 330, table_visual("pbi_coverage", [
+        ("outcome", "Outcome"), ("reporting_year", "Year"), ("companies_with_data", "Companies (of 9)")],
         "Data coverage by outcome and year",
         "Table showing how many of the nine companies have data for each outcome in each year.")),
     ("table", 235, 452, 1025, 250, table_visual("pbi_outcomes_long", [
@@ -341,15 +360,21 @@ page("6 Definitions and limits", [
         "Answers RQ4  ·  Objective 5  ·  Requirements R02, R10",
         "Everything shown in this dashboard comes from public Ofwat data processed by the project's Python code; "
         "the dashboard displays results and never recalculates them.")),
-    ("table", 20, 112, 1240, 330, table_visual("pbi_dictionary", [
+    ("table", 20, 112, 1240, 215, table_visual("pbi_dictionary", [
         ("measure", "Measure"), ("unit", "Unit"), ("better_direction", "Better direction"), ("period", "Period"),
-        ("role", "Role"), ("source", "Source"), ("notes", "Notes")],
+        ("role", "Role")],
         "What each measure means",
-        "Table defining each measure: unit, direction of better performance, period, role in the analysis, source and notes.")),
-    ("note", 20, 455, 1240, 247, textbox([
+        "Table defining each measure: unit, direction of better performance, period and role in the analysis.")),
+    ("sources", 20, 335, 1240, 215, table_visual("pbi_dictionary", [
+        ("measure", "Measure"), ("source", "Source")],
+        "Where each measure comes from",
+        "Table giving the Ofwat source for each measure.")),
+    ("note", 20, 558, 1240, 150, textbox([
         ("Limits to keep in mind", 15, True, NAVY),
         ("Associations, not causes. Spending may respond to past failures as well as prevent future ones.", 13, False, GREY),
-        ("Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded.", 13, False, GREY),
+        ("Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded. "
+         "Total spending (totex) includes enhancement and is consistent only from 2020-21.", 13, False, GREY),
+        ("Treatment works compliance is descriptive only: its boundary is wider than network-plus spending.", 13, False, GREY),
         ("Nine companies limit precision: see page 4 for the size of link the data could detect.", 13, False, GREY),
         ("No company ranking or forecast is produced (requirement R14). Severn Trent spending includes Hafren Dyfrdwy (about 1%).", 13, False, GREY)])),
 ])
@@ -396,14 +421,21 @@ def static_checks(fields, used):
             vco = visual.get("visualContainerObjects", {})
             if "general" not in vco:
                 problems.append(f"{pname}/{key}: no alt text")
-            if "title" not in vco:
+            if "title" not in vco and visual["visualType"] != "slicer":
                 problems.append(f"{pname}/{key}: no title")
     return problems
 
 
 if __name__ == "__main__":
-    if OUT.exists():
-        shutil.rmtree(OUT)
+    if OUT.exists():                       # clear old files; empty folders locked by Windows may remain
+        for f in sorted(OUT.rglob("*"), reverse=True):
+            if f.is_file():
+                f.unlink()
+            else:
+                try:
+                    f.rmdir()
+                except OSError:
+                    pass
     fields = build_model()
     used = build_report()
     write(OUT / f"{NAME}.pbip", {"version": "1.0", "artifacts": [{"report": {"path": f"{NAME}.Report"}}],

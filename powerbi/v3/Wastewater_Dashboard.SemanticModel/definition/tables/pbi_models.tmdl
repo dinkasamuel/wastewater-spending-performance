@@ -145,7 +145,7 @@ table pbi_models
 
 	column detectable_pct_of_average
 		dataType: double
-		formatString: 0.000
+		formatString: 0
 		lineageTag: dfb0ca5a-2f0b-567d-8f58-9e33c1ef3829
 		summarizeBy: none
 		sourceColumn: detectable_pct_of_average

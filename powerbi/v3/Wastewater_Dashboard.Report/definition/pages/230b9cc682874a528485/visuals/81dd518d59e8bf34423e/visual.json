@@ -6,7 +6,7 @@
     "y": 112,
     "z": 1,
     "width": 1240,
-    "height": 260,
+    "height": 185,
     "tabOrder": 1
   },
   "visual": {
@@ -134,25 +134,38 @@
               "queryRef": "pbi_detectability.detectable_pct_of_average",
               "nativeQueryRef": "detectable_pct_of_average",
               "displayName": "As % of average rate"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pbi_detectability"
-                    }
-                  },
-                  "Property": "plain_message"
-                }
-              },
-              "queryRef": "pbi_detectability.plain_message",
-              "nativeQueryRef": "plain_message",
-              "displayName": "In plain words"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

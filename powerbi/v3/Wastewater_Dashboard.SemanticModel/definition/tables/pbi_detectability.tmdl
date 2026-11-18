@@ -19,7 +19,7 @@ table pbi_detectability
 
 	column average_rate
 		dataType: double
-		formatString: 0.000
+		formatString: 0.00
 		lineageTag: 10be9cd3-ad6b-58d9-9632-4fc4b4b26bf9
 		summarizeBy: none
 		sourceColumn: average_rate
@@ -64,7 +64,7 @@ table pbi_detectability
 
 	column detectable_pct_of_average
 		dataType: double
-		formatString: 0.000
+		formatString: 0
 		lineageTag: d9ef1e9d-54c9-57c0-9809-f5ad44ae7598
 		summarizeBy: none
 		sourceColumn: detectable_pct_of_average

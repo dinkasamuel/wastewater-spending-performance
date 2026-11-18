@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a4e2bee56bbdf2c9a492",
   "position": {
-    "x": 885,
+    "x": 845,
     "y": 112,
     "z": 4,
-    "width": 375,
+    "width": 415,
     "height": 330,
     "tabOrder": 4
   },
@@ -58,11 +58,39 @@
               },
               "queryRef": "pbi_coverage.companies_with_data",
               "nativeQueryRef": "companies_with_data",
-              "displayName": "Companies with data (of 9)"
+              "displayName": "Companies (of 9)"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

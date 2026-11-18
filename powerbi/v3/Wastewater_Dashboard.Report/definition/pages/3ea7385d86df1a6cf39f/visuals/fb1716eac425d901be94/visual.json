@@ -5,7 +5,7 @@
     "x": 235,
     "y": 112,
     "z": 3,
-    "width": 640,
+    "width": 600,
     "height": 330,
     "tabOrder": 3
   },
@@ -102,6 +102,26 @@
             }
           }
         }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -144,6 +164,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Line chart of the selected outcome for each company, 2015-16 to 2024-25. Missing years are left blank.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

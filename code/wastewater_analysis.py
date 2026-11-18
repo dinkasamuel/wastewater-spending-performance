@@ -478,12 +478,12 @@ long[["company_code", "company_name", "reporting_year", "year_start", "outcome",
 
 def role(spec):
     if spec.startswith("main"):
-        return "Main model"
+        return "1 Main model"
     if spec.startswith("previous"):
-        return "Reproduction check"
+        return "4 Reproduction check"
     if "2020-24" in spec:
-        return "Base vs total spending"
-    return "Sensitivity"
+        return "3 Base vs total spending"
+    return "2 Sensitivity"
 
 
 models = pd.DataFrame({
@@ -510,9 +510,9 @@ detect = pd.DataFrame({
     "detectable_difference_80pct": main_rows.mde_10pct_80power.round(2),
     "detectable_pct_of_average": main_rows.mde_pct_of_mean.round(0)})
 detect["plain_message"] = [
-    f"No clear link. With nine companies, only a difference of about {d:.2f} {u} "
-    f"({p:.0f}% of the average) per 10% more spending could be reliably detected."
-    for d, u, p in zip(detect.detectable_difference_80pct, detect.unit, detect.detectable_pct_of_average)]
+    f"No clear link. Only a difference of about {d:.2f} ({p:.0f}% of the average rate) "
+    f"per 10% more spending could be reliably detected."
+    for d, p in zip(detect.detectable_difference_80pct, detect.detectable_pct_of_average)]
 detect.to_csv(PBI / "pbi_detectability.csv", index=False)
 
 (coverage.stack().rename("companies_with_data").reset_index()

@@ -3,11 +3,11 @@
   "name": "4d3064001a204fc40256",
   "position": {
     "x": 20,
-    "y": 455,
-    "z": 2,
+    "y": 558,
+    "z": 3,
     "width": 1240,
-    "height": 247,
-    "tabOrder": 2
+    "height": 150,
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "textbox",
@@ -44,7 +44,19 @@
               {
                 "textRuns": [
                   {
-                    "value": "Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded.",
+                    "value": "Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded. Total spending (totex) includes enhancement and is consistent only from 2020-21.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "13px",
+                      "color": "#36535C"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Treatment works compliance is descriptive only: its boundary is wider than network-plus spending.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13px",

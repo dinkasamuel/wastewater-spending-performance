@@ -51,7 +51,7 @@ table pbi_panel
 
 	column base_spend_per_property_gbp
 		dataType: double
-		formatString: 0.000
+		formatString: #,0.00
 		lineageTag: df7e9668-1670-54b4-b162-d46d536892b5
 		summarizeBy: none
 		sourceColumn: base_spend_per_property_gbp
@@ -60,7 +60,7 @@ table pbi_panel
 
 	column base_spend_gbp_m
 		dataType: double
-		formatString: 0.000
+		formatString: #,0.0
 		lineageTag: 4fdedf0f-ab2c-57cb-b9e9-dbc061d62ce4
 		summarizeBy: none
 		sourceColumn: base_spend_gbp_m
@@ -69,7 +69,7 @@ table pbi_panel
 
 	column properties
 		dataType: double
-		formatString: 0.000
+		formatString: #,0
 		lineageTag: 7687a3b3-3f67-53ad-87e2-be9d75e200bd
 		summarizeBy: none
 		sourceColumn: properties
@@ -78,7 +78,7 @@ table pbi_panel
 
 	column sewer_flooding_rate
 		dataType: double
-		formatString: 0.000
+		formatString: 0.00
 		lineageTag: ded39b24-4133-5eaf-97d5-cbd8589b2433
 		summarizeBy: none
 		sourceColumn: sewer_flooding_rate
@@ -87,7 +87,7 @@ table pbi_panel
 
 	column sewer_collapse_rate
 		dataType: double
-		formatString: 0.000
+		formatString: 0.00
 		lineageTag: 93bbef0a-feab-5d7f-afb2-749c3f20e040
 		summarizeBy: none
 		sourceColumn: sewer_collapse_rate
@@ -96,7 +96,7 @@ table pbi_panel
 
 	column pollution_rate
 		dataType: double
-		formatString: 0.000
+		formatString: 0.00
 		lineageTag: 16430053-4d98-5af3-8f46-3e2931a1a2d6
 		summarizeBy: none
 		sourceColumn: pollution_rate
@@ -105,7 +105,7 @@ table pbi_panel
 
 	column treatment_compliance_pct
 		dataType: double
-		formatString: 0.000
+		formatString: 0.00
 		lineageTag: 28a5c1e4-8e8d-57b5-af73-28399cad7ade
 		summarizeBy: none
 		sourceColumn: treatment_compliance_pct
