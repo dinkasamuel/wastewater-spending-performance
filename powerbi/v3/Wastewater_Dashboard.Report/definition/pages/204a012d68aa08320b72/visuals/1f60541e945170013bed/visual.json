@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
+    "z": 4,
     "width": 1240,
     "height": 92,
-    "tabOrder": 0
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "Is more spending associated with fewer problems?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "22px",
+                      "fontSize": "24px",
                       "fontWeight": "bold",
                       "color": "#17333B"
                     }
@@ -35,7 +35,7 @@
                     "value": "Answers RQ2 (main models) and RQ3 (sensitivity)  ·  Objectives 3-4  ·  Requirements R07, R08, R10",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "fontWeight": "bold",
                       "color": "#1F5F8B"
                     }
@@ -48,7 +48,7 @@
                     "value": "Difference in each outcome, in its own unit, for 10% more base spending per property, comparing each company with itself and allowing for shared yearly conditions. 95% ranges use nine company clusters (CV3).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "14px",
                       "color": "#36535C"
                     }
                   }

@@ -44,7 +44,7 @@ python code/check_reproducibility.py
 - **Expected result:** all 15 validation checks pass and 20 models are fitted. `outputs/reproducibility_check.json` reports that the outputs are identical across runs.
 - **Running time:** about 2 minutes, because each model enumerates all 512 bootstrap sign patterns.
 
-**Power BI (v3):**
+**Power BI (v3):** the quickest way is to open `powerbi/v3/Wastewater_Dashboard.pbix` in Power BI Desktop, which has the data embedded. To rebuild it from the code instead:
 1. Run the analysis, which writes `outputs/powerbi/*.csv`, then `python code/build_powerbi_v3.py`.
 2. Open `powerbi/v3/Wastewater_Dashboard.pbip` in Power BI Desktop.
 3. Go to **Home → Transform data → Edit parameters** and set `DataFolder` to the full path of this repository's `outputs\powerbi\` folder, including the final backslash.

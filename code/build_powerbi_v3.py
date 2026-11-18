@@ -197,7 +197,7 @@ def textbox(lines):
 
 
 def header(title, tags, context):
-    return textbox([(title, 22, True, NAVY), (tags, 13, True, "#1F5F8B"), (context, 13, False, GREY)])
+    return textbox([(title, 24, True, NAVY), (tags, 15, True, "#1F5F8B"), (context, 14, False, GREY)])
 
 
 def slicer(table, column, display):
@@ -212,9 +212,9 @@ def table_visual(table, columns, title, alt, sort_by=None):
     if sort_by:
         query["sortDefinition"] = {"sort": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": table}},
                                                                   "Property": sort_by}}, "direction": "Ascending"}]}
-    wrap = [{"properties": {"wordWrap": lit("true")}}]
+    style = [{"properties": {"wordWrap": lit("true"), "fontSize": lit("11D")}}]
     return decorate({"visualType": "tableEx", "query": query,
-                     "objects": {"values": wrap, "columnHeaders": wrap}}, title=title, alt=alt)
+                     "objects": {"values": style, "columnHeaders": style}}, title=title, alt=alt)
 
 
 def line_chart(table, measure, title, alt, series="company_code", series_name="Company"):
@@ -320,11 +320,11 @@ page("4 What can be detected", [
         ("detectable_pct_of_average", "As % of average rate")],
         "Main models: estimate and detectable size",
         "Table of the three main models showing the estimated difference, its 95 percent range and the smallest difference the data could reliably detect.")),
-    ("plain", 20, 305, 1240, 160, table_visual("pbi_detectability", [
+    ("plain", 20, 305, 1240, 190, table_visual("pbi_detectability", [
         ("outcome", "Outcome"), ("plain_message", "What this means in plain words")],
         "In plain words",
         "Table giving a plain-language sentence for each main model about the size of link the data could detect.")),
-    ("note", 20, 475, 1240, 227, textbox([
+    ("note", 20, 505, 1240, 197, textbox([
         ("Why this matters", 15, True, NAVY),
         ("With only nine companies, any real link smaller than about a fifth of the average rate per 10% more spending "
          "would usually go unnoticed.", 13, False, GREY),
@@ -360,23 +360,20 @@ page("6 Definitions and limits", [
         "Answers RQ4  ·  Objective 5  ·  Requirements R02, R10",
         "Everything shown in this dashboard comes from public Ofwat data processed by the project's Python code; "
         "the dashboard displays results and never recalculates them.")),
-    ("table", 20, 112, 1240, 215, table_visual("pbi_dictionary", [
+    ("table", 20, 108, 1240, 272, table_visual("pbi_dictionary", [
         ("measure", "Measure"), ("unit", "Unit"), ("better_direction", "Better direction"), ("period", "Period"),
         ("role", "Role")],
         "What each measure means",
         "Table defining each measure: unit, direction of better performance, period and role in the analysis.")),
-    ("sources", 20, 335, 1240, 215, table_visual("pbi_dictionary", [
+    ("sources", 20, 386, 1240, 252, table_visual("pbi_dictionary", [
         ("measure", "Measure"), ("source", "Source")],
         "Where each measure comes from",
         "Table giving the Ofwat source for each measure.")),
-    ("note", 20, 558, 1240, 150, textbox([
-        ("Limits to keep in mind", 15, True, NAVY),
-        ("Associations, not causes. Spending may respond to past failures as well as prevent future ones.", 13, False, GREY),
-        ("Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded. "
-         "Total spending (totex) includes enhancement and is consistent only from 2020-21.", 13, False, GREY),
-        ("Treatment works compliance is descriptive only: its boundary is wider than network-plus spending.", 13, False, GREY),
-        ("Nine companies limit precision: see page 4 for the size of link the data could detect.", 13, False, GREY),
-        ("No company ranking or forecast is produced (requirement R14). Severn Trent spending includes Hafren Dyfrdwy (about 1%).", 13, False, GREY)])),
+    ("note", 20, 644, 1240, 72, textbox([
+        ("Limits: associations, not causes; nine companies limit precision (page 4). Base spending excludes enhancement; "
+         "totex includes it and is consistent only from 2020-21.", 13, False, GREY),
+        ("Compliance is descriptive only. No ranking or forecast (R14). Severn Trent spending includes Hafren Dyfrdwy (about 1%).",
+         13, False, GREY)])),
 ])
 
 
@@ -399,8 +396,10 @@ def build_report():
         write(rp / "definition" / "pages" / pid / "page.json", {
             "$schema": f"{SCHEMA}/item/report/definition/page/2.1.0/schema.json",
             "name": pid, "displayName": pname, "displayOption": "FitToPage", "height": 720, "width": 1280})
-        for tab, (key, x, y, w, h, visual) in enumerate(items):
-            c = container(pname, key, x, y, w, h, tab, visual)
+        for i, (key, x, y, w, h, visual) in enumerate(items):
+            # Power BI visits the highest tabOrder first (verified in Desktop's Selection pane,
+            # 18 Nov 2026), so reading order top-to-bottom gets descending numbers.
+            c = container(pname, key, x, y, w, h, len(items) - 1 - i, visual)
             write(rp / "definition" / "pages" / pid / "visuals" / c["name"] / "visual.json", c)
             used.append((pname, key, visual))
     return used

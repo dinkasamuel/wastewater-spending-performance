@@ -4,10 +4,10 @@
   "position": {
     "x": 235,
     "y": 112,
-    "z": 3,
+    "z": 1,
     "width": 1025,
     "height": 420,
-    "tabOrder": 3
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "tableEx",
@@ -226,6 +226,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
             }
           }
         }
@@ -237,6 +244,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }

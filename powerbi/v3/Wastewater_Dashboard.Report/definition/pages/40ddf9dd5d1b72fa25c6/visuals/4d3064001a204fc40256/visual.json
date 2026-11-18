@@ -3,11 +3,11 @@
   "name": "4d3064001a204fc40256",
   "position": {
     "x": 20,
-    "y": 558,
-    "z": 3,
+    "y": 644,
+    "z": 0,
     "width": 1240,
-    "height": 150,
-    "tabOrder": 3
+    "height": 72,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -19,20 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Limits to keep in mind",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
-                      "fontWeight": "bold",
-                      "color": "#17333B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Associations, not causes. Spending may respond to past failures as well as prevent future ones.",
+                    "value": "Limits: associations, not causes; nine companies limit precision (page 4). Base spending excludes enhancement; totex includes it and is consistent only from 2020-21.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13px",
@@ -44,43 +31,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Base spending covers running and maintaining existing assets; improvement (enhancement) spending is excluded. Total spending (totex) includes enhancement and is consistent only from 2020-21.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
-                      "color": "#36535C"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Treatment works compliance is descriptive only: its boundary is wider than network-plus spending.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
-                      "color": "#36535C"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Nine companies limit precision: see page 4 for the size of link the data could detect.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
-                      "color": "#36535C"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "No company ranking or forecast is produced (requirement R14). Severn Trent spending includes Hafren Dyfrdwy (about 1%).",
+                    "value": "Compliance is descriptive only. No ranking or forecast (R14). Severn Trent spending includes Hafren Dyfrdwy (about 1%).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13px",

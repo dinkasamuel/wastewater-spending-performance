@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
+    "z": 3,
     "width": 1240,
     "height": 92,
-    "tabOrder": 0
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "How large would a link have to be for nine companies to reveal it?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "22px",
+                      "fontSize": "24px",
                       "fontWeight": "bold",
                       "color": "#17333B"
                     }
@@ -35,7 +35,7 @@
                     "value": "Answers RQ2-RQ4  ·  Objectives 3-5  ·  Requirements R07, R10",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "fontWeight": "bold",
                       "color": "#1F5F8B"
                     }
@@ -48,7 +48,7 @@
                     "value": "Smallest difference per 10% more spending that the main model would detect with 80% probability (minimum detectable effect).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "14px",
                       "color": "#36535C"
                     }
                   }

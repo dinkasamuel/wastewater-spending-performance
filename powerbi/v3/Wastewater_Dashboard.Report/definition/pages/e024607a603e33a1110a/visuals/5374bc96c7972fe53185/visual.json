@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
+    "z": 6,
     "width": 1240,
     "height": 92,
-    "tabOrder": 0
+    "tabOrder": 6
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "How spending and outcomes changed, 2017-18 to 2024-25",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "22px",
+                      "fontSize": "24px",
                       "fontWeight": "bold",
                       "color": "#17333B"
                     }
@@ -35,7 +35,7 @@
                     "value": "Answers RQ1  ·  Objective 2  ·  Requirements R06, R09",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "fontWeight": "bold",
                       "color": "#1F5F8B"
                     }
@@ -48,7 +48,7 @@
                     "value": "Base spending per connected property in 2022-23 prices; outcomes in their own units. Flooding, collapses and pollution: lower is better. Pollution is measured by calendar year. Source: Ofwat PR24 base-cost data (CA06, Oct 2025) and PR24 historical performance trends V6.0.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "14px",
                       "color": "#36535C"
                     }
                   }

@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
+    "z": 3,
     "width": 1240,
     "height": 92,
-    "tabOrder": 0
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "Definitions, sources and limits",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "22px",
+                      "fontSize": "24px",
                       "fontWeight": "bold",
                       "color": "#17333B"
                     }
@@ -35,7 +35,7 @@
                     "value": "Answers RQ4  ·  Objective 5  ·  Requirements R02, R10",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "fontWeight": "bold",
                       "color": "#1F5F8B"
                     }
@@ -48,7 +48,7 @@
                     "value": "Everything shown in this dashboard comes from public Ofwat data processed by the project's Python code; the dashboard displays results and never recalculates them.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "14px",
                       "color": "#36535C"
                     }
                   }

@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
+    "z": 5,
     "width": 1240,
     "height": 92,
-    "tabOrder": 0
+    "tabOrder": 5
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "Outcome history 2015-16 to 2024-25 and data coverage",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "22px",
+                      "fontSize": "24px",
                       "fontWeight": "bold",
                       "color": "#17333B"
                     }
@@ -35,7 +35,7 @@
                     "value": "Answers RQ1  ·  Objective 1  ·  Requirements R05, R06",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "fontWeight": "bold",
                       "color": "#1F5F8B"
                     }
@@ -48,7 +48,7 @@
                     "value": "Select exactly one outcome. Missing values stay blank and are never shown as zero. The main analysis uses 2017-18 to 2024-25, the years in which every company reports every outcome.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "14px",
                       "color": "#36535C"
                     }
                   }

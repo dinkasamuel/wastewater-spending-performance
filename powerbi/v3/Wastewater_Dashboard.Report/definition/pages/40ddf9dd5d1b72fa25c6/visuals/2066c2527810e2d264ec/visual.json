@@ -3,11 +3,11 @@
   "name": "2066c2527810e2d264ec",
   "position": {
     "x": 20,
-    "y": 335,
-    "z": 2,
+    "y": 386,
+    "z": 1,
     "width": 1240,
-    "height": 215,
-    "tabOrder": 2
+    "height": 252,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "tableEx",
@@ -59,6 +59,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
             }
           }
         }
@@ -70,6 +77,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }
