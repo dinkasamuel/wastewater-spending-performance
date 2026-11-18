@@ -1,0 +1,71 @@
+table pbi_dictionary
+	lineageTag: 1084d950-8f26-502c-9f8e-ea3aa63f3478
+
+	column measure
+		dataType: string
+		lineageTag: 5bb2b845-e345-50de-a026-ee408291ef36
+		summarizeBy: none
+		sourceColumn: measure
+
+		annotation SummarizationSetBy = User
+
+	column unit
+		dataType: string
+		lineageTag: 01ec7b02-4a8d-5b24-a11c-5a2efe6dfc22
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = User
+
+	column better_direction
+		dataType: string
+		lineageTag: c3bdb343-c36e-5d2e-994b-c53a6586bf41
+		summarizeBy: none
+		sourceColumn: better_direction
+
+		annotation SummarizationSetBy = User
+
+	column period
+		dataType: string
+		lineageTag: de990f76-3a23-546c-b8d2-e2f20be455ba
+		summarizeBy: none
+		sourceColumn: period
+
+		annotation SummarizationSetBy = User
+
+	column role
+		dataType: string
+		lineageTag: 6e942b61-9a66-5df3-8f4a-abbef17ea138
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = User
+
+	column source
+		dataType: string
+		lineageTag: 65a1de5d-c008-5410-90a4-88cd0779e8e3
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = User
+
+	column notes
+		dataType: string
+		lineageTag: 4810076e-d469-5f20-af04-7c86d446a16c
+		summarizeBy: none
+		sourceColumn: notes
+
+		annotation SummarizationSetBy = User
+
+	partition pbi_dictionary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_dictionary.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"measure", type text}, {"unit", type text}, {"better_direction", type text}, {"period", type text}, {"role", type text}, {"source", type text}, {"notes", type text}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

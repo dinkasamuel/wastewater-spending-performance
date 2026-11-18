@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "645c47e50cfaae1a1fbd",
+  "position": {
+    "x": 235,
+    "y": 452,
+    "z": 5,
+    "width": 1025,
+    "height": 250,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.company_name",
+              "nativeQueryRef": "company_name",
+              "displayName": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "displayName": "Reporting year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "outcome"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.outcome",
+              "nativeQueryRef": "outcome",
+              "displayName": "Outcome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.unit",
+              "nativeQueryRef": "unit",
+              "displayName": "Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "period_basis"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.period_basis",
+              "nativeQueryRef": "period_basis",
+              "displayName": "Period basis"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "value"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.value",
+              "nativeQueryRef": "value",
+              "displayName": "Value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "available"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.available",
+              "nativeQueryRef": "available",
+              "displayName": "Available?"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_outcomes_long"
+                    }
+                  },
+                  "Property": "in_main_window"
+                }
+              },
+              "queryRef": "pbi_outcomes_long.in_main_window",
+              "nativeQueryRef": "in_main_window",
+              "displayName": "In main analysis?"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Outcome values with period and availability'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of outcome values with unit, period basis, availability and whether the year is in the main analysis.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

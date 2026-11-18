@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Wastewater_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1b82ad52-6f65-50cb-94bc-4b0da3ec1c33"
+  }
+}

@@ -1,0 +1,93 @@
+table pbi_detectability
+	lineageTag: b69433cc-cc5d-54d8-a914-6951ef5da1a7
+
+	column outcome
+		dataType: string
+		lineageTag: 72b13d84-b5a7-5967-82b7-aba2eea9fbbd
+		summarizeBy: none
+		sourceColumn: outcome
+
+		annotation SummarizationSetBy = User
+
+	column unit
+		dataType: string
+		lineageTag: 3d11ac72-cf61-54d5-95bc-8527e509085e
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = User
+
+	column average_rate
+		dataType: double
+		formatString: 0.000
+		lineageTag: 10be9cd3-ad6b-58d9-9632-4fc4b4b26bf9
+		summarizeBy: none
+		sourceColumn: average_rate
+
+		annotation SummarizationSetBy = User
+
+	column difference_per_10pct
+		dataType: double
+		formatString: 0.000
+		lineageTag: a57421d9-7f13-5058-a1e7-24e9718d32e0
+		summarizeBy: none
+		sourceColumn: difference_per_10pct
+
+		annotation SummarizationSetBy = User
+
+	column ci95_low
+		dataType: double
+		formatString: 0.000
+		lineageTag: 290e3dc3-c1ef-5be1-96b2-1ea5fb7fa7aa
+		summarizeBy: none
+		sourceColumn: ci95_low
+
+		annotation SummarizationSetBy = User
+
+	column ci95_high
+		dataType: double
+		formatString: 0.000
+		lineageTag: 8fb0af75-bbf8-5ac5-9a55-b11ecc9b5e37
+		summarizeBy: none
+		sourceColumn: ci95_high
+
+		annotation SummarizationSetBy = User
+
+	column detectable_difference_80pct
+		dataType: double
+		formatString: 0.000
+		lineageTag: e9920c71-776b-5087-9383-a6d21004c058
+		summarizeBy: none
+		sourceColumn: detectable_difference_80pct
+
+		annotation SummarizationSetBy = User
+
+	column detectable_pct_of_average
+		dataType: double
+		formatString: 0.000
+		lineageTag: d9ef1e9d-54c9-57c0-9809-f5ad44ae7598
+		summarizeBy: none
+		sourceColumn: detectable_pct_of_average
+
+		annotation SummarizationSetBy = User
+
+	column plain_message
+		dataType: string
+		lineageTag: 6a69ec83-4c43-522c-b06a-283396a16555
+		summarizeBy: none
+		sourceColumn: plain_message
+
+		annotation SummarizationSetBy = User
+
+	partition pbi_detectability = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_detectability.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"outcome", type text}, {"unit", type text}, {"average_rate", type number}, {"difference_per_10pct", type number}, {"ci95_low", type number}, {"ci95_high", type number}, {"detectable_difference_80pct", type number}, {"detectable_pct_of_average", type number}, {"plain_message", type text}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

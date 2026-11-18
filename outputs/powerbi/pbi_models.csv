@@ -1,0 +1,21 @@
+outcome,unit,specification,role,answers,spending_measure,outcome_source,years,company_years,companies,difference_per_10pct,ci95_low,ci95_high,range_includes_zero,p_wild_bootstrap,p_holm_main,detectable_difference_80pct,detectable_pct_of_average
+Internal sewer flooding,"incidents per 10,000 connections","main: same year, balanced 2017-24",Main model,RQ2,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,0.057,-0.293,0.407,Yes,0.68,1.0,0.485,21.8
+Internal sewer flooding,"incidents per 10,000 connections",unbalanced: all available years,Sensitivity,RQ3,base spending per property,PR24 V6.0,2016-17 to 2024-25,81,9,0.227,-0.278,0.731,Yes,0.352,,0.699,29.8
+Internal sewer flooding,"incidents per 10,000 connections",total spending + size,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,0.051,-0.387,0.489,Yes,0.773,,0.607,27.3
+Internal sewer flooding,"incidents per 10,000 connections",spending one year earlier,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-0.115,-0.473,0.244,Yes,0.387,,0.497,22.3
+Sewer collapses,"collapses per 1,000 km of sewer","main: same year, balanced 2017-24",Main model,RQ2,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-0.216,-1.575,1.142,Yes,0.719,1.0,1.882,21.0
+Sewer collapses,"collapses per 1,000 km of sewer",unbalanced: all available years,Sensitivity,RQ3,base spending per property,PR24 V6.0,2015-16 to 2024-25,76,9,-0.364,-1.33,0.602,Yes,0.477,,1.339,15.1
+Sewer collapses,"collapses per 1,000 km of sewer",total spending + size,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-0.219,-1.688,1.25,Yes,0.725,,2.035,22.7
+Sewer collapses,"collapses per 1,000 km of sewer",spending one year earlier,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-0.124,-1.036,0.789,Yes,0.656,,1.264,14.1
+Pollution incidents,"incidents per 10,000 km of sewer","main: same year, balanced 2017-24",Main model,RQ2,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,0.843,-4.973,6.658,Yes,0.781,,8.058,20.6
+Pollution incidents,"incidents per 10,000 km of sewer",total spending + size,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,0.834,-5.931,7.6,Yes,0.852,,9.374,23.9
+Pollution incidents,"incidents per 10,000 km of sewer",spending one year earlier,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-2.121,-4.829,0.587,Yes,0.02,,3.752,9.6
+Pollution incidents,"incidents per 10,000 km of sewer",spending two years earlier,Sensitivity,RQ3,base spending per property,PR24 V6.0,2017-18 to 2024-25,72,9,-0.068,-3.357,3.221,Yes,0.957,,4.557,11.6
+Internal sewer flooding,"incidents per 10,000 connections","base spending, 2020-24",Base vs total spending,RQ3,base spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,0.146,-0.083,0.375,Yes,0.172,,0.317,16.0
+Internal sewer flooding,"incidents per 10,000 connections","total spending, 2020-24",Base vs total spending,RQ3,total spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,-0.002,-0.227,0.224,Yes,1.0,,0.313,15.8
+Sewer collapses,"collapses per 1,000 km of sewer","base spending, 2020-24",Base vs total spending,RQ3,base spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,0.425,-0.692,1.543,Yes,0.523,,1.548,19.7
+Sewer collapses,"collapses per 1,000 km of sewer","total spending, 2020-24",Base vs total spending,RQ3,total spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,0.138,-0.287,0.563,Yes,0.617,,0.589,7.5
+Pollution incidents,"incidents per 10,000 km of sewer","base spending, 2020-24",Base vs total spending,RQ3,base spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,-1.591,-5.872,2.69,Yes,0.336,,5.931,14.5
+Pollution incidents,"incidents per 10,000 km of sewer","total spending, 2020-24",Base vs total spending,RQ3,total spending per property,PR24 V6.0,2020-21 to 2024-25,45,9,-2.352,-5.696,0.992,Yes,0.121,,4.633,11.3
+Internal sewer flooding,"incidents per 10,000 connections",previous design: WCPR totex 2020-24,Reproduction check,RQ3,total spending per property,WCPR 2024-25,2020-21 to 2024-25,45,9,0.013,-0.204,0.231,Yes,0.938,,0.301,15.0
+Sewer collapses,"collapses per 1,000 km of sewer",previous design: WCPR totex 2020-24,Reproduction check,RQ3,total spending per property,WCPR 2024-25,2020-21 to 2024-25,45,9,0.311,-0.519,1.141,Yes,0.664,,1.15,14.4

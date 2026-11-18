@@ -1,0 +1,361 @@
+company_code,company_name,reporting_year,year_start,outcome,unit,period_basis,value,available,in_main_window
+ANH,Anglian Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+ANH,Anglian Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+ANH,Anglian Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,29.83,Yes,Yes
+ANH,Anglian Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,24.99,Yes,Yes
+ANH,Anglian Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,34.8,Yes,Yes
+ANH,Anglian Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,27.47,Yes,Yes
+ANH,Anglian Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,33.75,Yes,Yes
+ANH,Anglian Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,33.36,Yes,Yes
+ANH,Anglian Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,40.16,Yes,Yes
+ANH,Anglian Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,57.17,Yes,Yes
+NES,Northumbrian Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+NES,Northumbrian Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+NES,Northumbrian Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,16.65,Yes,Yes
+NES,Northumbrian Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,12.32,Yes,Yes
+NES,Northumbrian Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,15.32,Yes,Yes
+NES,Northumbrian Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,14.32,Yes,Yes
+NES,Northumbrian Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,22.98,Yes,Yes
+NES,Northumbrian Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,19.98,Yes,Yes
+NES,Northumbrian Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,32.97,Yes,Yes
+NES,Northumbrian Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,38.97,Yes,Yes
+SVE,Severn Trent Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SVE,Severn Trent Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SVE,Severn Trent Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,29.94,Yes,Yes
+SVE,Severn Trent Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,31.11,Yes,Yes
+SVE,Severn Trent Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,26.52,Yes,Yes
+SVE,Severn Trent Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,20.32,Yes,Yes
+SVE,Severn Trent Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,21.81,Yes,Yes
+SVE,Severn Trent Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,20.64,Yes,Yes
+SVE,Severn Trent Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,25.55,Yes,Yes
+SVE,Severn Trent Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,29.3,Yes,Yes
+SRN,Southern Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SRN,Southern Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SRN,Southern Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,34.99,Yes,Yes
+SRN,Southern Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,38.01,Yes,Yes
+SRN,Southern Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,109.24,Yes,Yes
+SRN,Southern Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,101.19,Yes,Yes
+SRN,Southern Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,93.63,Yes,Yes
+SRN,Southern Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,90.11,Yes,Yes
+SRN,Southern Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,58.9,Yes,Yes
+SRN,Southern Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,67.71,Yes,Yes
+TMS,Thames Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+TMS,Thames Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+TMS,Thames Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,27.8,Yes,Yes
+TMS,Thames Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,27.25,Yes,Yes
+TMS,Thames Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,29.82,Yes,Yes
+TMS,Thames Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,26.79,Yes,Yes
+TMS,Thames Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,24.87,Yes,Yes
+TMS,Thames Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,30.37,Yes,Yes
+TMS,Thames Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,32.12,Yes,Yes
+TMS,Thames Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,43.13,Yes,Yes
+UUW,United Utilities,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+UUW,United Utilities,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+UUW,United Utilities,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,22.11,Yes,Yes
+UUW,United Utilities,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,23.92,Yes,Yes
+UUW,United Utilities,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,26.77,Yes,Yes
+UUW,United Utilities,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,18.23,Yes,Yes
+UUW,United Utilities,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,17.71,Yes,Yes
+UUW,United Utilities,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,16.29,Yes,Yes
+UUW,United Utilities,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,27.93,Yes,Yes
+UUW,United Utilities,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,44.87,Yes,Yes
+WSX,Wessex Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+WSX,Wessex Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+WSX,Wessex Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,22.89,Yes,Yes
+WSX,Wessex Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,23.47,Yes,Yes
+WSX,Wessex Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,21.75,Yes,Yes
+WSX,Wessex Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,24.9,Yes,Yes
+WSX,Wessex Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,20.6,Yes,Yes
+WSX,Wessex Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,31.48,Yes,Yes
+WSX,Wessex Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,36.06,Yes,Yes
+WSX,Wessex Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,62.1,Yes,Yes
+YKY,Yorkshire Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+YKY,Yorkshire Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+YKY,Yorkshire Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,43.05,Yes,Yes
+YKY,Yorkshire Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,43.82,Yes,Yes
+YKY,Yorkshire Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,34.63,Yes,Yes
+YKY,Yorkshire Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,23.92,Yes,Yes
+YKY,Yorkshire Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,27.36,Yes,Yes
+YKY,Yorkshire Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,22.39,Yes,Yes
+YKY,Yorkshire Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,26.21,Yes,Yes
+YKY,Yorkshire Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,28.89,Yes,Yes
+SWB,South West Water,2015-16,2015,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SWB,South West Water,2016-17,2016,Pollution incidents,"incidents per 10,000 km of sewer",calendar,,No (missing in source),No
+SWB,South West Water,2017-18,2017,Pollution incidents,"incidents per 10,000 km of sewer",calendar,74.41,Yes,Yes
+SWB,South West Water,2018-19,2018,Pollution incidents,"incidents per 10,000 km of sewer",calendar,73.97,Yes,Yes
+SWB,South West Water,2019-20,2019,Pollution incidents,"incidents per 10,000 km of sewer",calendar,79.25,Yes,Yes
+SWB,South West Water,2020-21,2020,Pollution incidents,"incidents per 10,000 km of sewer",calendar,99.07,Yes,Yes
+SWB,South West Water,2021-22,2021,Pollution incidents,"incidents per 10,000 km of sewer",calendar,66.48,Yes,Yes
+SWB,South West Water,2022-23,2022,Pollution incidents,"incidents per 10,000 km of sewer",calendar,47.55,Yes,Yes
+SWB,South West Water,2023-24,2023,Pollution incidents,"incidents per 10,000 km of sewer",calendar,85.42,Yes,Yes
+SWB,South West Water,2024-25,2024,Pollution incidents,"incidents per 10,000 km of sewer",calendar,108.37,Yes,Yes
+ANH,Anglian Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+ANH,Anglian Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,1.78,Yes,No
+ANH,Anglian Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,1.32,Yes,Yes
+ANH,Anglian Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,0.93,Yes,Yes
+ANH,Anglian Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,1.06,Yes,Yes
+ANH,Anglian Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.33,Yes,Yes
+ANH,Anglian Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,1.73,Yes,Yes
+ANH,Anglian Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,1.69,Yes,Yes
+ANH,Anglian Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,2.27,Yes,Yes
+ANH,Anglian Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.41,Yes,Yes
+NES,Northumbrian Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+NES,Northumbrian Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,3.18,Yes,No
+NES,Northumbrian Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,3.16,Yes,Yes
+NES,Northumbrian Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,4.07,Yes,Yes
+NES,Northumbrian Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,3.68,Yes,Yes
+NES,Northumbrian Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.89,Yes,Yes
+NES,Northumbrian Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,1.84,Yes,Yes
+NES,Northumbrian Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,1.21,Yes,Yes
+NES,Northumbrian Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,1.21,Yes,Yes
+NES,Northumbrian Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.03,Yes,Yes
+SVE,Severn Trent Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+SVE,Severn Trent Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,2.21,Yes,No
+SVE,Severn Trent Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,1.6,Yes,Yes
+SVE,Severn Trent Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,1.89,Yes,Yes
+SVE,Severn Trent Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,2.22,Yes,Yes
+SVE,Severn Trent Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.86,Yes,Yes
+SVE,Severn Trent Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,1.61,Yes,Yes
+SVE,Severn Trent Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,1.65,Yes,Yes
+SVE,Severn Trent Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,1.67,Yes,Yes
+SVE,Severn Trent Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.52,Yes,Yes
+SRN,Southern Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+SRN,Southern Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,2.28,Yes,No
+SRN,Southern Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,2.11,Yes,Yes
+SRN,Southern Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,1.96,Yes,Yes
+SRN,Southern Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,2.27,Yes,Yes
+SRN,Southern Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.96,Yes,Yes
+SRN,Southern Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,3.04,Yes,Yes
+SRN,Southern Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,2.25,Yes,Yes
+SRN,Southern Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,2.57,Yes,Yes
+SRN,Southern Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.34,Yes,Yes
+TMS,Thames Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+TMS,Thames Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,2.93,Yes,No
+TMS,Thames Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,2.0,Yes,Yes
+TMS,Thames Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,2.1,Yes,Yes
+TMS,Thames Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,2.02,Yes,Yes
+TMS,Thames Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,2.31,Yes,Yes
+TMS,Thames Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,3.46,Yes,Yes
+TMS,Thames Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,1.91,Yes,Yes
+TMS,Thames Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,1.88,Yes,Yes
+TMS,Thames Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.83,Yes,Yes
+UUW,United Utilities,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+UUW,United Utilities,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,8.47,Yes,No
+UUW,United Utilities,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,4.01,Yes,Yes
+UUW,United Utilities,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,2.87,Yes,Yes
+UUW,United Utilities,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,4.35,Yes,Yes
+UUW,United Utilities,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,4.47,Yes,Yes
+UUW,United Utilities,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,2.98,Yes,Yes
+UUW,United Utilities,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,2.32,Yes,Yes
+UUW,United Utilities,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,4.35,Yes,Yes
+UUW,United Utilities,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,3.48,Yes,Yes
+WSX,Wessex Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+WSX,Wessex Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,1.32,Yes,No
+WSX,Wessex Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,1.23,Yes,Yes
+WSX,Wessex Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,1.44,Yes,Yes
+WSX,Wessex Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,1.18,Yes,Yes
+WSX,Wessex Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.41,Yes,Yes
+WSX,Wessex Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,1.43,Yes,Yes
+WSX,Wessex Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,1.31,Yes,Yes
+WSX,Wessex Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,1.56,Yes,Yes
+WSX,Wessex Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,1.56,Yes,Yes
+YKY,Yorkshire Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+YKY,Yorkshire Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,5.29,Yes,No
+YKY,Yorkshire Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,7.49,Yes,Yes
+YKY,Yorkshire Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,5.8,Yes,Yes
+YKY,Yorkshire Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,4.86,Yes,Yes
+YKY,Yorkshire Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,3.34,Yes,Yes
+YKY,Yorkshire Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,2.83,Yes,Yes
+YKY,Yorkshire Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,2.67,Yes,Yes
+YKY,Yorkshire Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,2.78,Yes,Yes
+YKY,Yorkshire Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,2.21,Yes,Yes
+SWB,South West Water,2015-16,2015,Internal sewer flooding,"incidents per 10,000 connections",financial,,No (missing in source),No
+SWB,South West Water,2016-17,2016,Internal sewer flooding,"incidents per 10,000 connections",financial,2.25,Yes,No
+SWB,South West Water,2017-18,2017,Internal sewer flooding,"incidents per 10,000 connections",financial,1.89,Yes,Yes
+SWB,South West Water,2018-19,2018,Internal sewer flooding,"incidents per 10,000 connections",financial,1.23,Yes,Yes
+SWB,South West Water,2019-20,2019,Internal sewer flooding,"incidents per 10,000 connections",financial,2.09,Yes,Yes
+SWB,South West Water,2020-21,2020,Internal sewer flooding,"incidents per 10,000 connections",financial,1.36,Yes,Yes
+SWB,South West Water,2021-22,2021,Internal sewer flooding,"incidents per 10,000 connections",financial,0.77,Yes,Yes
+SWB,South West Water,2022-23,2022,Internal sewer flooding,"incidents per 10,000 connections",financial,0.64,Yes,Yes
+SWB,South West Water,2023-24,2023,Internal sewer flooding,"incidents per 10,000 connections",financial,0.75,Yes,Yes
+SWB,South West Water,2024-25,2024,Internal sewer flooding,"incidents per 10,000 connections",financial,0.69,Yes,Yes
+ANH,Anglian Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,98.26,Yes,No
+ANH,Anglian Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,99.11999999999999,Yes,No
+ANH,Anglian Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,98.61,Yes,Yes
+ANH,Anglian Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,98.21,Yes,Yes
+ANH,Anglian Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,98.58,Yes,Yes
+ANH,Anglian Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.29,Yes,Yes
+ANH,Anglian Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,98.22,Yes,Yes
+ANH,Anglian Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,98.57000000000001,Yes,Yes
+ANH,Anglian Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,98.44000000000001,Yes,Yes
+ANH,Anglian Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,99.28,Yes,Yes
+NES,Northumbrian Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,,No (missing in source),No
+NES,Northumbrian Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,,No (missing in source),No
+NES,Northumbrian Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,96.0,Yes,Yes
+NES,Northumbrian Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,100.0,Yes,Yes
+NES,Northumbrian Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,96.57,Yes,Yes
+NES,Northumbrian Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.51,Yes,Yes
+NES,Northumbrian Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,98.04,Yes,Yes
+NES,Northumbrian Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,98.53,Yes,Yes
+NES,Northumbrian Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,98.54,Yes,Yes
+NES,Northumbrian Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,97.21,Yes,Yes
+SVE,Severn Trent Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,,No (missing in source),No
+SVE,Severn Trent Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,,No (missing in source),No
+SVE,Severn Trent Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,99.63,Yes,Yes
+SVE,Severn Trent Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,98.42,Yes,Yes
+SVE,Severn Trent Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,99.61,Yes,Yes
+SVE,Severn Trent Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.6,Yes,Yes
+SVE,Severn Trent Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,99.33,Yes,Yes
+SVE,Severn Trent Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,99.33,Yes,Yes
+SVE,Severn Trent Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,99.46000000000001,Yes,Yes
+SVE,Severn Trent Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,99.46000000000001,Yes,Yes
+SRN,Southern Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,98.39,Yes,No
+SRN,Southern Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,98.72,Yes,No
+SRN,Southern Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,98.17,Yes,Yes
+SRN,Southern Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,99.1,Yes,Yes
+SRN,Southern Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,98.81,Yes,Yes
+SRN,Southern Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,97.06,Yes,Yes
+SRN,Southern Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,97.94,Yes,Yes
+SRN,Southern Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,98.21,Yes,Yes
+SRN,Southern Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,99.4,Yes,Yes
+SRN,Southern Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,98.22999999999999,Yes,Yes
+TMS,Thames Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,99.21,Yes,No
+TMS,Thames Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,97.91,Yes,No
+TMS,Thames Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,99.48,Yes,Yes
+TMS,Thames Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,98.96000000000001,Yes,Yes
+TMS,Thames Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,99.74,Yes,Yes
+TMS,Thames Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.74,Yes,Yes
+TMS,Thames Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,98.96000000000001,Yes,Yes
+TMS,Thames Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,99.48,Yes,Yes
+TMS,Thames Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,99.22,Yes,Yes
+TMS,Thames Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,98.69,Yes,Yes
+UUW,United Utilities,2015-16,2015,Treatment works compliance,% of works compliant,calendar,97.21,Yes,No
+UUW,United Utilities,2016-17,2016,Treatment works compliance,% of works compliant,calendar,97.37,Yes,No
+UUW,United Utilities,2017-18,2017,Treatment works compliance,% of works compliant,calendar,98.76,Yes,Yes
+UUW,United Utilities,2018-19,2018,Treatment works compliance,% of works compliant,calendar,98.74000000000001,Yes,Yes
+UUW,United Utilities,2019-20,2019,Treatment works compliance,% of works compliant,calendar,98.47,Yes,Yes
+UUW,United Utilities,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.75,Yes,Yes
+UUW,United Utilities,2021-22,2021,Treatment works compliance,% of works compliant,calendar,98.98,Yes,Yes
+UUW,United Utilities,2022-23,2022,Treatment works compliance,% of works compliant,calendar,98.45,Yes,Yes
+UUW,United Utilities,2023-24,2023,Treatment works compliance,% of works compliant,calendar,98.97,Yes,Yes
+UUW,United Utilities,2024-25,2024,Treatment works compliance,% of works compliant,calendar,98.2,Yes,Yes
+WSX,Wessex Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,99.67,Yes,No
+WSX,Wessex Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,99.37,Yes,No
+WSX,Wessex Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,99.02,Yes,Yes
+WSX,Wessex Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,100.0,Yes,Yes
+WSX,Wessex Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,98.46000000000001,Yes,Yes
+WSX,Wessex Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.08,Yes,Yes
+WSX,Wessex Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,100.0,Yes,Yes
+WSX,Wessex Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,99.35000000000001,Yes,Yes
+WSX,Wessex Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,99.03,Yes,Yes
+WSX,Wessex Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,99.68,Yes,Yes
+YKY,Yorkshire Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,99.32,Yes,No
+YKY,Yorkshire Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,97.17,Yes,No
+YKY,Yorkshire Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,97.77,Yes,Yes
+YKY,Yorkshire Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,97.45,Yes,Yes
+YKY,Yorkshire Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,97.47,Yes,Yes
+YKY,Yorkshire Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.03999999999999,Yes,Yes
+YKY,Yorkshire Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,99.03,Yes,Yes
+YKY,Yorkshire Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,99.68,Yes,Yes
+YKY,Yorkshire Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,99.03999999999999,Yes,Yes
+YKY,Yorkshire Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,98.39,Yes,Yes
+SWB,South West Water,2015-16,2015,Treatment works compliance,% of works compliant,calendar,95.53,Yes,No
+SWB,South West Water,2016-17,2016,Treatment works compliance,% of works compliant,calendar,98.08,Yes,No
+SWB,South West Water,2017-18,2017,Treatment works compliance,% of works compliant,calendar,97.1,Yes,Yes
+SWB,South West Water,2018-19,2018,Treatment works compliance,% of works compliant,calendar,98.72,Yes,Yes
+SWB,South West Water,2019-20,2019,Treatment works compliance,% of works compliant,calendar,98.71,Yes,Yes
+SWB,South West Water,2020-21,2020,Treatment works compliance,% of works compliant,calendar,99.03999999999999,Yes,Yes
+SWB,South West Water,2021-22,2021,Treatment works compliance,% of works compliant,calendar,97.46000000000001,Yes,Yes
+SWB,South West Water,2022-23,2022,Treatment works compliance,% of works compliant,calendar,99.37,Yes,Yes
+SWB,South West Water,2023-24,2023,Treatment works compliance,% of works compliant,calendar,96.19,Yes,Yes
+SWB,South West Water,2024-25,2024,Treatment works compliance,% of works compliant,calendar,98.1,Yes,Yes
+ANH,Anglian Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+ANH,Anglian Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+ANH,Anglian Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.5,Yes,Yes
+ANH,Anglian Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.07,Yes,Yes
+ANH,Anglian Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.63,Yes,Yes
+ANH,Anglian Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.04,Yes,Yes
+ANH,Anglian Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.57,Yes,Yes
+ANH,Anglian Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.19,Yes,Yes
+ANH,Anglian Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.43,Yes,Yes
+ANH,Anglian Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,4.53,Yes,Yes
+NES,Northumbrian Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+NES,Northumbrian Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+NES,Northumbrian Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,18.52,Yes,Yes
+NES,Northumbrian Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.48,Yes,Yes
+NES,Northumbrian Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.77,Yes,Yes
+NES,Northumbrian Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.82,Yes,Yes
+NES,Northumbrian Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,8.71,Yes,Yes
+NES,Northumbrian Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.29,Yes,Yes
+NES,Northumbrian Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,8.39,Yes,Yes
+NES,Northumbrian Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.33,Yes,Yes
+SVE,Severn Trent Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+SVE,Severn Trent Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+SVE,Severn Trent Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.14,Yes,Yes
+SVE,Severn Trent Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,8.8,Yes,Yes
+SVE,Severn Trent Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.33,Yes,Yes
+SVE,Severn Trent Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.74,Yes,Yes
+SVE,Severn Trent Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.42,Yes,Yes
+SVE,Severn Trent Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.18,Yes,Yes
+SVE,Severn Trent Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.52,Yes,Yes
+SVE,Severn Trent Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.31,Yes,Yes
+SRN,Southern Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.14,Yes,No
+SRN,Southern Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.88,Yes,No
+SRN,Southern Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.79,Yes,Yes
+SRN,Southern Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.03,Yes,Yes
+SRN,Southern Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.77,Yes,Yes
+SRN,Southern Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.91,Yes,Yes
+SRN,Southern Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.87,Yes,Yes
+SRN,Southern Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.18,Yes,Yes
+SRN,Southern Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.85,Yes,Yes
+SRN,Southern Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.19,Yes,Yes
+TMS,Thames Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+TMS,Thames Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+TMS,Thames Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,3.89,Yes,Yes
+TMS,Thames Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,4.05,Yes,Yes
+TMS,Thames Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.9,Yes,Yes
+TMS,Thames Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,3.96,Yes,Yes
+TMS,Thames Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,3.78,Yes,Yes
+TMS,Thames Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,3.55,Yes,Yes
+TMS,Thames Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,2.64,Yes,Yes
+TMS,Thames Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,2.38,Yes,Yes
+UUW,United Utilities,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+UUW,United Utilities,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+UUW,United Utilities,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,17.2,Yes,Yes
+UUW,United Utilities,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,15.93,Yes,Yes
+UUW,United Utilities,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,20.42,Yes,Yes
+UUW,United Utilities,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,14.77,Yes,Yes
+UUW,United Utilities,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,14.01,Yes,Yes
+UUW,United Utilities,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,14.27,Yes,Yes
+UUW,United Utilities,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,13.01,Yes,Yes
+UUW,United Utilities,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,12.93,Yes,Yes
+WSX,Wessex Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+WSX,Wessex Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+WSX,Wessex Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.15,Yes,Yes
+WSX,Wessex Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.3,Yes,Yes
+WSX,Wessex Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.2,Yes,Yes
+WSX,Wessex Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.12,Yes,Yes
+WSX,Wessex Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.91,Yes,Yes
+WSX,Wessex Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.22,Yes,Yes
+WSX,Wessex Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.55,Yes,Yes
+WSX,Wessex Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,5.0,Yes,Yes
+YKY,Yorkshire Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.93,Yes,No
+YKY,Yorkshire Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.41,Yes,No
+YKY,Yorkshire Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,26.81,Yes,Yes
+YKY,Yorkshire Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,18.26,Yes,Yes
+YKY,Yorkshire Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,13.99,Yes,Yes
+YKY,Yorkshire Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,15.67,Yes,Yes
+YKY,Yorkshire Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,11.71,Yes,Yes
+YKY,Yorkshire Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,10.96,Yes,Yes
+YKY,Yorkshire Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,12.37,Yes,Yes
+YKY,Yorkshire Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.97,Yes,Yes
+SWB,South West Water,2015-16,2015,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+SWB,South West Water,2016-17,2016,Sewer collapses,"collapses per 1,000 km of sewer",financial,,No (missing in source),No
+SWB,South West Water,2017-18,2017,Sewer collapses,"collapses per 1,000 km of sewer",financial,18.0,Yes,Yes
+SWB,South West Water,2018-19,2018,Sewer collapses,"collapses per 1,000 km of sewer",financial,19.27,Yes,Yes
+SWB,South West Water,2019-20,2019,Sewer collapses,"collapses per 1,000 km of sewer",financial,12.79,Yes,Yes
+SWB,South West Water,2020-21,2020,Sewer collapses,"collapses per 1,000 km of sewer",financial,9.76,Yes,Yes
+SWB,South West Water,2021-22,2021,Sewer collapses,"collapses per 1,000 km of sewer",financial,6.75,Yes,Yes
+SWB,South West Water,2022-23,2022,Sewer collapses,"collapses per 1,000 km of sewer",financial,8.29,Yes,Yes
+SWB,South West Water,2023-24,2023,Sewer collapses,"collapses per 1,000 km of sewer",financial,10.37,Yes,Yes
+SWB,South West Water,2024-25,2024,Sewer collapses,"collapses per 1,000 km of sewer",financial,7.54,Yes,Yes

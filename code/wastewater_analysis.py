@@ -448,11 +448,104 @@ plt.close(fig)
 print("Figures written to", FIG)
 
 
-# %% 8. Validation record and run manifest -- R02, R11 ---------------------------------
+# %% 8. Tables for the Power BI dashboard -- R06, R09, R10 (RQ4) ------------------------
+# Small, clearly named CSV files with plain-language labels and units already attached,
+# so the dashboard never has to recalculate or relabel anything (it only displays).
+PBI = OUT / "powerbi"
+PBI.mkdir(exist_ok=True)
+LABEL = {"sewer_flooding_rate": "Internal sewer flooding", "sewer_collapse_rate": "Sewer collapses",
+         "pollution_rate": "Pollution incidents", "treatment_compliance_pct": "Treatment works compliance"}
+UNIT = {"sewer_flooding_rate": "incidents per 10,000 connections",
+        "sewer_collapse_rate": "collapses per 1,000 km of sewer",
+        "pollution_rate": "incidents per 10,000 km of sewer",
+        "treatment_compliance_pct": "% of works compliant"}
+
+(balanced[["company_code", "company_name", "reporting_year", "year_start", "base_cost_per_property",
+           "base_cost_m_2223", "properties"] + list(OUTCOMES)]
+ .rename(columns={"base_cost_per_property": "base_spend_per_property_gbp",
+                  "base_cost_m_2223": "base_spend_gbp_m"})
+ .to_csv(PBI / "pbi_panel.csv", index=False))
+
+long = outcomes_long.assign(
+    company_name=outcomes_long.company_code.map(COMPANIES),
+    reporting_year=outcomes_long.year_start.map(label),
+    outcome=outcomes_long.metric.map(LABEL), unit=outcomes_long.metric.map(UNIT),
+    available=np.where(outcomes_long.value.notna(), "Yes", "No (missing in source)"),
+    in_main_window=np.where(outcomes_long.year_start.isin(BALANCED_YEARS), "Yes", "No"))
+long[["company_code", "company_name", "reporting_year", "year_start", "outcome", "unit",
+      "period_basis", "value", "available", "in_main_window"]].to_csv(PBI / "pbi_outcomes_long.csv", index=False)
+
+
+def role(spec):
+    if spec.startswith("main"):
+        return "Main model"
+    if spec.startswith("previous"):
+        return "Reproduction check"
+    if "2020-24" in spec:
+        return "Base vs total spending"
+    return "Sensitivity"
+
+
+models = pd.DataFrame({
+    "outcome": results.outcome.map(LABEL), "unit": results.outcome.map(UNIT),
+    "specification": results.specification, "role": results.specification.map(role),
+    "answers": np.where(results.specification.str.startswith("main"), "RQ2", "RQ3"),
+    "spending_measure": results.spending_measure, "outcome_source": results.outcome_source,
+    "years": results.first_year.map(label) + " to " + results.last_year.map(label),
+    "company_years": results.n, "companies": results.companies,
+    "difference_per_10pct": results.diff_per_10pct.round(3),
+    "ci95_low": results.ci_low_10pct.round(3), "ci95_high": results.ci_high_10pct.round(3),
+    "range_includes_zero": np.where((results.ci_low_10pct < 0) & (results.ci_high_10pct > 0), "Yes", "No"),
+    "p_wild_bootstrap": results.p_wild_bootstrap.round(3), "p_holm_main": results.p_wild_holm.round(3),
+    "detectable_difference_80pct": results.mde_10pct_80power.round(3),
+    "detectable_pct_of_average": results.mde_pct_of_mean.round(1)})
+models.to_csv(PBI / "pbi_models.csv", index=False)
+
+main_rows = results[results.specification.str.startswith("main")]
+detect = pd.DataFrame({
+    "outcome": main_rows.outcome.map(LABEL), "unit": main_rows.outcome.map(UNIT),
+    "average_rate": main_rows.outcome_mean.round(2),
+    "difference_per_10pct": main_rows.diff_per_10pct.round(2),
+    "ci95_low": main_rows.ci_low_10pct.round(2), "ci95_high": main_rows.ci_high_10pct.round(2),
+    "detectable_difference_80pct": main_rows.mde_10pct_80power.round(2),
+    "detectable_pct_of_average": main_rows.mde_pct_of_mean.round(0)})
+detect["plain_message"] = [
+    f"No clear link. With nine companies, only a difference of about {d:.2f} {u} "
+    f"({p:.0f}% of the average) per 10% more spending could be reliably detected."
+    for d, u, p in zip(detect.detectable_difference_80pct, detect.unit, detect.detectable_pct_of_average)]
+detect.to_csv(PBI / "pbi_detectability.csv", index=False)
+
+(coverage.stack().rename("companies_with_data").reset_index()
+ .assign(outcome=lambda d: d.metric.map(LABEL), reporting_year=lambda d: d.year_start.map(label))
+ [["outcome", "reporting_year", "companies_with_data"]].to_csv(PBI / "pbi_coverage.csv", index=False))
+
+pd.DataFrame([
+    ["Base spending per property", "GBP per connected property, 2022-23 prices", "No automatic direction",
+     "Financial year (April-March)", "Explanatory variable",
+     "Ofwat PR24CA06 dataset (Oct 2025): modelled base costs, wastewater network plus",
+     "Operating and maintaining existing assets; excludes enhancement and bioresources. Severn Trent includes Hafren Dyfrdwy (~1% of costs)."],
+    ["Total spending per property (totex)", "GBP per connected property, 2017-18 prices", "No automatic direction",
+     "Financial year", "Comparison only (2020-21 to 2024-25)", "Ofwat WCPR 2024-25, item B0143TAWWNP",
+     "Includes enhancement; not available on a consistent basis before 2020-21."],
+    [LABEL["sewer_flooding_rate"], UNIT["sewer_flooding_rate"], "Lower is better", "Financial year",
+     "Modelled outcome", "Ofwat historical performance trends for PR24 V6.0", ""],
+    [LABEL["sewer_collapse_rate"], UNIT["sewer_collapse_rate"], "Lower is better", "Financial year",
+     "Modelled outcome", "Ofwat historical performance trends for PR24 V6.0", ""],
+    [LABEL["pollution_rate"], UNIT["pollution_rate"], "Lower is better", "Calendar year (label 2024-25 = 2024)",
+     "Modelled outcome", "Ofwat historical performance trends for PR24 V6.0", ""],
+    [LABEL["treatment_compliance_pct"], UNIT["treatment_compliance_pct"], "Higher is better",
+     "Calendar year", "Descriptive only", "Ofwat historical performance trends for PR24 V6.0",
+     "Boundary wider than network-plus spending, so not modelled."],
+], columns=["measure", "unit", "better_direction", "period", "role", "source", "notes"]
+).to_csv(PBI / "pbi_dictionary.csv", index=False)
+print("Power BI tables written:", sorted(p.name for p in PBI.glob("*.csv")))
+
+
+# %% 9. Validation record and run manifest -- R02, R11 ---------------------------------
 check("T12_inputs_unchanged", all(sha256(p) == input_hashes_before[k] for k, p in FILES.items()),
       "Raw input files unchanged by the run")
 pd.DataFrame(CHECKS).to_csv(OUT / "validation_checks.csv", index=False)
-outputs = sorted(p for folder in (OUT, FIG) for p in folder.glob("*")
+outputs = sorted(p for folder in (OUT, FIG) for p in folder.rglob("*")
                  if p.is_file() and p.suffix in {".csv", ".png"})
 manifest = {
     "python": platform.python_version(),

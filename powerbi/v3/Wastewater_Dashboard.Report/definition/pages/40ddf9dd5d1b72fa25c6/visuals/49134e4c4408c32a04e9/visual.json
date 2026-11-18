@@ -1,0 +1,171 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "49134e4c4408c32a04e9",
+  "position": {
+    "x": 20,
+    "y": 112,
+    "z": 1,
+    "width": 1240,
+    "height": 330,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "measure"
+                }
+              },
+              "queryRef": "pbi_dictionary.measure",
+              "nativeQueryRef": "measure",
+              "displayName": "Measure"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "pbi_dictionary.unit",
+              "nativeQueryRef": "unit",
+              "displayName": "Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "better_direction"
+                }
+              },
+              "queryRef": "pbi_dictionary.better_direction",
+              "nativeQueryRef": "better_direction",
+              "displayName": "Better direction"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "queryRef": "pbi_dictionary.period",
+              "nativeQueryRef": "period",
+              "displayName": "Period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "role"
+                }
+              },
+              "queryRef": "pbi_dictionary.role",
+              "nativeQueryRef": "role",
+              "displayName": "Role"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "source"
+                }
+              },
+              "queryRef": "pbi_dictionary.source",
+              "nativeQueryRef": "source",
+              "displayName": "Source"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_dictionary"
+                    }
+                  },
+                  "Property": "notes"
+                }
+              },
+              "queryRef": "pbi_dictionary.notes",
+              "nativeQueryRef": "notes",
+              "displayName": "Notes"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What each measure means'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table defining each measure: unit, direction of better performance, period, role in the analysis, source and notes.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

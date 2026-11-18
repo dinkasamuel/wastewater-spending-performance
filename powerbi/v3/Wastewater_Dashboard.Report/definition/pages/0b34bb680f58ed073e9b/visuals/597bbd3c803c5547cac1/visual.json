@@ -1,0 +1,201 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "597bbd3c803c5547cac1",
+  "position": {
+    "x": 205,
+    "y": 112,
+    "z": 3,
+    "width": 1055,
+    "height": 590,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "pbi_panel.company_name",
+              "nativeQueryRef": "company_name",
+              "displayName": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "pbi_panel.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "displayName": "Reporting year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "base_spend_per_property_gbp"
+                }
+              },
+              "queryRef": "pbi_panel.base_spend_per_property_gbp",
+              "nativeQueryRef": "base_spend_per_property_gbp",
+              "displayName": "Base spending per property (GBP, 2022-23 prices)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "base_spend_gbp_m"
+                }
+              },
+              "queryRef": "pbi_panel.base_spend_gbp_m",
+              "nativeQueryRef": "base_spend_gbp_m",
+              "displayName": "Base spending (GBP m, 2022-23 prices)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "properties"
+                }
+              },
+              "queryRef": "pbi_panel.properties",
+              "nativeQueryRef": "properties",
+              "displayName": "Connected properties"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "sewer_flooding_rate"
+                }
+              },
+              "queryRef": "pbi_panel.sewer_flooding_rate",
+              "nativeQueryRef": "sewer_flooding_rate",
+              "displayName": "Internal flooding (per 10,000 connections)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "sewer_collapse_rate"
+                }
+              },
+              "queryRef": "pbi_panel.sewer_collapse_rate",
+              "nativeQueryRef": "sewer_collapse_rate",
+              "displayName": "Sewer collapses (per 1,000 km)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "pollution_rate"
+                }
+              },
+              "queryRef": "pbi_panel.pollution_rate",
+              "nativeQueryRef": "pollution_rate",
+              "displayName": "Pollution (per 10,000 km, calendar year)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_panel"
+                    }
+                  },
+                  "Property": "treatment_compliance_pct"
+                }
+              },
+              "queryRef": "pbi_panel.treatment_compliance_pct",
+              "nativeQueryRef": "treatment_compliance_pct",
+              "displayName": "Treatment compliance (%, calendar year, descriptive)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Company-year values used in the analysis'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of the 72 company-years in the analysis with base spending, connected properties and four outcomes in their own units.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

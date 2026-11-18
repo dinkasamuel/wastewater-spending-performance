@@ -1,0 +1,166 @@
+table pbi_models
+	lineageTag: 13a3a6e0-02f2-5d50-87e9-a67340df9f51
+
+	column outcome
+		dataType: string
+		lineageTag: 665a7505-7c11-5e05-9eb0-c891d0629f5f
+		summarizeBy: none
+		sourceColumn: outcome
+
+		annotation SummarizationSetBy = User
+
+	column unit
+		dataType: string
+		lineageTag: ae79dd98-4635-5568-83b6-777c906c84a4
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = User
+
+	column specification
+		dataType: string
+		lineageTag: 5d73e980-af51-5d07-b59f-f6e3ef7ef834
+		summarizeBy: none
+		sourceColumn: specification
+
+		annotation SummarizationSetBy = User
+
+	column role
+		dataType: string
+		lineageTag: 12e152ce-dc1e-5ebf-95d3-57a808d87416
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = User
+
+	column answers
+		dataType: string
+		lineageTag: 359cc48f-dc68-57f4-85b9-def72b6d9cf9
+		summarizeBy: none
+		sourceColumn: answers
+
+		annotation SummarizationSetBy = User
+
+	column spending_measure
+		dataType: string
+		lineageTag: ec148075-2b3c-5f49-b934-2746cede9620
+		summarizeBy: none
+		sourceColumn: spending_measure
+
+		annotation SummarizationSetBy = User
+
+	column outcome_source
+		dataType: string
+		lineageTag: facb8266-1d38-53d3-909b-cf0481dc8d1e
+		summarizeBy: none
+		sourceColumn: outcome_source
+
+		annotation SummarizationSetBy = User
+
+	column years
+		dataType: string
+		lineageTag: da13d740-ea70-5882-847b-3d8a90e4d6de
+		summarizeBy: none
+		sourceColumn: years
+
+		annotation SummarizationSetBy = User
+
+	column company_years
+		dataType: int64
+		lineageTag: b5649205-117b-5dfe-a5f7-60ad0dd53e6a
+		summarizeBy: none
+		sourceColumn: company_years
+
+		annotation SummarizationSetBy = User
+
+	column companies
+		dataType: int64
+		lineageTag: f054d2af-d16b-581b-8d53-0c6fd4b8ea54
+		summarizeBy: none
+		sourceColumn: companies
+
+		annotation SummarizationSetBy = User
+
+	column difference_per_10pct
+		dataType: double
+		formatString: 0.000
+		lineageTag: 23f73441-a8d8-50cf-804a-a795db0c632c
+		summarizeBy: none
+		sourceColumn: difference_per_10pct
+
+		annotation SummarizationSetBy = User
+
+	column ci95_low
+		dataType: double
+		formatString: 0.000
+		lineageTag: aca2f20f-dff5-5601-8758-d437b5b64ca7
+		summarizeBy: none
+		sourceColumn: ci95_low
+
+		annotation SummarizationSetBy = User
+
+	column ci95_high
+		dataType: double
+		formatString: 0.000
+		lineageTag: a3d77531-bbb3-59fd-8b27-8b5e6d6e4e32
+		summarizeBy: none
+		sourceColumn: ci95_high
+
+		annotation SummarizationSetBy = User
+
+	column range_includes_zero
+		dataType: string
+		lineageTag: 0b790a7e-4124-5777-879b-1695d890a5c2
+		summarizeBy: none
+		sourceColumn: range_includes_zero
+
+		annotation SummarizationSetBy = User
+
+	column p_wild_bootstrap
+		dataType: double
+		formatString: 0.000
+		lineageTag: c0a4b277-bd2f-5db6-9fdd-6aea095b50ba
+		summarizeBy: none
+		sourceColumn: p_wild_bootstrap
+
+		annotation SummarizationSetBy = User
+
+	column p_holm_main
+		dataType: double
+		formatString: 0.000
+		lineageTag: 56b27312-fb22-59d2-bc5e-5a339307b0ae
+		summarizeBy: none
+		sourceColumn: p_holm_main
+
+		annotation SummarizationSetBy = User
+
+	column detectable_difference_80pct
+		dataType: double
+		formatString: 0.000
+		lineageTag: bdb78ae6-8fb2-5128-9b62-9e40f3ac28ad
+		summarizeBy: none
+		sourceColumn: detectable_difference_80pct
+
+		annotation SummarizationSetBy = User
+
+	column detectable_pct_of_average
+		dataType: double
+		formatString: 0.000
+		lineageTag: dfb0ca5a-2f0b-567d-8f58-9e33c1ef3829
+		summarizeBy: none
+		sourceColumn: detectable_pct_of_average
+
+		annotation SummarizationSetBy = User
+
+	partition pbi_models = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_models.csv"),[Delimiter=",", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"outcome", type text}, {"unit", type text}, {"specification", type text}, {"role", type text}, {"answers", type text}, {"spending_measure", type text}, {"outcome_source", type text}, {"years", type text}, {"company_years", Int64.Type}, {"companies", Int64.Type}, {"difference_per_10pct", type number}, {"ci95_low", type number}, {"ci95_high", type number}, {"range_includes_zero", type text}, {"p_wild_bootstrap", type number}, {"p_holm_main", type number}, {"detectable_difference_80pct", type number}, {"detectable_pct_of_average", type number}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

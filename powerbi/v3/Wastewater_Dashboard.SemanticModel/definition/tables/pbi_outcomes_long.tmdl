@@ -1,0 +1,103 @@
+table pbi_outcomes_long
+	lineageTag: 6b4a5211-0fc1-5f6f-b9da-6c792695d60e
+
+	measure 'Selected outcome value' = IF(HASONEVALUE(pbi_outcomes_long[outcome]), AVERAGE(pbi_outcomes_long[value]), BLANK())
+		formatString: 0.00
+		lineageTag: 83c99fe8-5064-5048-b6d3-e90334d43d50
+
+	measure 'Outcome chart title' = IF(HASONEVALUE(pbi_outcomes_long[outcome]), SELECTEDVALUE(pbi_outcomes_long[outcome]) & " | " & SELECTEDVALUE(pbi_outcomes_long[unit]) & " | blank = not available", "Select exactly one outcome to show its values and unit")
+		lineageTag: a24124b1-1399-5e8e-b1d1-8535ff105e71
+
+	column company_code
+		dataType: string
+		lineageTag: 90d81a38-9cb3-5c84-9be1-4b7e44813e7f
+		summarizeBy: none
+		sourceColumn: company_code
+
+		annotation SummarizationSetBy = User
+
+	column company_name
+		dataType: string
+		lineageTag: 5670ecff-f140-5a32-aac6-786533dc784d
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = User
+
+	column reporting_year
+		dataType: string
+		lineageTag: 046cd410-bcfa-5cc0-a67f-91d8f2b6fe46
+		summarizeBy: none
+		sourceColumn: reporting_year
+
+		annotation SummarizationSetBy = User
+
+	column year_start
+		dataType: int64
+		lineageTag: 9fec2753-cd3d-553d-a72b-cb9e6e719e9b
+		summarizeBy: none
+		sourceColumn: year_start
+
+		annotation SummarizationSetBy = User
+
+	column outcome
+		dataType: string
+		lineageTag: 5a8a9402-33c8-59f6-9a26-0642fe7b647b
+		summarizeBy: none
+		sourceColumn: outcome
+
+		annotation SummarizationSetBy = User
+
+	column unit
+		dataType: string
+		lineageTag: c22cecc7-376f-570d-a035-365b419fb85c
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = User
+
+	column period_basis
+		dataType: string
+		lineageTag: 4cc6d551-f5ef-5f98-80b2-b10ef45069bb
+		summarizeBy: none
+		sourceColumn: period_basis
+
+		annotation SummarizationSetBy = User
+
+	column value
+		dataType: double
+		formatString: 0.000
+		lineageTag: 179f87b4-3805-5a34-acd4-15eed97abc05
+		summarizeBy: none
+		sourceColumn: value
+
+		annotation SummarizationSetBy = User
+
+	column available
+		dataType: string
+		lineageTag: e66f44b6-1362-560c-859b-ca8c15fe0063
+		summarizeBy: none
+		sourceColumn: available
+
+		annotation SummarizationSetBy = User
+
+	column in_main_window
+		dataType: string
+		lineageTag: d6c6da44-7b21-5c97-9bb9-1977fcae3f44
+		summarizeBy: none
+		sourceColumn: in_main_window
+
+		annotation SummarizationSetBy = User
+
+	partition pbi_outcomes_long = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_outcomes_long.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"company_code", type text}, {"company_name", type text}, {"reporting_year", type text}, {"year_start", Int64.Type}, {"outcome", type text}, {"unit", type text}, {"period_basis", type text}, {"value", type number}, {"available", type text}, {"in_main_window", type text}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

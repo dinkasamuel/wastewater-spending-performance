@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a4e2bee56bbdf2c9a492",
+  "position": {
+    "x": 885,
+    "y": 112,
+    "z": 4,
+    "width": 375,
+    "height": 330,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_coverage"
+                    }
+                  },
+                  "Property": "outcome"
+                }
+              },
+              "queryRef": "pbi_coverage.outcome",
+              "nativeQueryRef": "outcome",
+              "displayName": "Outcome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_coverage"
+                    }
+                  },
+                  "Property": "reporting_year"
+                }
+              },
+              "queryRef": "pbi_coverage.reporting_year",
+              "nativeQueryRef": "reporting_year",
+              "displayName": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_coverage"
+                    }
+                  },
+                  "Property": "companies_with_data"
+                }
+              },
+              "queryRef": "pbi_coverage.companies_with_data",
+              "nativeQueryRef": "companies_with_data",
+              "displayName": "Companies with data (of 9)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data coverage by outcome and year'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table showing how many of the nine companies have data for each outcome in each year.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

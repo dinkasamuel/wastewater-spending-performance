@@ -1,0 +1,126 @@
+table pbi_panel
+	lineageTag: 7b692076-0a61-5deb-8b9c-c8a0b7a836dd
+
+	measure 'Base spending per property' = AVERAGE(pbi_panel[base_spend_per_property_gbp])
+		formatString: 0.00
+		lineageTag: 84b7c5c2-78c9-5b6a-9192-2203f8a7c84b
+
+	measure 'Flooding rate' = AVERAGE(pbi_panel[sewer_flooding_rate])
+		formatString: 0.00
+		lineageTag: 9bff9fe2-16ce-5e90-8fff-fe0af6812ca8
+
+	measure 'Collapse rate' = AVERAGE(pbi_panel[sewer_collapse_rate])
+		formatString: 0.00
+		lineageTag: 6b3138f1-efa0-5fb0-8672-5334396d8d02
+
+	measure 'Pollution rate' = AVERAGE(pbi_panel[pollution_rate])
+		formatString: 0.00
+		lineageTag: bba8c059-132f-5807-af38-aac4411a6179
+
+	column company_code
+		dataType: string
+		lineageTag: fcea43d1-d926-5ea3-b294-784ac33f92f2
+		summarizeBy: none
+		sourceColumn: company_code
+
+		annotation SummarizationSetBy = User
+
+	column company_name
+		dataType: string
+		lineageTag: 2a6a9b3c-7d5d-54b2-8ab3-c6caf3cbe821
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = User
+
+	column reporting_year
+		dataType: string
+		lineageTag: 3c91417f-3883-5b14-9190-2b2e5b3dc54d
+		summarizeBy: none
+		sourceColumn: reporting_year
+
+		annotation SummarizationSetBy = User
+
+	column year_start
+		dataType: int64
+		lineageTag: 49f84d64-9f95-5fd7-9e97-451b87d9bef2
+		summarizeBy: none
+		sourceColumn: year_start
+
+		annotation SummarizationSetBy = User
+
+	column base_spend_per_property_gbp
+		dataType: double
+		formatString: 0.000
+		lineageTag: df7e9668-1670-54b4-b162-d46d536892b5
+		summarizeBy: none
+		sourceColumn: base_spend_per_property_gbp
+
+		annotation SummarizationSetBy = User
+
+	column base_spend_gbp_m
+		dataType: double
+		formatString: 0.000
+		lineageTag: 4fdedf0f-ab2c-57cb-b9e9-dbc061d62ce4
+		summarizeBy: none
+		sourceColumn: base_spend_gbp_m
+
+		annotation SummarizationSetBy = User
+
+	column properties
+		dataType: double
+		formatString: 0.000
+		lineageTag: 7687a3b3-3f67-53ad-87e2-be9d75e200bd
+		summarizeBy: none
+		sourceColumn: properties
+
+		annotation SummarizationSetBy = User
+
+	column sewer_flooding_rate
+		dataType: double
+		formatString: 0.000
+		lineageTag: ded39b24-4133-5eaf-97d5-cbd8589b2433
+		summarizeBy: none
+		sourceColumn: sewer_flooding_rate
+
+		annotation SummarizationSetBy = User
+
+	column sewer_collapse_rate
+		dataType: double
+		formatString: 0.000
+		lineageTag: 93bbef0a-feab-5d7f-afb2-749c3f20e040
+		summarizeBy: none
+		sourceColumn: sewer_collapse_rate
+
+		annotation SummarizationSetBy = User
+
+	column pollution_rate
+		dataType: double
+		formatString: 0.000
+		lineageTag: 16430053-4d98-5af3-8f46-3e2931a1a2d6
+		summarizeBy: none
+		sourceColumn: pollution_rate
+
+		annotation SummarizationSetBy = User
+
+	column treatment_compliance_pct
+		dataType: double
+		formatString: 0.000
+		lineageTag: 28a5c1e4-8e8d-57b5-af73-28399cad7ade
+		summarizeBy: none
+		sourceColumn: treatment_compliance_pct
+
+		annotation SummarizationSetBy = User
+
+	partition pbi_panel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_panel.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"company_code", type text}, {"company_name", type text}, {"reporting_year", type text}, {"year_start", Int64.Type}, {"base_spend_per_property_gbp", type number}, {"base_spend_gbp_m", type number}, {"properties", type number}, {"sewer_flooding_rate", type number}, {"sewer_collapse_rate", type number}, {"pollution_rate", type number}, {"treatment_compliance_pct", type number}}, "en-GB")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

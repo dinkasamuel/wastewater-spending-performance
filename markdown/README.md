@@ -14,7 +14,7 @@ MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (stu
 | `data/raw/` | Ofwat source files, unchanged (see Data sources) |
 | `outputs/` | Generated CSV tables, validation checks, run manifest and reproducibility result |
 | `figures/` | Result charts and UML diagrams (PNG, plus SVG for the diagrams) |
-| `powerbi/` | Power BI dashboard project: `v2/` is current; `v1_2026-11-16/` is kept because the v2 build script uses it |
+| `powerbi/` | Power BI dashboard projects: **`v3/` is current**; `v2/` and `v1_2026-11-16/` are earlier versions, kept for the evaluation record |
 | `docs/` | Word versions of every project document, plus the requirements register (CSV) |
 | `markdown/` | Editable Markdown sources of the documents in `docs/` |
 
@@ -26,7 +26,8 @@ MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (stu
 | `methods.py` | The statistical methods: two-way fixed-effects model, CV3 jackknife, wild-cluster bootstrap (all 512 sign patterns), minimum detectable effect, Holm adjustment and self-tests |
 | `check_reproducibility.py` | Runs the analysis twice in fresh processes and confirms that every output is byte-identical |
 | `make_uml_figures.py` | Draws UML Figures 4.1 (project workflow) and 4.2 (requirements traceability) |
-| `build_powerbi.py` | Builds dashboard v2 from v1 (labels, alt text, tab order, units) |
+| `build_powerbi_v3.py` | Builds the current dashboard (v3) from `outputs/powerbi/*.csv`: six pages, research-question tags, alt text, portable data folder |
+| `build_powerbi.py` | Builds the earlier dashboard v2 from v1 (kept for the evaluation record) |
 | `inspect_pbip.py` | Lists every dashboard page and visual, with its fields and text, for evaluation |
 | `md_to_docx.py` | Converts `markdown/*.md` to `docs/*.docx` |
 
@@ -43,7 +44,13 @@ python code/check_reproducibility.py
 - **Expected result:** all 15 validation checks pass and 20 models are fitted. `outputs/reproducibility_check.json` reports that the outputs are identical across runs.
 - **Running time:** about 2 minutes, because each model enumerates all 512 bootstrap sign patterns.
 
-**Power BI:** open `powerbi/v2/Wastewater_Review.pbip` in Power BI Desktop. Its data connections still point to absolute paths on the author's computer; making them portable is planned for dashboard version 3.
+**Power BI (v3):**
+1. Run the analysis, which writes `outputs/powerbi/*.csv`, then `python code/build_powerbi_v3.py`.
+2. Open `powerbi/v3/Wastewater_Dashboard.pbip` in Power BI Desktop.
+3. Go to **Home → Transform data → Edit parameters** and set `DataFolder` to the full path of this repository's `outputs\powerbi\` folder, including the final backslash.
+4. Click **Refresh**.
+
+The six pages are: trends (RQ1), audited values (RQ1), associations (RQ2–RQ3), what can be detected (RQ2–RQ4), history and coverage (RQ1), and definitions and limits (RQ4).
 
 ## Data sources (all public, Ofwat; Open Government Licence)
 

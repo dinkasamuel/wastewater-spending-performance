@@ -1,0 +1,201 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "81dd518d59e8bf34423e",
+  "position": {
+    "x": 20,
+    "y": 112,
+    "z": 1,
+    "width": 1240,
+    "height": 260,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "outcome"
+                }
+              },
+              "queryRef": "pbi_detectability.outcome",
+              "nativeQueryRef": "outcome",
+              "displayName": "Outcome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "pbi_detectability.unit",
+              "nativeQueryRef": "unit",
+              "displayName": "Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "average_rate"
+                }
+              },
+              "queryRef": "pbi_detectability.average_rate",
+              "nativeQueryRef": "average_rate",
+              "displayName": "Average rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "difference_per_10pct"
+                }
+              },
+              "queryRef": "pbi_detectability.difference_per_10pct",
+              "nativeQueryRef": "difference_per_10pct",
+              "displayName": "Estimated difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "ci95_low"
+                }
+              },
+              "queryRef": "pbi_detectability.ci95_low",
+              "nativeQueryRef": "ci95_low",
+              "displayName": "95% range: low"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "ci95_high"
+                }
+              },
+              "queryRef": "pbi_detectability.ci95_high",
+              "nativeQueryRef": "ci95_high",
+              "displayName": "95% range: high"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "detectable_difference_80pct"
+                }
+              },
+              "queryRef": "pbi_detectability.detectable_difference_80pct",
+              "nativeQueryRef": "detectable_difference_80pct",
+              "displayName": "Smallest detectable difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "detectable_pct_of_average"
+                }
+              },
+              "queryRef": "pbi_detectability.detectable_pct_of_average",
+              "nativeQueryRef": "detectable_pct_of_average",
+              "displayName": "As % of average rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_detectability"
+                    }
+                  },
+                  "Property": "plain_message"
+                }
+              },
+              "queryRef": "pbi_detectability.plain_message",
+              "nativeQueryRef": "plain_message",
+              "displayName": "In plain words"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Main models: estimate and detectable size'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of the three main models showing the estimated difference, its 95 percent range and the smallest difference the data could reliably detect.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

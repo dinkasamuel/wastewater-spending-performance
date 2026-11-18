@@ -1,0 +1,246 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "925010def2f8222cac7f",
+  "position": {
+    "x": 235,
+    "y": 112,
+    "z": 3,
+    "width": 1025,
+    "height": 420,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "outcome"
+                }
+              },
+              "queryRef": "pbi_models.outcome",
+              "nativeQueryRef": "outcome",
+              "displayName": "Outcome"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "specification"
+                }
+              },
+              "queryRef": "pbi_models.specification",
+              "nativeQueryRef": "specification",
+              "displayName": "Specification"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "role"
+                }
+              },
+              "queryRef": "pbi_models.role",
+              "nativeQueryRef": "role",
+              "displayName": "Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "years"
+                }
+              },
+              "queryRef": "pbi_models.years",
+              "nativeQueryRef": "years",
+              "displayName": "Years"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "company_years"
+                }
+              },
+              "queryRef": "pbi_models.company_years",
+              "nativeQueryRef": "company_years",
+              "displayName": "Company-years"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "companies"
+                }
+              },
+              "queryRef": "pbi_models.companies",
+              "nativeQueryRef": "companies",
+              "displayName": "Companies"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "difference_per_10pct"
+                }
+              },
+              "queryRef": "pbi_models.difference_per_10pct",
+              "nativeQueryRef": "difference_per_10pct",
+              "displayName": "Difference for +10% spending"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "ci95_low"
+                }
+              },
+              "queryRef": "pbi_models.ci95_low",
+              "nativeQueryRef": "ci95_low",
+              "displayName": "95% range: low"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "ci95_high"
+                }
+              },
+              "queryRef": "pbi_models.ci95_high",
+              "nativeQueryRef": "ci95_high",
+              "displayName": "95% range: high"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "range_includes_zero"
+                }
+              },
+              "queryRef": "pbi_models.range_includes_zero",
+              "nativeQueryRef": "range_includes_zero",
+              "displayName": "Range includes zero?"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "p_wild_bootstrap"
+                }
+              },
+              "queryRef": "pbi_models.p_wild_bootstrap",
+              "nativeQueryRef": "p_wild_bootstrap",
+              "displayName": "Wild-bootstrap p-value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pbi_models"
+                    }
+                  },
+                  "Property": "detectable_difference_80pct"
+                }
+              },
+              "queryRef": "pbi_models.detectable_difference_80pct",
+              "nativeQueryRef": "detectable_difference_80pct",
+              "displayName": "Smallest detectable difference"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'All 20 model results (stored values; filters do not refit any model)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of model results: difference in each outcome for 10 percent more spending, 95 percent range, p-value and smallest detectable difference.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
