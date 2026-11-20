@@ -1,10 +1,14 @@
 # References
 
-*UWE Harvard style. This list contains only sources cited in Chapters 1–4, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
+*UWE Harvard style. This list contains only sources cited in Chapters 1–6, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
+
+Bloom, H.S. (1995) Minimum detectable effects: a simple way to report the statistical power of experimental designs. *Evaluation Review* [online]. 19 (5), pp. 547–556. Available from: https://doi.org/10.1177/0193841X9501900504 [Accessed 20 November 2026].
 
 Environment Agency (2025a) *Water and sewerage companies in England: environmental performance report 2024* [online]. Available from: https://www.gov.uk/government/publications/water-and-sewerage-companies-in-england-environmental-performance-report-2024 [Accessed 26 October 2026].
 
 Environment Agency (2025b) *Water and sewerage companies in England: EPA metric guide for 2024* [online]. Available from: https://www.gov.uk/government/publications/water-and-sewerage-companies-in-england-environmental-performance-report-2024/water-and-sewerage-companies-in-england-epa-metric-guide-for-2024 [Accessed 26 October 2026].
+
+Holm, S. (1979) A simple sequentially rejective multiple test procedure. *Scandinavian Journal of Statistics* [online]. 6 (2), pp. 65–70. Available from: https://www.jstor.org/stable/4615733 [Accessed 20 November 2026].
 
 MacKinnon, J.G., Nielsen, M.Ø. and Webb, M.D. (2023) Cluster-robust inference: a guide to empirical practice. *Journal of Econometrics* [online]. 232 (2), pp. 272–299. Available from: https://doi.org/10.1016/j.jeconom.2022.04.001 [Accessed 26 October 2026].
 
@@ -15,8 +19,6 @@ Maziotis, A., Sala-Garrido, R., Mocholi-Arce, M. and Molinos-Senante, M. (2023) 
 Maziotis, A., Sala-Garrido, R., Mocholi-Arce, M. and Molinos-Senante, M. (2024a) Estimating the impact of carbon inefficiency and overuse of energy on the economics of water companies: a case study for England and Wales. *Sustainable Development* [online]. 32 (4), pp. 3601–3611. Available from: https://doi.org/10.1002/sd.2843 [Accessed 26 October 2026].
 
 Maziotis, A., Sala-Garrido, R., Mocholi-Arce, M. and Molinos-Senante, M. (2024b) Understanding water-energy-carbon nexus in English and Welsh water industry by assessing eco-productivity of water companies. *npj Clean Water* [online]. 7, article 121. Available from: https://doi.org/10.1038/s41545-024-00420-8 [Accessed 26 October 2026].
-
-Microsoft (n.d.) *Understand star schema and the importance for Power BI* [online]. Available from: https://learn.microsoft.com/power-bi/guidance/star-schema [Accessed 26 October 2026].
 
 Molinos-Senante, M., Maziotis, A., Sala-Garrido, R. and Mocholi-Arce, M. (2025) Benchmarking energy efficiency in water utilities: evidence from England and Wales. *Computers & Industrial Engineering* [online]. 209, article 111457. Available from: https://doi.org/10.1016/j.cie.2025.111457 [Accessed 26 October 2026].
 

@@ -73,7 +73,7 @@ The artefact separates four layers:
 
 The presentation layer reads the approved tables; it does not refit any model inside a visual.
 
-The Power BI model is a star schema. Company, year and metric dimensions filter the fact tables for observations, historical outcomes and model results (Microsoft, n.d.). Model estimates are stored separately from observed regulatory values, so an estimate cannot be mistaken for a reported figure. Each metric record carries its unit, its direction of better performance and both its reporting and measurement periods.
+The Power BI model holds six flat tables written by the analysis, with no relationships between them. A filter on one page therefore cannot change a model result stored on another. Model estimates are kept separately from observed regulatory values, so an estimate cannot be mistaken for a reported figure. Each measure carries its unit, its direction of better performance and its period basis.
 
 Component and use-case diagrams for the final artefact appear in Appendix B.
 
