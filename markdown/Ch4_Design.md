@@ -87,4 +87,4 @@ The data are public, company-level regulatory statistics with no personal inform
 - the company ranking excluded by R14 is not produced;
 - uncertainty intervals accompany every estimate.
 
-The user study (R12b) requires approval under UWE's research ethics procedures before any recruitment (UWE Bristol, n.d.). If approval is not obtained in time, the study is omitted, not run informally. Appendix A records the ethical review and the disclosure of AI assistance.
+The user study (R12b) requires approval under UWE's research ethics procedures before any recruitment (UWE Bristol, n.d.a). If approval is not obtained in time, the study is omitted, not run informally. Appendix A records the ethical review and the disclosure of AI assistance.

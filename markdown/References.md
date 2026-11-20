@@ -1,6 +1,8 @@
 # References
 
-*UWE Harvard style. This list contains only sources cited in Chapters 1–7, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
+*UWE Harvard style. This list contains only sources cited in Chapters 1–7 and Appendix A, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
+
+Anthropic (2026) *Claude Opus 5.5* [Large language model, accessed through the Claude Code desktop application]. Available from: https://claude.ai [Accessed 18–20 November 2026].
 
 Bloom, H.S. (1995) Minimum detectable effects: a simple way to report the statistical power of experimental designs. *Evaluation Review* [online]. 19 (5), pp. 547–556. Available from: https://doi.org/10.1177/0193841X9501900504 [Accessed 20 November 2026].
 
@@ -44,7 +46,9 @@ Ofwat (2025e) *PR24CA06 – WW1 – FD: wastewater network plus dataset (updated
 
 Ofwat (2026) *Historical performance trends for PR24 V6.0* [online]. Available from: https://www.ofwat.gov.uk/publication/historical-performance-trends-for-pr24-v6-0/ [Accessed 18 November 2026].
 
-UWE Bristol (n.d.) *Research ethics* [online]. Available from: https://www.uwe.ac.uk/research/policies-and-standards/research-ethics [Accessed 18 November 2026].
+UWE Bristol (n.d.a) *Research ethics* [online]. Available from: https://www.uwe.ac.uk/research/policies-and-standards/research-ethics [Accessed 18 November 2026].
+
+UWE Bristol (n.d.b) *Using generative AI at UWE Bristol* [online]. Available from: https://www.uwe.ac.uk/study/study-support/study-skills/using-generative-ai-at-uwe-bristol [Accessed 20 November 2026].
 
 Vilarinho, H., Pereira, M.A., D'Inverno, G., Nóvoa, H. and Camanho, A.S. (2024) Water Utility Service Quality Index: a customer-centred approach for assessing the quality of service in the water sector. *Socio-Economic Planning Sciences* [online]. 92, article 101797. Available from: https://doi.org/10.1016/j.seps.2023.101797 [Accessed 26 October 2026].
 

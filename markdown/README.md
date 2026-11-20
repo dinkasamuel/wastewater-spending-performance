@@ -71,6 +71,8 @@ The six pages are: trends (RQ1), audited values (RQ1), associations (RQ2–RQ3),
 
 Requirements R01–R14 are linked to research questions RQ1–RQ4, to workflow actions in Figure 4.1 and to artefact locations in Figure 4.2 and `docs/Requirements_register.csv`. Code sections are tagged with the requirements and research questions they address.
 
-## Attribution
+## Attribution and use of generative AI
 
-All code was written for this project with AI assistance (Anthropic's Claude), under the author's direction and review. The statistical methods follow MacKinnon, Nielsen and Webb (2023). The AI-use disclosure is in Appendix A of the report.
+This project is the work of Dinka Christabel Samuel. Generative AI (Claude Opus 5.5, Anthropic) was used as an assistant for writing and debugging code, checking data sources, testing the dashboard and drafting text. The research questions, scope, analytical decisions and final text are the author's, and every reported result is generated and checked by the code in this repository. The full declaration of AI use is in Appendix A of the report.
+
+The statistical methods follow MacKinnon, Nielsen and Webb (2023). All data are public Ofwat publications, used under the Open Government Licence.
