@@ -152,3 +152,48 @@ F1, F2, F3, F6 and F7 were confirmed fixed in Desktop after a rebuild.
 | L14: save and reopen | PASS: saved as `powerbi/v3/Wastewater_Dashboard.pbix` (117 KB); reopened with all six pages and the data embedded, so no refresh is needed. It opens on the last active page |
 
 **Status:** all checks L0–L14 have been run. Every one passes after fixes F1–F9, except for one minor cosmetic point: the sources table on page 6 needs a small scroll.
+
+---
+
+## Heuristic review and colour-contrast check (R12a), 20 Nov 2026
+
+**Method:**
+- **Heuristic review:** dashboard v3 was inspected page by page in Power BI Desktop against Nielsen's (1994) ten usability heuristics. Each problem was rated on Nielsen's severity scale: 0 = not a problem, 1 = cosmetic, 2 = minor, 3 = major, 4 = catastrophe.
+- **Contrast check:** colour contrast was computed against WCAG 2.1 (W3C, 2018) by `code/check_contrast.py`, which writes `outputs/contrast_check.csv`.
+- **Who did it:** the review was carried out with AI assistance and checked by the researcher. It is an expert review, not a user study.
+
+### Heuristic review
+
+| # | Heuristic | Evidence | Problem found | Severity | Action |
+|---|---|---|---|---|---|
+| H1 | Visibility of system status | Selections stay visible in slicers. Header names data sources | Outcome data release date not shown | 1 | Fixed (F12): "V6.0 (Jan 2026)" added |
+| H2 | Match with the real world | Plain labels, units, "lower is better" | Statistical terms on page 3 (CV3, wild-bootstrap p-value) | 2 | Mitigated: "How to read this page" box; kept for specialists |
+| H3 | User control and freedom | Slicer selections can be cleared | No one-click reset in Desktop | 1 | None |
+| H4 | Consistency and standards | Same header pattern, slicer position and unit-in-title on all six pages | None | 0 | None |
+| H5 | Error prevention | Two outcomes cannot be combined. Filters cannot refit models | None | 0 | None |
+| H6 | Recognition rather than recall | Chart lines labelled with three-letter codes | Codes had to be remembered; long names were cut off in narrow slicers | 2 | Fixed (F11): slicers and tables show "ANH – Anglian Water", code first so it stays visible |
+| H7 | Flexibility and efficiency | Slicers, table export | None | 0 | None |
+| H8 | Aesthetic and minimalist design | Nine lines per chart; 12-column table on page 3 | Visual density | 2 | Mitigated: company slicer, "Type of result" filter, main models listed first |
+| H9 | Recognise and recover from errors | Empty chart explains itself ("Select exactly one outcome") | None | 0 | None |
+| H10 | Help and documentation | Definitions page, reading notes, README | No in-report link to help | 1 | None |
+
+**No problem was rated major (3) or catastrophic (4).**
+
+### Colour contrast (WCAG 2.1)
+
+| Element | Result |
+|---|---|
+| All text colours (5) | PASS: 6.19:1 to 15.52:1 against white (4.5:1 needed, WCAG 1.4.3) |
+| Company line colours (9) | 8 PASS. United Utilities' yellow (#D9B300) was 2.02:1, below the 3:1 needed for graphics (WCAG 1.4.11) |
+
+**F10 fix:** United Utilities is now drawn in a darker gold (#9A7B00, 4.03:1).
+
+Changing the theme file stopped the report loading in Desktop, so each company's colour is instead set explicitly on every line chart. A single override had shifted the other companies' colours, which is why all nine are set.
+
+**Re-test in Desktop:**
+- every company colour is correct;
+- the slicers show "ANH – Anglian Water";
+- all 14 colour checks pass;
+- the `.pbix` was re-saved.
+
+**Remaining limits:** H2 and H8 at severity 2; small header text at 63% zoom (L11).

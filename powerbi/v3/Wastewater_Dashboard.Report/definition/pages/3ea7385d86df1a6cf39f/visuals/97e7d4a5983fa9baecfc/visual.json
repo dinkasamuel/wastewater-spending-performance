@@ -23,11 +23,11 @@
                       "Entity": "pbi_outcomes_long"
                     }
                   },
-                  "Property": "company_name"
+                  "Property": "company_label"
                 }
               },
-              "queryRef": "pbi_outcomes_long.company_name",
-              "nativeQueryRef": "company_name",
+              "queryRef": "pbi_outcomes_long.company_label",
+              "nativeQueryRef": "company_label",
               "displayName": "Company",
               "active": true
             }

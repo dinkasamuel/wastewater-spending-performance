@@ -30,7 +30,7 @@ The dashboard went through three evaluation rounds, and each round found real de
 
 **Remaining limitation.** On a 1456×819 laptop screen, the page fits at 63% zoom, and small header text remains hard to read.
 
-**[TO COMPLETE before submission: structured heuristic review against Nielsen's ten usability heuristics and a colour-contrast check (R12a); add the Nielsen reference.]**
+**Heuristic review and contrast.** An expert review against Nielsen's (1994) ten heuristics found no major problems. Two minor problems were fixed: company codes had to be remembered, and the data release date was not shown. Two were mitigated: statistical terms on page 3 and the density of nine-line charts. A WCAG 2.1 contrast check (W3C, 2018) passed all text colours. One line colour failed at 2.0:1 against the 3:1 needed for graphics, and was replaced (4.0:1).
 
 ## 7.3 User evaluation (R12b) and RQ4
 
@@ -44,8 +44,7 @@ The dashboard went through three evaluation rounds, and each round found real de
 
 | Status | Requirements |
 |---|---|
-| Met and tested | R01–R11 |
-| Partly met | R12a: live checks done; heuristic review and contrast check outstanding |
+| Met and tested | R01–R11, R12a |
 | Pending ethics | R12b |
 | Not attempted | R13 (Could): no export view |
 | Respected | R14: no forecast or company ranking is produced |

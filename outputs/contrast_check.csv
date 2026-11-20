@@ -1,0 +1,15 @@
+element,colour,background,type,ratio,required,passes
+Header title (navy),#17333B,#FFFFFF,text,13.35,4.5,True
+Header tags (blue),#1F5F8B,#FFFFFF,text,6.84,4.5,True
+Header context (grey),#36535C,#FFFFFF,text,8.24,4.5,True
+Table and axis text (theme foreground),#242424,#FFFFFF,text,15.52,4.5,True
+Secondary text (theme),#616161,#FFFFFF,text,6.19,4.5,True
+Line colour 1 (ANH),#118DFF,#FFFFFF,graphic,3.35,3.0,True
+Line colour 2 (NES),#12239E,#FFFFFF,graphic,11.93,3.0,True
+Line colour 3 (SRN),#E66C37,#FFFFFF,graphic,3.2,3.0,True
+Line colour 4 (SVE),#6B007B,#FFFFFF,graphic,10.99,3.0,True
+Line colour 5 (SWB),#E044A7,#FFFFFF,graphic,3.78,3.0,True
+Line colour 6 (TMS),#744EC2,#FFFFFF,graphic,5.81,3.0,True
+Line colour 7 (UUW),#9A7B00,#FFFFFF,graphic,4.03,3.0,True
+Line colour 8 (WSX),#D64550,#FFFFFF,graphic,4.35,3.0,True
+Line colour 9 (YKY),#197278,#FFFFFF,graphic,5.65,3.0,True

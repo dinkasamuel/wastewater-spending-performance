@@ -24,6 +24,14 @@ table pbi_outcomes_long
 
 		annotation SummarizationSetBy = User
 
+	column company_label
+		dataType: string
+		lineageTag: 5c9078ea-e701-5fc7-914c-48f5d0be3312
+		summarizeBy: none
+		sourceColumn: company_label
+
+		annotation SummarizationSetBy = User
+
 	column reporting_year
 		dataType: string
 		lineageTag: 046cd410-bcfa-5cc0-a67f-91d8f2b6fe46
@@ -93,10 +101,10 @@ table pbi_outcomes_long
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents(DataFolder & "pbi_outcomes_long.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Source = Csv.Document(File.Contents(DataFolder & "pbi_outcomes_long.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Blanks = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
-				    Typed = Table.TransformColumnTypes(Blanks, {{"company_code", type text}, {"company_name", type text}, {"reporting_year", type text}, {"year_start", Int64.Type}, {"outcome", type text}, {"unit", type text}, {"period_basis", type text}, {"value", type number}, {"available", type text}, {"in_main_window", type text}}, "en-GB")
+				    Typed = Table.TransformColumnTypes(Blanks, {{"company_code", type text}, {"company_name", type text}, {"company_label", type text}, {"reporting_year", type text}, {"year_start", Int64.Type}, {"outcome", type text}, {"unit", type text}, {"period_basis", type text}, {"value", type number}, {"available", type text}, {"in_main_window", type text}}, "en-GB")
 				in
 				    Typed
 

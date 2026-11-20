@@ -460,19 +460,21 @@ UNIT = {"sewer_flooding_rate": "incidents per 10,000 connections",
         "pollution_rate": "incidents per 10,000 km of sewer",
         "treatment_compliance_pct": "% of works compliant"}
 
-(balanced[["company_code", "company_name", "reporting_year", "year_start", "base_cost_per_property",
-           "base_cost_m_2223", "properties"] + list(OUTCOMES)]
+(balanced.assign(company_label=balanced.company_code + " – " + balanced.company_name)
+ [["company_code", "company_name", "company_label", "reporting_year", "year_start", "base_cost_per_property",
+   "base_cost_m_2223", "properties"] + list(OUTCOMES)]
  .rename(columns={"base_cost_per_property": "base_spend_per_property_gbp",
                   "base_cost_m_2223": "base_spend_gbp_m"})
  .to_csv(PBI / "pbi_panel.csv", index=False))
 
 long = outcomes_long.assign(
     company_name=outcomes_long.company_code.map(COMPANIES),
+    company_label=outcomes_long.company_code + " – " + outcomes_long.company_code.map(COMPANIES),
     reporting_year=outcomes_long.year_start.map(label),
     outcome=outcomes_long.metric.map(LABEL), unit=outcomes_long.metric.map(UNIT),
     available=np.where(outcomes_long.value.notna(), "Yes", "No (missing in source)"),
     in_main_window=np.where(outcomes_long.year_start.isin(BALANCED_YEARS), "Yes", "No"))
-long[["company_code", "company_name", "reporting_year", "year_start", "outcome", "unit",
+long[["company_code", "company_name", "company_label", "reporting_year", "year_start", "outcome", "unit",
       "period_basis", "value", "available", "in_main_window"]].to_csv(PBI / "pbi_outcomes_long.csv", index=False)
 
 

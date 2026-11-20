@@ -1,6 +1,6 @@
 # References
 
-*UWE Harvard style. This list contains only sources cited in Chapters 1–6, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
+*UWE Harvard style. This list contains only sources cited in Chapters 1–7, and each was checked against the chapter text on 18 November 2026. Journal DOIs are to be re-verified before submission (review item A6).*
 
 Bloom, H.S. (1995) Minimum detectable effects: a simple way to report the statistical power of experimental designs. *Evaluation Review* [online]. 19 (5), pp. 547–556. Available from: https://doi.org/10.1177/0193841X9501900504 [Accessed 20 November 2026].
 
@@ -26,6 +26,8 @@ Mukherjee, M. and Jensen, O. (2022) Open Water: impacts of retail competition on
 
 National Audit Office (2025) *Regulating for investment and outcomes in the water sector* [online]. Available from: https://www.nao.org.uk/reports/regulating-for-investment-and-outcomes-in-the-water-sector/ [Accessed 26 October 2026].
 
+Nielsen, J. (1994) *10 usability heuristics for user interface design* [online]. Nielsen Norman Group. Available from: https://www.nngroup.com/articles/ten-usability-heuristics/ [Accessed 20 November 2026].
+
 Ofwat (2023) *IN 23/07 Assessing the influence of enhancement expenditure on historical performance trends for PR24* [online]. Available from: https://www.ofwat.gov.uk/wp-content/uploads/2023/07/IN-23.07-Influence-of-enhancement-expenditure-on-historical-performance-trends.pdf [Accessed 26 October 2026].
 
 Ofwat (2024) *PR24 final determinations: base costs – wastewater model 3 (network plus)* [online]. Available from: https://www.ofwat.gov.uk/wp-content/uploads/2024/12/PR24-FD-CA08-Base-costs-wastewater-model-3-Network-Plus.xlsx [Accessed 18 November 2026].
@@ -45,3 +47,5 @@ Ofwat (2026) *Historical performance trends for PR24 V6.0* [online]. Available f
 UWE Bristol (n.d.) *Research ethics* [online]. Available from: https://www.uwe.ac.uk/research/policies-and-standards/research-ethics [Accessed 18 November 2026].
 
 Vilarinho, H., Pereira, M.A., D'Inverno, G., Nóvoa, H. and Camanho, A.S. (2024) Water Utility Service Quality Index: a customer-centred approach for assessing the quality of service in the water sector. *Socio-Economic Planning Sciences* [online]. 92, article 101797. Available from: https://doi.org/10.1016/j.seps.2023.101797 [Accessed 26 October 2026].
+
+W3C (2018) *Web Content Accessibility Guidelines (WCAG) 2.1* [online]. World Wide Web Consortium. Available from: https://www.w3.org/TR/WCAG21/ [Accessed 20 November 2026].

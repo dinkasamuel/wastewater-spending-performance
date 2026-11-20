@@ -31,6 +31,11 @@ NAME = "Wastewater_Dashboard"
 THEME_SRC = ROOT / "powerbi" / "v2" / "Wastewater_Review.Report" / "StaticResources"
 DEFAULT_FOLDER = str(DATA) + "\\"          # author's path; markers change the parameter
 NAVY, GREY = "#17333B", "#36535C"
+# Explicit, fixed colour per company on every line chart (theme order), so overriding one colour
+# cannot shift the others. United Utilities' theme colour #D9B300 is 2.0:1 on white and fails
+# WCAG 1.4.11, so it is replaced by a darker gold #9A7B00 (4.0:1; see check_contrast.py).
+COMPANY_COLOURS = {"ANH": "#118DFF", "NES": "#12239E", "SRN": "#E66C37", "SVE": "#6B007B", "SWB": "#E044A7",
+                   "TMS": "#744EC2", "UUW": "#9A7B00", "WSX": "#D64550", "YKY": "#197278"}
 SCHEMA = "https://developer.microsoft.com/json-schemas/fabric"
 
 
@@ -227,6 +232,14 @@ def line_chart(table, measure, title, alt, series="company_code", series_name="C
                   "Y": {"projections": [field(table, measure, measure=True)]}},
                   "sortDefinition": sort},
               "objects": {"seriesLabels": [{"properties": {"show": lit("true")}}],
+                          "dataPoint": [{
+                              "properties": {"fill": {"solid": {"color": text_lit(colour)}}},
+                              "selector": {"data": [{"scopeId": {"Comparison": {
+                                  "ComparisonKind": 0,
+                                  "Left": {"Column": {"Expression": {"SourceRef": {"Entity": table}},
+                                                      "Property": series}},
+                                  "Right": {"Literal": {"Value": f"'{code}'"}}}}}]}}
+                              for code, colour in COMPANY_COLOURS.items()],
                           "lineStyles": [{"properties": {"lineChartType": text_lit("linear"),
                                                          "showMarker": lit("true")}}]}}
     visual = decorate(visual, title=title, alt=alt)
@@ -241,14 +254,14 @@ def page(name, items):
     PAGES.append((vid("page", name), name, items))
 
 
-SRC_NOTE = "Source: Ofwat PR24 base-cost data (CA06, Oct 2025) and PR24 historical performance trends V6.0."
+SRC_NOTE = "Source: Ofwat PR24 base-cost data (CA06, Oct 2025) and PR24 historical performance trends V6.0 (Jan 2026)."
 page("1 Trends", [
     ("header", 20, 10, 1240, 92, header(
         "How spending and outcomes changed, 2017-18 to 2024-25",
         "Answers RQ1  ·  Objective 2  ·  Requirements R06, R09",
         "Base spending per connected property in 2022-23 prices; outcomes in their own units. Flooding, collapses and "
         "pollution: lower is better. Pollution is measured by calendar year. " + SRC_NOTE)),
-    ("company", 20, 112, 170, 290, slicer("pbi_panel", "company_name", "Company")),
+    ("company", 20, 112, 170, 290, slicer("pbi_panel", "company_label", "Company")),
     ("year", 20, 412, 170, 290, slicer("pbi_panel", "reporting_year", "Reporting year")),
     ("spend", 205, 112, 525, 290, line_chart("pbi_panel", "Base spending per property",
         "Base spending per property | GBP, 2022-23 prices",
@@ -268,10 +281,10 @@ page("2 Values", [
         "Audited values: one row per company and reporting year",
         "Answers RQ1  ·  Objective 1  ·  Requirements R03, R04, R09",
         "Values are exactly those used in the analysis (72 company-years). Rates are never summed. " + SRC_NOTE)),
-    ("company", 20, 112, 170, 290, slicer("pbi_panel", "company_name", "Company")),
+    ("company", 20, 112, 170, 290, slicer("pbi_panel", "company_label", "Company")),
     ("year", 20, 412, 170, 290, slicer("pbi_panel", "reporting_year", "Reporting year")),
     ("table", 205, 112, 1055, 590, table_visual("pbi_panel", [
-        ("company_name", "Company"), ("reporting_year", "Reporting year"),
+        ("company_label", "Company"), ("reporting_year", "Reporting year"),
         ("base_spend_per_property_gbp", "Base spending per property (GBP, 2022-23 prices)"),
         ("base_spend_gbp_m", "Base spending (GBP m, 2022-23 prices)"),
         ("properties", "Connected properties"),
@@ -338,7 +351,7 @@ page("5 History and coverage", [
         "Select exactly one outcome. Missing values stay blank and are never shown as zero. The main analysis uses "
         "2017-18 to 2024-25, the years in which every company reports every outcome.")),
     ("outcome", 20, 112, 200, 200, slicer("pbi_outcomes_long", "outcome", "Outcome")),
-    ("company", 20, 322, 200, 380, slicer("pbi_outcomes_long", "company_name", "Company")),
+    ("company", 20, 322, 200, 380, slicer("pbi_outcomes_long", "company_label", "Company")),
     ("chart", 235, 112, 600, 330, line_chart("pbi_outcomes_long", "Selected outcome value",
         {"expr": {"Measure": {"Expression": {"SourceRef": {"Entity": "pbi_outcomes_long"}},
                               "Property": "Outcome chart title"}}},
@@ -348,7 +361,7 @@ page("5 History and coverage", [
         "Data coverage by outcome and year",
         "Table showing how many of the nine companies have data for each outcome in each year.")),
     ("table", 235, 452, 1025, 250, table_visual("pbi_outcomes_long", [
-        ("company_name", "Company"), ("reporting_year", "Reporting year"), ("outcome", "Outcome"), ("unit", "Unit"),
+        ("company_label", "Company"), ("reporting_year", "Reporting year"), ("outcome", "Outcome"), ("unit", "Unit"),
         ("period_basis", "Period basis"), ("value", "Value"), ("available", "Available?"),
         ("in_main_window", "In main analysis?")],
         "Outcome values with period and availability",
@@ -384,8 +397,8 @@ def build_report():
                              "metadata": {"type": "Report", "displayName": NAME},
                              "config": {"version": "2.0", "logicalId": uid("report")}})
     shutil.copytree(THEME_SRC, rp / "StaticResources", dirs_exist_ok=True)
-    v2_report = json.loads((ROOT / "powerbi/v2/Wastewater_Review.Report/definition/report.json").read_text(encoding="utf-8"))
-    write(rp / "definition" / "report.json", v2_report)
+    report = json.loads((ROOT / "powerbi/v2/Wastewater_Review.Report/definition/report.json").read_text(encoding="utf-8"))
+    write(rp / "definition" / "report.json", report)
     write(rp / "definition" / "version.json", {"$schema": f"{SCHEMA}/item/report/definition/versionMetadata/1.0.0/schema.json",
                                                "version": "2.0.0"})
     write(rp / "definition" / "pages" / "pages.json", {
@@ -428,7 +441,7 @@ def static_checks(fields, used):
 if __name__ == "__main__":
     if OUT.exists():                       # clear old files; empty folders locked by Windows may remain
         for f in sorted(OUT.rglob("*"), reverse=True):
-            if f.is_file():
+            if f.is_file() and f.suffix != ".pbix":     # keep the saved .pbix copy
                 f.unlink()
             else:
                 try:
