@@ -1,0 +1,48 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.10.6"
+  },
+  "inputs_sha256": {
+    "PR24CA06-WW1-FD.xlsx": "62341d351c76a94aa2504223d70800e765aa7ddb9e93625b62e35776dcdfd139",
+    "PR24-FD-CA08-Base-costs-wastewater-model-3-Network-Plus.xlsx": "23b3e89578c08db7a34e0496e7a3730cfabcf1dfa228c0e095db22cf6b94932c",
+    "WCPR_2024-25-Open-Data-Machine-Readable-Normalised-PostFDUpdate.xlsx": "62fe9156388f76c04e36cd494ba927124dc7f239928dc0f7e1e257b91168976b",
+    "WCPR-data-report-2024-25-external-V0.2-Final.xlsx": "669ea7a229df3f8f4850b562ef5cd04a64ed7602e6d5e4c606182c8664dae131",
+    "Historical-performance-trends-for-PR24-V6.0.xlsx": "a56d982ac474e09c05d786a957f438358144182c006f7d7514dea1da02faffc4"
+  },
+  "main_window": "2017-18 to 2024-25 (balanced, 72 company-years)",
+  "spending_measure": "Ofwat modelled base costs, wastewater network plus, GBP 2022-23 prices, per connected property",
+  "models": 20,
+  "checks_passed": 15,
+  "outputs_sha256": {
+    "3_results/dashboard_tables/pbi_coverage.csv": "e1cbd631e3704d40e0c16c3299efefd4af6566613d9b1de1540ab9917e4b7edc",
+    "3_results/dashboard_tables/pbi_detectability.csv": "d5b5ec7e762c597a315a0e57293ec2418f8972a3efbcdd08904a61f1783e142d",
+    "3_results/dashboard_tables/pbi_dictionary.csv": "c3676ffefcb1f58dd9565fd385524cd127b1a1e36b314b97871f5064269dac0f",
+    "3_results/dashboard_tables/pbi_models.csv": "9995e1627c627d5ecee6dba14fe9ae0d2f50155479e4f77830e42de4b179cc4e",
+    "3_results/dashboard_tables/pbi_outcomes_long.csv": "9ffee95d76e64b66887a102d2b92730e79a182afe9a298ae0bd4633b68708930",
+    "3_results/dashboard_tables/pbi_panel.csv": "4650e59b2df88f52371b6788e0259a0196b079c763ff1e57f832bd1f3c830491",
+    "3_results/figures/fig4_1_project_activity.png": "6b6c979fc49dfde71ce7c15bfc7aff8a2bfaf00ad262a395c7615da89870eef5",
+    "3_results/figures/fig4_2_requirements_traceability.png": "cc7c1a42a0f8d9c3c48da69004553fd6b797aed815d7efd6f5f11917d5152cd2",
+    "3_results/figures/fig_association_estimates.png": "d0a2f856dfb5c9b9c4f3596a83730b13dc40fe9edc50d944bb42eff8658829cc",
+    "3_results/figures/fig_company_trends.png": "b2964f4f3db83c6b964ff39f8f3222a02a1954a870e081dee91bb48db460a55d",
+    "3_results/figures/fig_outcome_coverage.png": "5c200a7cb6733f340a9fd83083674af40398bdab228f9103eda2d9db2d126bf2",
+    "3_results/tables/base_costs_actual.csv": "653eb4fa13a3caf4f862361c2917527960a2b75292e50b208de9e43656770e82",
+    "3_results/tables/company_omission_results.csv": "16891b8ee3414048e3a2133959ab20a5d27856dc50c957f101bb9fcec2f1331e",
+    "3_results/tables/contrast_check.csv": "1d17507cbd4cb00e3fa2968722ec2de6ed1e5fe76fd857e1a03929252e5c9704",
+    "3_results/tables/model_results.csv": "a265ef143cd6586a081ffcb3a2f3d1b1c1f7209d44b764872360ce7bd2e1b9c7",
+    "3_results/tables/outcome_coverage.csv": "6be81c42ff94e9a53c768d3693594450c7cac1f404ccb4be5132b5fd55543a6f",
+    "3_results/tables/panel_all_years.csv": "cbaa6ec3a92de4f1f05d1b3f77a7fe7e93f06571041b78470f8b573afc1cf80e",
+    "3_results/tables/panel_main_balanced.csv": "f0ab5b2fe42444a1c73aef0057391d75089d4660f4caea3d75639b63f0f9cff5",
+    "3_results/tables/pr24_outcomes_long.csv": "cd64048370f69ba3e4e8082749269a35745a5f9bc7d998df06a3a95459dcca7f",
+    "3_results/tables/property_crosscheck.csv": "7d76ee286f70d188e04ada76ffcb2bf7cabfd8621a5ecb7f01ee67949a057cb0",
+    "3_results/tables/rq1_change_2017_to_2024.csv": "3db4e62676f63f8d4cb01c1168529d173b0e17db1634fc0a0574f42314e8e757",
+    "3_results/tables/rq1_yearly_company_means.csv": "b8a71dee71782474be121f5c85d0971ee4770b3825c7991c496b3f490e4b096a",
+    "3_results/tables/v3_page2_export.csv": "bf45ff7480a57ce5e4613eb3acd8e71528523fd93eff722a684ee938aa3c0eb6",
+    "3_results/tables/validation_checks.csv": "baeedb971e23927b76eda96a103ffd8fd79761dfc8ec1ef870dab6636c14aaf6",
+    "3_results/tables/wcpr_baseline_2020_2025.csv": "8749149ab8e1023a926dde035e1b8a0d17c8bba4eaba7c2accd41e57d282cdb5"
+  }
+}

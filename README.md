@@ -2,77 +2,76 @@
 
 MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (student number 25067140).
 
-**Question:** when one of England's nine water and sewerage companies spends more than usual on running and maintaining its wastewater network (base spending), do sewer flooding, sewer collapses and pollution incidents change? The analysis compares each company with itself over time and allows for conditions that affect every company in a given year.
+**Question:** when one of England's nine water and sewerage companies spends more than usual on running and maintaining its wastewater network (base spending), do sewer flooding, sewer collapses and pollution incidents change?
 
-**Main finding:** over 2017-18 to 2024-25 (72 company-years) there is **no clear association** in either direction between spending and any of the three outcomes. A minimum-detectable-effect analysis shows how large a link would have to be before nine companies could reveal it. The results are associations, not causal effects.
+**Answer (2017-18 to 2024-25, 72 company-years):** there is **no clear association** in either direction for any of the three outcomes. With nine companies, only links of roughly a fifth of each outcome's average rate per 10% more spending could be reliably detected. These are associations, not causal effects.
 
-## Folder structure
+## Folders (in the order the work flows)
 
-| Folder | Contents |
+| Folder | What is in it |
 |---|---|
-| `code/` | Python scripts (see the table below) |
-| `notebooks/` | **`Wastewater_Analysis.ipynb`**: the executed analysis, with each section's research question, objective and requirements highlighted |
-| `data/raw/` | Ofwat source files, unchanged (see Data sources) |
-| `outputs/` | Generated CSV tables, validation checks, run manifest and reproducibility result |
-| `figures/` | Result charts and UML diagrams (PNG, plus SVG for the diagrams) |
-| `powerbi/` | Power BI dashboard projects: **`v3/` is current**; `v2/` and `v1_2026-11-16/` are earlier versions, kept for the evaluation record |
-| `docs/` | Word versions of every project document, plus the requirements register (CSV) |
-| `markdown/` | Editable Markdown sources of the documents in `docs/` |
+| `1_data/` | Ofwat source files, never edited |
+| `2_analysis/` | **`analysis.ipynb`**: the whole analysis in one notebook, plus `methods.py` (statistical functions) |
+| `3_results/` | `tables/` (CSV results and checks), `figures/` (charts and UML diagrams), `dashboard_tables/` (data for Power BI) |
+| `4_dashboard/` | **`Wastewater_Dashboard.pbip`**: the Power BI dashboard (also saved as `.pbix`) |
+| `5_report/` | Report chapters, appendices and references (Word), with their Markdown sources in `5_report/markdown/` |
+| `6_project_records/` | Ethics pack, decision log, evaluation log, live-check sheet, plans and reviews |
+| `tools/` | Helpers you rarely need (see below) |
 
-### Scripts in `code/`
+## How to run it
 
-| Script | What it does |
+Requires Python 3.13 with the packages in `requirements.txt`; the reported run used Anaconda Python 3.13.9.
+
+1. **Analysis:** open `2_analysis/analysis.ipynb` in Jupyter and choose *Kernel → Restart & Run All*. Or, from the project folder:
+   ```bash
+   python tools/run_analysis.py
+   ```
+   It takes about one minute. Every step should finish without errors, ending with "All 15 checks passed; 20 models".
+2. **Check that it reproduces** (optional): this runs the notebook twice and confirms the results are byte-identical.
+   ```bash
+   python tools/check_reproducibility.py
+   ```
+3. **Dashboard:** open `4_dashboard/Wastewater_Dashboard.pbip` in Power BI Desktop. Go to *Home → Transform data → Edit parameters* and set `DataFolder` to the full path of this project's `3_results\dashboard_tables\` folder, ending with a backslash. Then click *Refresh*.
+
+## How to read the notebook
+
+The notebook has ten numbered steps. Each heading ends with one tag that shows what the step answers:
+
+> `Step 6 · Is spending associated with outcomes?  [RQ2 + RQ3 · Obj 3, 4 · R07 R08]`
+
+- **RQ** = research question (RQ1–RQ4, Chapter 1).
+- **Obj** = objective (1–6, Chapter 1).
+- **R** = requirement (R01–R14, Appendix B and Figure 4.2).
+
+Each result is followed by a **What this shows** note in plain English.
+
+The six dashboard pages carry the same tags in their headers.
+
+## Tools
+
+| Tool | Use |
 |---|---|
-| `wastewater_analysis.py` | **The full analysis.** Loads and validates the data, builds the panels, then runs descriptive analysis (RQ1), association models (RQ2) and sensitivity checks (RQ3). Writes the tables and figures. Run it cell by cell (`# %%`) or as a whole |
-| `methods.py` | The statistical methods: two-way fixed-effects model, CV3 jackknife, wild-cluster bootstrap (all 512 sign patterns), minimum detectable effect, Holm adjustment and self-tests |
-| `make_notebook.py` | Generates and executes `notebooks/Wastewater_Analysis.ipynb` from the analysis script: blue boxes state what each section answers, green boxes give the insights |
-| `check_reproducibility.py` | Runs the analysis twice in fresh processes and confirms that every output is byte-identical |
-| `make_uml_figures.py` | Draws UML Figures 4.1 (project workflow) and 4.2 (requirements traceability) |
-| `build_powerbi_v3.py` | Builds the current dashboard (v3) from `outputs/powerbi/*.csv`: six pages, research-question tags, alt text, portable data folder |
-| `build_powerbi.py` | Builds the earlier dashboard v2 from v1 (kept for the evaluation record) |
-| `inspect_pbip.py` | Lists every dashboard page and visual, with its fields and text, for evaluation |
-| `md_to_docx.py` | Converts `markdown/*.md` to `docs/*.docx` |
+| `run_analysis.py` | Runs the notebook from a fresh kernel and saves it |
+| `check_reproducibility.py` | Runs the notebook twice and compares every output |
+| `build_dashboard.py` | Rebuilds the Power BI dashboard from `3_results/dashboard_tables/` |
+| `check_contrast.py` | Checks dashboard colours against WCAG 2.1 contrast rules |
+| `inspect_dashboard.py` | Lists every dashboard page and visual, for evaluation |
+| `make_uml_figures.py` | Redraws UML Figures 4.1 and 4.2 |
+| `md_to_docx.py` | Turns the Markdown sources into the Word documents |
 
-## How to reproduce
+## Data sources (public, Ofwat; Open Government Licence)
 
-Requires Python 3.13 and the packages pinned in `requirements.txt`. The analysis was run with Anaconda Python 3.13.9.
-
-```bash
-pip install -r requirements.txt
-python code/wastewater_analysis.py
-python code/check_reproducibility.py
-```
-
-- **Expected result:** all 15 validation checks pass and 20 models are fitted. `outputs/reproducibility_check.json` reports that the outputs are identical across runs.
-- **Running time:** about 2 minutes, because each model enumerates all 512 bootstrap sign patterns.
-
-**Power BI (v3):** the quickest way is to open `powerbi/v3/Wastewater_Dashboard.pbix` in Power BI Desktop, which has the data embedded. To rebuild it from the code instead:
-1. Run the analysis, which writes `outputs/powerbi/*.csv`, then `python code/build_powerbi_v3.py`.
-2. Open `powerbi/v3/Wastewater_Dashboard.pbip` in Power BI Desktop.
-3. Go to **Home → Transform data → Edit parameters** and set `DataFolder` to the full path of this repository's `outputs\powerbi\` folder, including the final backslash.
-4. Click **Refresh**.
-
-The six pages are: trends (RQ1), audited values (RQ1), associations (RQ2–RQ3), what can be detected (RQ2–RQ4), history and coverage (RQ1), and definitions and limits (RQ4).
-
-## Data sources (all public, Ofwat; Open Government Licence)
-
-| File in `data/raw/` | Publisher and use |
+| File in `1_data/` | Use |
 |---|---|
-| `PR24CA06-WW1-FD.xlsx` | Ofwat, republished October 2025 for the CMA redeterminations. **Main spending source:** modelled base costs and connected properties for wastewater network plus, 2011-12 to 2024-25 actuals (later years are forecasts and are excluded) |
-| `PR24-FD-CA08-Base-costs-wastewater-model-3-Network-Plus.xlsx` | Ofwat PR24 final determinations, December 2024. Used to confirm that CA06 has the same definition: identical for 2011-12 to 2023-24 (check T01b) |
-| `Historical-performance-trends-for-PR24-V6.0.xlsx` | Ofwat. Outcomes: internal sewer flooding, sewer collapses, pollution incidents and treatment compliance, 2015-16 to 2024-25 |
-| `WCPR_2024-25-Open-Data-Machine-Readable-Normalised-PostFDUpdate.xlsx` | Ofwat Water Company Performance Report 2024-25. Total spending (totex), properties and outcomes for 2020-21 to 2024-25 |
-| `WCPR-data-report-2024-25-external-V0.2-Final.xlsx` | Ofwat companion workbook, used to cross-check every selected WCPR value |
-| `WCPR-2024-25-Open-Data-DataDictionary.csv` | Field definitions for the WCPR file |
-| `PR24-Cost-Assessment-Master-Dataset-Wholesale-Wastewater-Base-Costs-v4.xlsx` | Ofwat, April 2023. Earlier base-cost dataset; reference only, superseded by CA08 |
-| `RAG-4.13-Table-definitions-2025-03-31.pdf` | Ofwat regulatory accounting guideline defining totex (APR table 4C) |
+| `PR24CA06-WW1-FD.xlsx` | **Main spending source:** modelled base costs and connected properties, wastewater network plus, 2011-12 to 2024-25 actuals (Ofwat, October 2025) |
+| `PR24-FD-CA08-Base-costs-wastewater-model-3-Network-Plus.xlsx` | Confirms the main source uses the same definition (December 2024) |
+| `Historical-performance-trends-for-PR24-V6.0.xlsx` | Outcomes: flooding, collapses, pollution, treatment compliance, 2015-16 to 2024-25 |
+| `WCPR_2024-25-Open-Data-Machine-Readable-Normalised-PostFDUpdate.xlsx` | Total spending (totex) and outcomes 2020-21 to 2024-25, used as a comparison |
+| `WCPR-data-report-2024-25-external-V0.2-Final.xlsx` | Cross-check of every WCPR value used |
+| `WCPR-2024-25-Open-Data-DataDictionary.csv` | WCPR field definitions |
+| `PR24-Cost-Assessment-Master-Dataset-Wholesale-Wastewater-Base-Costs-v4.xlsx` | Earlier base-cost dataset (reference only) |
+| `RAG-4.13-Table-definitions-2025-03-31.pdf` | Ofwat definition of totex (table 4C) |
 
-## Traceability
+## Attribution
 
-Requirements R01–R14 are linked to research questions RQ1–RQ4, to workflow actions in Figure 4.1 and to artefact locations in Figure 4.2 and `docs/Requirements_register.csv`. Code sections are tagged with the requirements and research questions they address.
-
-## Attribution and use of generative AI
-
-This project is the work of Dinka Christabel Samuel. Generative AI (Claude Opus 5.5, Anthropic) was used as an assistant for writing and debugging code, checking data sources, testing the dashboard and drafting text. The research questions, scope, analytical decisions and final text are the author's, and every reported result is generated and checked by the code in this repository. The full declaration of AI use is in Appendix A of the report.
-
-The statistical methods follow MacKinnon, Nielsen and Webb (2023). All data are public Ofwat publications, used under the Open Government Licence.
+The statistical methods follow MacKinnon, Nielsen and Webb (2023). Use of generative AI is declared in Appendix A (`5_report/`).

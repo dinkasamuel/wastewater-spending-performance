@@ -1,0 +1,4 @@
+expression DataFolder = "C:\Users\HP\Desktop\Project - WASCs\3_results\dashboard_tables\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 07fe4aba-49e0-50f5-b7bc-d4f5d1f6af71
+
+	annotation PBI_ResultType = Text
