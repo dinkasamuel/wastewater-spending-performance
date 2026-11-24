@@ -144,3 +144,28 @@ This log records decisions that change scope, requirements or method. It support
 
 **Follow-up:**
 - The saved `.pbix` still holds the old data path. It needs one refresh in Power BI Desktop after setting `DataFolder`, then a save.
+
+## D-2026-11-24b Master dataset and data dictionary
+
+**Decision (student-approved):** the data are consolidated into one file, and every column is documented.
+
+**The master dataset.**
+- File: `3_results/tables/master_dataset.csv`.
+- Contents: one row per company and year, 2015-16 to 2024-25 (90 rows), with plain column names. It holds:
+  - base spending (£m and per property), including the previous year and two years earlier;
+  - connected properties;
+  - total spending, for 2020-21 onward;
+  - the four outcomes;
+  - an `in_main_analysis` flag.
+- The notebook writes this file and then reads only it for every model. The 72-row model sample is simply the flagged rows.
+
+**The data dictionary.**
+- File: `3_results/tables/data_dictionary.csv`.
+- It defines all 195 columns of the 19 tables the notebook writes: what each column means, its unit and its source (Ofwat file and item code, or the formula).
+- The definitions are kept in `2_analysis/column_definitions.csv`.
+
+**New checks:**
+- **T07a:** the master dataset has 90 unique company-years.
+- **T13:** every column of every output table is defined. If a column is ever added without a definition, the run stops, so the dictionary cannot go out of date.
+
+**Verification:** every result table and chart is byte-identical to the previous run. All 17 checks pass.

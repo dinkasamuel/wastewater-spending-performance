@@ -7,10 +7,12 @@ T03_wcpr_grid,True,"270 WCPR values = 9 companies x 5 years x 6 items, none miss
 T04_companion,True,Every selected WCPR value equals the companion workbook value
 T05_properties,True,"Properties identical for 7 of 9 companies; differences only for ['SVE', 'SWB']"
 T06_pr24_grid,True,Unique 9 companies x 10 years x 4 outcomes grid
+T07a_master,True,Master dataset: 9 companies x 10 years = 90 unique company-years
 T07_balanced,True,"Balanced panel: 9 companies x 8 years = 72 rows, no missing outcomes or spending"
 T08_no_forecasts,True,No forecast spending year enters any panel
 T09_reproduce_previous,True,"Previous main estimates reproduced: flooding 0.0134, collapses 0.3111"
 T10_bootstrap,True,All 512 sign patterns used in every model
 T11_demean_sewer_flooding_rate,True,Demeaned slope equals dummy-variable slope
 T11_demean_sewer_collapse_rate,True,Demeaned slope equals dummy-variable slope
+T13_dictionary,True,Every column of 19 tables is defined; undefined: []
 T12_inputs_unchanged,True,Raw input files unchanged by the run

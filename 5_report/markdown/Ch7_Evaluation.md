@@ -4,7 +4,7 @@ The artefact was evaluated at three levels, each against the acceptance tests in
 
 ## 7.1 Data and analysis
 
-**Checks.** Fifteen automatic checks pass on every run. They confirm three things:
+**Checks.** Seventeen automatic checks pass on every run. They confirm three things:
 - one spending definition holds across all 117 shared company-years of the two Ofwat cost files;
 - every selected WCPR value equals Ofwat's companion workbook;
 - the inputs are unchanged by the run.

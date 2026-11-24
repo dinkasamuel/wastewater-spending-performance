@@ -57,7 +57,7 @@ It requires its own review under UWE's Student Ethical Review Record, because th
 - **Approved each data download,** and reviewed the code, outputs and drafts.
 
 **How outputs were verified.**
-- **Data:** every number reported is produced by code from the original Ofwat files and protected by 15 automatic checks.
+- **Data:** every number reported is produced by code from the original Ofwat files and protected by 17 automatic checks.
 - **Reproducibility:** repeat runs are byte-identical, and the earlier verified results are reproduced exactly.
 - **Dashboard:** checked live in Power BI Desktop.
 - **References:** each one was checked against its source by the student. [Student to confirm once the reference check is complete.]

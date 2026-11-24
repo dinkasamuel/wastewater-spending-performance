@@ -1,0 +1,97 @@
+column,description,unit,source
+company_code,Ofwat company code (ANH Anglian; NES Northumbrian; SRN Southern; SVE Severn Trent; SWB South West; TMS Thames; UUW United Utilities; WSX Wessex; YKY Yorkshire),code,Ofwat
+company_name,Company name,text,Derived from company_code
+company_label,Company name and code as shown in the dashboard,text,Derived from company_code
+cost_code,Company code used in Ofwat's cost files (NWT = United Utilities; SVH = Severn Trent including Hafren Dyfrdwy),code,PR24CA06-WW1-FD.xlsx
+reporting_year,Ofwat reporting year (financial year April to March; for calendar-year outcomes the first year of the label),e.g. 2024-25,Ofwat
+year_start,First calendar year of the reporting year (2024 = 2024-25),year,Derived from reporting_year
+in_main_analysis,Whether the company-year is in the balanced main analysis window 2017-18 to 2024-25,Yes/No,Derived
+in_main_window,Whether the year is in the balanced main analysis window 2017-18 to 2024-25,Yes/No,Derived
+is_forecast,Whether Ofwat's value is a forecast rather than an actual (forecasts are excluded),True/False,Derived from year (2025-26 onward)
+base_spend_gbp_m_2223,Base spending (modelled base costs) for wastewater network plus: operating and maintaining existing assets; excludes enhancement and bioresources,"GBP million, 2022-23 prices",PR24CA06-WW1-FD.xlsx sheet F_Outputs_prep column modelledbase_wwnp
+base_cost_m_2223,Base spending for wastewater network plus (same as base_spend_gbp_m_2223),"GBP million, 2022-23 prices",PR24CA06-WW1-FD.xlsx sheet F_Outputs_prep column modelledbase_wwnp
+base_spend_gbp_m,Base spending for wastewater network plus (same as base_spend_gbp_m_2223),"GBP million, 2022-23 prices",PR24CA06-WW1-FD.xlsx
+connected_properties,Properties connected to the wastewater network (average during the year),number of properties,PR24CA06-WW1-FD.xlsx sheet F_Outputs_prep column properties
+properties,Properties connected to the wastewater network (same as connected_properties),number of properties,PR24CA06-WW1-FD.xlsx sheet F_Outputs_prep column properties
+properties_thousands,Connected wastewater properties as published in the WCPR,thousand properties,WCPR item BN2710
+base_spend_per_property_gbp_2223,Base spending per connected property,"GBP per property, 2022-23 prices",Derived: base_spend_gbp_m_2223 x 1000000 / connected_properties
+base_cost_per_property,Base spending per connected property (same as base_spend_per_property_gbp_2223),"GBP per property, 2022-23 prices",Derived: base_cost_m_2223 x 1000000 / properties
+base_spend_per_property_gbp,Base spending per connected property (same as base_spend_per_property_gbp_2223),"GBP per property, 2022-23 prices",Derived
+base_spend_per_property_prev_year_gbp_2223,Base spending per property in the previous reporting year (used for the one-year lag),"GBP per property, 2022-23 prices",Derived from base spending one year earlier
+base_spend_per_property_2yrs_earlier_gbp_2223,Base spending per property two reporting years earlier (used for the two-year lag),"GBP per property, 2022-23 prices",Derived from base spending two years earlier
+spend_pp_lag1,Base spending per property in the previous reporting year,"GBP per property, 2022-23 prices",Derived (master column base_spend_per_property_prev_year_gbp_2223)
+spend_pp_lag2,Base spending per property two reporting years earlier,"GBP per property, 2022-23 prices",Derived (master column base_spend_per_property_2yrs_earlier_gbp_2223)
+log_spend_pp,Natural log of base spending per property (model input; a 0.0953 change equals 10% more spending),log GBP,Derived
+log_spend_total,Natural log of total base spending (model input for the total-plus-size check),log GBP million,Derived
+log_properties,Natural log of connected properties (size control),log number,Derived
+log_spend_pp_lag1,Natural log of base spending per property one year earlier,log GBP,Derived
+log_spend_pp_lag2,Natural log of base spending per property two years earlier,log GBP,Derived
+total_spend_gbp_m_1718,Total spending (totex) for wastewater network plus: base plus enhancement; available 2020-21 onward only,"GBP million, 2017-18 prices",WCPR item B0143TAWWNP 17-18prices (APR table 4C.5)
+totex_m_1718,Total spending (totex) for wastewater network plus (same as total_spend_gbp_m_1718),"GBP million, 2017-18 prices",WCPR item B0143TAWWNP 17-18prices
+total_spend_per_property_gbp_1718,Total spending per connected property; comparison measure only,"GBP per property, 2017-18 prices",Derived: totex x 1000 / WCPR properties in thousands
+totex_per_property,Total spending per connected property (same as total_spend_per_property_gbp_1718),"GBP per property, 2017-18 prices",Derived
+flooding_per_10k_connections,Internal sewer flooding incidents (lower is better; financial year),"incidents per 10,000 sewer connections",PR24 historical performance trends V6.0 code OUT5_01_PR24_OFWAT
+sewer_flooding_rate,Internal sewer flooding incidents (same as flooding_per_10k_connections),"incidents per 10,000 sewer connections",PR24 V6.0 OUT5_01_PR24_OFWAT (WCPR APR3B_01 in the WCPR table)
+collapses_per_1000km,Sewer collapses (lower is better; financial year),"collapses per 1,000 km of sewer",PR24 historical performance trends V6.0 code OUT5_11_PR24_OFWAT
+sewer_collapse_rate,Sewer collapses (same as collapses_per_1000km),"collapses per 1,000 km of sewer",PR24 V6.0 OUT5_11_PR24_OFWAT (WCPR APR3B_03 in the WCPR table)
+pollution_per_10k_km,Pollution incidents (lower is better; calendar year: label 2024-25 = 2024),"incidents per 10,000 km of sewer",PR24 historical performance trends V6.0 code OUT5_05_PR24_OFWAT
+pollution_rate,Pollution incidents (same as pollution_per_10k_km),"incidents per 10,000 km of sewer",PR24 V6.0 OUT5_05_PR24_OFWAT (WCPR APR3B_02 in the WCPR table)
+compliance_pct,Treatment works compliance (higher is better; calendar year; descriptive only),% of works compliant,PR24 historical performance trends V6.0 code OUT4_19_PR24_OFWAT (fraction x 100)
+treatment_compliance_pct,Treatment works compliance (same as compliance_pct),% of works compliant,PR24 V6.0 OUT4_19_PR24_OFWAT (WCPR APR3B_04 in the WCPR table)
+metric,Outcome identifier (sewer_flooding_rate; sewer_collapse_rate; pollution_rate; treatment_compliance_pct),code,Derived
+outcome,Outcome name in plain English,text,Derived
+value,Outcome value in its own unit (blank = not reported by Ofwat),see unit,PR24 historical performance trends V6.0
+period_basis,Whether the outcome is measured by financial year or calendar year,financial/calendar,PR24 historical performance trends V6.0
+available,Whether Ofwat reports a value for this company and year,text,Derived
+unit,Unit of the outcome or measure,text,Derived
+YEAR,Number of the nine companies with a reported value in that year (column name = first year of the reporting year),count (0-9),Derived from PR24 historical performance trends V6.0
+companies_with_data,Number of the nine companies with a reported value,count (0-9),Derived
+difference_pct,Difference between the two sources' property counts,% of WCPR count,Derived: (properties - properties_thousands x 1000) / (properties_thousands x 1000) x 100
+model_id,Unique model identifier (outcome|specification),text,Derived
+specification,Which version of the model was fitted (main or a sensitivity check),text,Derived
+spending_measure,Spending variable used in the model,text,Derived
+outcome_source,Ofwat release the outcome values come from,text,Derived
+first_year,First year of the model sample,year,Derived
+last_year,Last year of the model sample,year,Derived
+n,Number of company-years in the model,count,Derived
+company_years,Number of company-years in the model,count,Derived
+companies,Number of companies (clusters) in the model,count,Derived
+slope_log,Model slope on log spending (outcome units per one log unit of spending),outcome unit,Two-way fixed-effects regression (2_analysis/methods.py)
+cv3_se_log,Standard error of the slope from the leave-one-company-out (CV3) jackknife,outcome unit,methods.cv3_jackknife
+diff_per_10pct,Difference in the outcome associated with 10% more spending (slope x ln 1.1),outcome unit,Derived from slope_log
+difference_per_10pct,Difference in the outcome associated with 10% more spending,outcome unit,Derived from slope_log
+ci_low_10pct,Lower end of the 95% range for diff_per_10pct (CV3 standard error; t distribution with companies - 1 degrees of freedom),outcome unit,Derived
+ci_high_10pct,Upper end of the 95% range for diff_per_10pct,outcome unit,Derived
+ci95_low,Lower end of the 95% range,outcome unit,Derived
+ci95_high,Upper end of the 95% range,outcome unit,Derived
+range_includes_zero,Whether the 95% range includes zero (if Yes the direction of the link is uncertain),Yes/No,Derived
+p_cv3,Two-sided p-value from the CV3 t-test,probability,Derived
+p_wild_bootstrap,Two-sided p-value from the restricted wild-cluster bootstrap (all 512 sign patterns),probability,methods.wild_cluster_bootstrap_p
+p_wild_holm,Holm-adjusted bootstrap p-value (main flooding and collapse models only),probability,methods.holm
+p_holm_main,Holm-adjusted bootstrap p-value (main flooding and collapse models only),probability,methods.holm
+bootstrap_draws,Number of bootstrap sign patterns used (2 to the power 9 = 512),count,methods.wild_cluster_bootstrap_p
+t_cv1,Observed t-statistic with the CV1 cluster standard error (used by the bootstrap),statistic,methods.wild_cluster_bootstrap_p
+mde_10pct_80power,Smallest difference per 10% more spending the model would detect with 80% probability (minimum detectable effect),outcome unit,methods.minimum_detectable_effect
+detectable_difference_80pct,Smallest difference per 10% more spending the model would detect with 80% probability,outcome unit,methods.minimum_detectable_effect
+mde_pct_of_mean,Minimum detectable effect as a percentage of the outcome's average,% of average,Derived
+detectable_pct_of_average,Minimum detectable effect as a percentage of the outcome's average,% of average,Derived
+outcome_mean,Average of the outcome in the model sample,outcome unit,Derived
+average_rate,Average of the outcome in the main model sample,outcome unit,Derived
+omit_one_min_10pct,Smallest diff_per_10pct when each company is left out in turn,outcome unit,methods.cv3_jackknife
+omit_one_max_10pct,Largest diff_per_10pct when each company is left out in turn,outcome unit,methods.cv3_jackknife
+omitted_company,Company left out of this refit,code,Derived
+max_company_leverage_share,Largest share of the spending variation (after company and year effects) contributed by one company,share (0-1),Derived
+residual_df,Residual degrees of freedom of the model,count,Derived
+condition_number,Condition number of the design matrix (high values warn of near-collinearity),number,Derived
+role,Type of result or role of a measure in the analysis,text,Derived
+answers,Research question the result answers,text,Derived
+years,Years covered by the model sample,text,Derived
+plain_message,Plain-English summary of what the main model can and cannot detect,text,Derived
+measure,Name of a measure used in the analysis,text,Derived
+better_direction,Whether higher or lower values are better,text,Derived
+period,Period over which the measure is reported,text,Derived
+source,Ofwat source of the measure,text,Derived
+notes,Notes on boundaries and limits,text,Derived
+test_id,Identifier of a validation check,code,Derived
+passed,Whether the check passed,True/False,Derived
+detail,What the check tested,text,Derived

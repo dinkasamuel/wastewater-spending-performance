@@ -12,7 +12,7 @@ MSc Data Science dissertation project, UWE Bristol: Dinka Christabel Samuel (stu
 |---|---|
 | `1_data/` | Ofwat source files, never edited |
 | `2_analysis/` | **`analysis.ipynb`**: the whole analysis in one notebook, plus `methods.py` (statistical functions) |
-| `3_results/` | `tables/` (CSV results and checks), `figures/` (charts and UML diagrams), `dashboard_tables/` (data for Power BI) |
+| `3_results/` | `tables/` (CSV results and checks), `figures/` (charts and UML diagrams), `dashboard_tables/` (data for Power BI). **Start with `tables/master_dataset.csv`** (the data) and **`tables/data_dictionary.csv`** (what every column means) |
 | `4_dashboard/` | **`Wastewater_Dashboard.pbip`**: the Power BI dashboard (also saved as `.pbix`) |
 | `5_report/` | Report chapters, appendices and references (Word), with their Markdown sources in `5_report/markdown/` |
 | `6_project_records/` | Ethics pack, decision log, evaluation log, live-check sheet, plans and reviews |
@@ -26,7 +26,7 @@ Requires Python 3.13 with the packages in `requirements.txt`; the reported run u
    ```bash
    python tools/run_analysis.py
    ```
-   It takes about one minute. Every step should finish without errors, ending with "All 15 checks passed; 20 models".
+   It takes about one minute. Every step should finish without errors, ending with "All 17 checks passed; 20 models".
 2. **Check that it reproduces** (optional): this runs the notebook twice and confirms the results are byte-identical.
    ```bash
    python tools/check_reproducibility.py

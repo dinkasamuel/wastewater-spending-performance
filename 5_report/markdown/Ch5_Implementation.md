@@ -20,13 +20,16 @@ The pipeline reads three Ofwat workbooks directly:
 | PR24 historical performance trends V6.0 (Ofwat, 2026) | Outcomes, 2015-16 to 2024-25 |
 | WCPR 2024-25 (Ofwat, 2025b) | Total spending, for comparison and reproduction |
 
+The three sources are consolidated into one **master dataset** (`3_results/tables/master_dataset.csv`): one row per company and year, 2015-16 to 2024-25, with plain column names. Every model reads from this single file, and a **data dictionary** (`3_results/tables/data_dictionary.csv`) defines all 195 columns of the 19 tables the analysis writes, with unit and source.
+
 Spending is converted to pounds per connected property at 2022-23 prices. Forecast years (2025-26 onwards) are removed. Severn Trent appears in the cost data as its combined England and Wales series, the only one with properties for every year; the Welsh element is about 1% of its costs.
 
 The main panel keeps the 72 company-years (2017-18 to 2024-25) in which every company reports every outcome. Missing values are never filled in.
 
-Fifteen automatic checks stop the run on any failure (R03). Among them:
+Seventeen automatic checks stop the run on any failure (R03). Among them:
 - the October 2025 cost file equals the December 2024 file for all 117 shared company-years, confirming one definition;
 - all 270 selected WCPR values equal Ofwat's companion workbook;
+- every column of every output table is defined in the data dictionary;
 - the input files are unchanged by the run.
 
 ## 5.3 Statistical models (E1–E3; R07–R08)
