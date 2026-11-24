@@ -2,6 +2,8 @@
 
 This chapter explains how the requirements were gathered, how they depend on one another and where each is realised in the project workflow. Figure 4.1 models the whole project as a UML activity diagram. Figure 4.2 models the requirements and links each one to the Figure 4.1 actions that satisfy it. Together they provide the traceability chain used throughout the rest of the report: research question → requirement → action → artefact location. Appendix B records this chain in full.
 
+![**Figure 4.1.** Whole-project workflow as a UML activity diagram with four partitions (researcher, Python pipeline, Power BI artefact, supervisor). Bands on the left mark the report chapters; action IDs (A1–G3) carry the requirements, research questions and objectives they address, and are cited in Figure 4.2.](../figures/fig4_1_project_activity.png){height=21.5cm}
+
 ## 4.1 How the requirements were gathered
 
 The requirements came from five sources, shown in the left panel of Figure 4.2:
@@ -33,6 +35,8 @@ Priorities use MoSCoW categories:
 ## 4.2 Requirement dependencies
 
 Figure 4.2 arranges the fourteen requirements by dependency. Each box states the requirement's purpose, the research questions it serves and the actions that realise it. Transitive dependencies are omitted for legibility.
+
+![**Figure 4.2.** Requirements R01–R14: dependencies, MoSCoW priority, purpose, the research questions each serves and the Figure 4.1 actions that realise it. Transitive dependencies are omitted; the full register is in Appendix B.](../figures/fig4_2_requirements_traceability.png){width=15.5cm}
 
 The chain begins with scope and provenance:
 

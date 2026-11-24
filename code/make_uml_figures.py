@@ -10,9 +10,9 @@ Figure 4.2  Requirements dependency and traceability diagram. Each
 Author: Dinka Christabel Samuel (drafted with AI assistance; see the
 AI-use disclosure in Appendix A). Pure standard-library Python: no
 dependencies. Run from the project folder:  python code/make_uml_figures.py
-The SVGs are written to figures/. PNG copies were rendered with headless Microsoft Edge:
-  msedge --headless=new --force-device-scale-factor=2 --window-size=1340,<height>
-         --screenshot=<file>.png <file>.svg   (height 2140 for Figure 4.1, 1640 for Figure 4.2)
+The SVGs are written to figures/. PNG copies are rendered with headless Google Chrome (or Microsoft Edge):
+  chrome --headless=new --force-device-scale-factor=2 --window-size=1340,<height>
+         --screenshot=<file>.png <file>.svg   (height 2080 for Figure 4.1, 1578 for Figure 4.2)
 """
 
 from pathlib import Path
@@ -47,14 +47,17 @@ class SVG:
         mk = ' marker-end="url(#arrow)"' if arrow else ""
         self.add(f'<path d="{d}" fill="none" stroke="{LINE}" stroke-width="{width}"{dash}{mk}/>')
 
-    def save(self, name):
-        head = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.w}" height="{self.h}" '
-                f'viewBox="0 0 {self.w} {self.h}">'
+    def save(self, name, crop_top=0):
+        """Write the SVG. crop_top removes empty space at the top: the figure title
+        lives in the report caption, not inside the image."""
+        h = self.h - crop_top
+        head = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.w}" height="{h}" '
+                f'viewBox="0 {crop_top} {self.w} {h}">'
                 '<defs><marker id="arrow" viewBox="0 0 10 10" refX="9.5" refY="5" '
                 'markerWidth="9" markerHeight="9" orient="auto-start-reverse">'
                 f'<path d="M0,0 L10,5 L0,10" fill="none" stroke="{LINE}" stroke-width="1.6"/>'
                 '</marker></defs>'
-                f'<rect width="{self.w}" height="{self.h}" fill="#ffffff"/>')
+                f'<rect y="{crop_top}" width="{self.w}" height="{h}" fill="#ffffff"/>')
         (OUT / name).write_text(head + "".join(self.parts) + "</svg>", encoding="utf-8")
 
 
@@ -82,8 +85,6 @@ def figure_4_1():
         s.text((x0 + x1) / 2, top + 22, lab, size=18, weight="bold")
     s.add(f'<rect x="0" y="{top}" width="50" height="{bottom-top}" fill="#eef2f5" '
           f'stroke="{LINE}" stroke-width="1.2"/>')
-    s.text(W / 2, 34, "Figure 4.1  Project workflow: UML activity diagram with partitions",
-           size=22, weight="bold")
 
     # phase bands (strip on the left + dashed separators)
     bounds = [top + 44] + [y(p) - 70 for p in phase_rows] + [bottom]
@@ -147,7 +148,7 @@ def figure_4_1():
     action("E3", "PR", 12.6, "Sensitivity", "scale, omission, timing", "R05 R08 · RQ3 · Obj 4")
     bar(13.4)
     action("E4", "P", 14.2, "Export and rerun", "fact tables, fresh kernel", "R11 · Obj 6")
-    action("F1", "B", 14.2, "Power BI report", "5 pages, star schema", "R06 R09 R10 · RQ4 · Obj 5")
+    action("F1", "B", 14.2, "Power BI report", "6 pages, RQ-tagged", "R06 R09 R10 · RQ4 · Obj 5")
     action("G1", "R", 15.2, "Evaluate", "data, analysis, artefact", "R12a R12b · RQ4 · Obj 6")
     decision("S", 16.2, "Changes", "needed?", w=180)
     action("G3", "R", 17.2, "Report and reflect", "answer RQ1–RQ4", "Ch 6–8")
@@ -199,7 +200,7 @@ def figure_4_1():
             "bars = fork/join; dashed = object flow; folded box = note.",
             "Action IDs (A1…G3) are cited in Figure 4.2 and Appendix B."]):
         s.text(lx, ly + i * 20, t, size=14, anchor="start")
-    s.save("fig4_1_project_activity.svg")
+    s.save("fig4_1_project_activity.svg", crop_top=60)
 
 
 # ---------------------------------------------------------------- Figure 4.2
@@ -226,8 +227,6 @@ REQS = {
 def figure_4_2():
     W, H = 1340, 1640
     s = SVG(W, H)
-    s.text(W / 2, 34, "Figure 4.2  Requirements: dependencies, purpose and traceability",
-           size=22, weight="bold")
     COL = {1: 230, 2: 670, 3: 1110}
     BW, BH = 400, 122
     def Y(layer):
@@ -307,7 +306,7 @@ def figure_4_2():
         ("RQ3 sensitivity of associations", ACCENT),
         ("RQ4 communication through Power BI", ACCENT),
         ("Research gaps G1–G3 (Ch 2)", INK),
-        ("Feasibility audit and 16 Nov decision (Ch 3)", INK),
+        ("Feasibility audit and base-cost decision (Ch 3)", INK),
         ("Supervisor feedback, 3 Oct 2026", INK),
         ("Logbook review of priorities", INK),
     ]
@@ -333,7 +332,7 @@ def figure_4_2():
     ]
     for i, t in enumerate(legend):
         s.text(lx + 16, ly + 60 + i * 26, t, size=15, anchor="start")
-    s.save("fig4_2_requirements_traceability.svg")
+    s.save("fig4_2_requirements_traceability.svg", crop_top=62)
 
 
 if __name__ == "__main__":

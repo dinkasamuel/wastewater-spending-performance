@@ -3,7 +3,11 @@
 The .md files are the editable sources; the .docx files are what gets shared or
 submitted. Supports the Markdown used in this project: headings, paragraphs, bold,
 italic, inline code, links, bullet and numbered lists (one level of nesting),
-block quotes, horizontal rules and pipe tables.
+block quotes, horizontal rules, pipe tables and figures.
+
+Figures use standard Markdown image syntax with an optional height or width, e.g.
+    ![Figure 4.1. Caption text.](../figures/fig4_1_project_activity.png){height=21cm}
+The image is centred and the alt text becomes the caption below it (Word 'Caption' style).
 
 Requires python-docx (pip install python-docx).
 Usage (from the project folder):   python code/md_to_docx.py
@@ -13,10 +17,12 @@ from pathlib import Path
 
 from docx import Document
 from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.shared import Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Cm, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC, DST = ROOT / "markdown", ROOT / "docs"
+IMAGE = re.compile(r"!\[(?P<caption>[^\]]*)\]\((?P<path>[^)]+)\)(?:\{(?P<dim>height|width)=(?P<size>[\d.]+)cm\})?")
 INLINE = re.compile(r"(\*\*[^*]+\*\*|\*[^*\s][^*]*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))")
 
 
@@ -59,8 +65,25 @@ def add_table(doc, lines):
     doc.add_paragraph()
 
 
+def add_figure(doc, md_path, match):
+    """Insert a centred image with its caption underneath."""
+    image = (md_path.parent / match["path"]).resolve()
+    size = {match["dim"]: Cm(float(match["size"]))} if match["dim"] else {"width": Cm(15.5)}
+    picture = doc.add_paragraph()
+    picture.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    picture.paragraph_format.keep_with_next = True
+    picture.add_run().add_picture(str(image), **size)
+    caption = doc.add_paragraph(style="Caption")
+    caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    add_inline(caption, match["caption"])
+
+
 def convert(md_path, docx_path):
     doc = Document()
+    for section in doc.sections:                 # A4 portrait, 2.54 cm margins (UK submission)
+        section.page_width, section.page_height = Cm(21.0), Cm(29.7)
+        section.left_margin = section.right_margin = Cm(2.54)
+        section.top_margin = section.bottom_margin = Cm(2.54)
     doc.styles["Normal"].font.name = "Calibri"
     doc.styles["Normal"].font.size = Pt(11)
     lines = md_path.read_text(encoding="utf-8").splitlines()
@@ -77,6 +100,8 @@ def convert(md_path, docx_path):
             continue
         if not stripped:
             pass
+        elif fig := IMAGE.fullmatch(stripped):
+            add_figure(doc, md_path, fig)
         elif re.fullmatch(r"-{3,}|\*{3,}", stripped):
             doc.add_paragraph("_" * 60)
         elif m := re.match(r"(#{1,6})\s+(.*)", stripped):
